@@ -1,52 +1,55 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+const usersSchema = import('/models/users');
 
 const port = process.env.PORT || 5000;
 
+const url = 
 
-const users = [
-        {
-            id: 1,
-            name: "first and last",
-            date_of_birth: "date",
-            parent_name: "parent name",
-            primary_contact_name: "name",
-            primary_contact_number: "number",
-            address: "address",
-            email: "email",
-            primary_instrument: "primary instrument",
-            primary_learning_location: "location",
-            experience: "current level",
-            currently_enrolled: {
-                enrolled: false,
-                day: "monday",
-                time: "1630"
-            },
-            gender: "male",
-            role: "admin "
-        },
-        {
-            id: 2,
-            name: "first and last",
-            date_of_birth: "date",
-            parent_name: "parent name",
-            primary_contact_name: "name",
-            primary_contact_number: "number",
-            address: "address",
-            email: "email",
-            primary_instrument: "primary instrument",
-            primary_learning_location: "location",
-            experience: "current level",
-            currently_enrolled: {
-                enrolled: false,
-                day: "monday",
-                time: "1630"
-            },
-            gender: "male",
-            role: "user"
-        }
-    ]
+
+// const users = [
+//         {
+//             id: 1,
+//             name: "first and last",
+//             date_of_birth: "date",
+//             parent_name: "parent name",
+//             primary_contact_name: "name",
+//             primary_contact_number: "number",
+//             address: "address",
+//             email: "email",
+//             primary_instrument: "primary instrument",
+//             primary_learning_location: "location",
+//             experience: "current level",
+//             currently_enrolled: {
+//                 enrolled: false,
+//                 day: "monday",
+//                 time: "1630"
+//             },
+//             gender: "male",
+//             role: "admin "
+//         },
+//         {
+//             id: 2,
+//             name: "first and last",
+//             date_of_birth: "date",
+//             parent_name: "parent name",
+//             primary_contact_name: "name",
+//             primary_contact_number: "number",
+//             address: "address",
+//             email: "email",
+//             primary_instrument: "primary instrument",
+//             primary_learning_location: "location",
+//             experience: "current level",
+//             currently_enrolled: {
+//                 enrolled: false,
+//                 day: "monday",
+//                 time: "1630"
+//             },
+//             gender: "male",
+//             role: "user"
+//         }
+//     ]
 
 app.get('/', (req, res) => {
   res.send('hi from api');
