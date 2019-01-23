@@ -11,10 +11,8 @@ const users = [
             name: "first and last",
             date_of_birth: "date",
             parent_name: "parent name",
-            primary_contact: {
-                name: "name",
-                number: "number"
-            },
+            primary_contact_name: "name",
+            primary_contact_number: "number",
             address: "address",
             email: "email",
             primary_instrument: "primary instrument",
@@ -33,10 +31,8 @@ const users = [
             name: "first and last",
             date_of_birth: "date",
             parent_name: "parent name",
-            primary_contact: {
-                name: "name",
-                number: "number"
-            },
+            primary_contact_name: "name",
+            primary_contact_number: "number",
             address: "address",
             email: "email",
             primary_instrument: "primary instrument",
@@ -72,6 +68,11 @@ app.get('/users/:id', (req, res) => {
  }
 });
 
+
+// app.post('/users/new', (req, res) => {
+//   const {id, name, date_of_birth, parent_name, primary_contact_name, primary_contact_number, address, email, primary_instrument, primary_learning_location, experience, currently_enrolled:{enrolled, day, time}, gender, role} = req.body;
+//   const user = new users
+// });
 
 
 
