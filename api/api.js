@@ -1,63 +1,76 @@
 const express = require('express');
 const mongoose = require('mongoose');
+// const usersSchema = import('/models/users');
+const User = require('./models/User');
+
 const app = express();
-const usersSchema = import('/models/users');
+const port = process.env.PORT || 5001;
 
-const port = process.env.PORT || 5000;
-
-const url = 
+app.use(express.json());
 
 
-// const users = [
-//         {
-//             id: 1,
-//             name: "first and last",
-//             date_of_birth: "date",
-//             parent_name: "parent name",
-//             primary_contact_name: "name",
-//             primary_contact_number: "number",
-//             address: "address",
-//             email: "email",
-//             primary_instrument: "primary instrument",
-//             primary_learning_location: "location",
-//             experience: "current level",
-//             currently_enrolled: {
-//                 enrolled: false,
-//                 day: "monday",
-//                 time: "1630"
-//             },
-//             gender: "male",
-//             role: "admin "
-//         },
-//         {
-//             id: 2,
-//             name: "first and last",
-//             date_of_birth: "date",
-//             parent_name: "parent name",
-//             primary_contact_name: "name",
-//             primary_contact_number: "number",
-//             address: "address",
-//             email: "email",
-//             primary_instrument: "primary instrument",
-//             primary_learning_location: "location",
-//             experience: "current level",
-//             currently_enrolled: {
-//                 enrolled: false,
-//                 day: "monday",
-//                 time: "1630"
-//             },
-//             gender: "male",
-//             role: "user"
-//         }
-//     ]
+//sherin - begin
+mongoose.connect('mongodb://localhost:27017/lms-lilla', { useNewUrlParser: true });
+mongoose.connection.on('connected', () => console.log("Connected to Mongod"));
+mongoose.connection.on('error', () => console.log("Failed to connect to Mongod"));
+
+
+//End point for new user registration
+app.post('/users/new', (req, res) => {
+  const {
+    name, 
+    date_of_birth, 
+    parent_name, 
+    primary_contact_name, 
+    primary_contact_number, 
+    address, 
+    email, 
+    primary_instrument, 
+    primary_learning_location, 
+    experience, 
+    currently_enrolled:{enrolled, day, time}, 
+    gender, 
+    role
+  } = req.body;
+
+  const user = new User({
+                        name, 
+                        date_of_birth, 
+                        parent_name, 
+                        primary_contact_name, 
+                        primary_contact_number, 
+                        address, 
+                        email, 
+                        primary_instrument, 
+                        primary_learning_location, 
+                        experience, 
+                        currently_enrolled:{enrolled,  day, time}, 
+                        gender, 
+                        role
+                      });
+
+  user.save()
+    .then(res.send(user));
+});
+
+
+// End point for fetching all users
+app.get('/users', (req, res) => {
+  User.find({})
+    .then(docs => res.send(docs))
+    .catch(err => res.send(err));
+});
+
+//sherin - end
+
 
 app.get('/', (req, res) => {
   res.send('hi from api');
-})
+});
 
-app.get('/users', (req, res) => {
-  res.send(users);
-})
+// app.get('/users', (req, res) => {
+//   res.send(users);
+// })
 
 app.get('/users/:id', (req, res) => {
   const {id} = req.params;
