@@ -1,0 +1,65 @@
+
+/*Fonts Used
+font-family: 'Great Vibes', cursive; 
+font-family: 'Quicksand', sans-serif;
+*/
+
+.App {
+  text-align: center;
+}
+
+.main-heading {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 200;
+  font-size: 250%; 
+  text-align: center;
+  margin: 0;
+  margin-top: 2%;
+}
+
+.line-under-headings {
+  text-align: center;
+  margin-top: 0px;
+}
+
+.sub-headings {
+  margin-top: 1%;
+  text-align: center;
+}
+
+.sub-header-links {
+  color: black;
+  text-decoration: none;
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* .App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
