@@ -1,12 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
-// const usersSchema = import('/models/users');
+
 const User = require('./models/User');
-require('dotenv').config()
+require('dotenv').config();
+
 const app = express();
 const port = process.env.PORT || 5001;
 
 app.use(express.json());
+app.use(require('./controllers'));
 
 
 //sherin - begin

@@ -18,7 +18,8 @@ const userSchema = new schema({
           time: String,
       },
       gender: String,
-      role: String
+      role: String,
+      password: String
 })
 
 module.exports = mongoose.model('users', userSchema);
