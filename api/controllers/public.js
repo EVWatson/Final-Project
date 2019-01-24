@@ -2,7 +2,14 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
-app.post('/users/new', (req, res) => {
+const app = express();
+app.use(express.json());
+
+router.get('/', (req, res) => {
+  res.send('hi from api');
+});
+
+router.post('/users/new', (req, res) => {
 
   const {
     role,
@@ -52,9 +59,7 @@ app.post('/users/new', (req, res) => {
 
 
 
-app.get('/', (req, res) => {
-  res.send('hi from api');
-});
+
 
 
 

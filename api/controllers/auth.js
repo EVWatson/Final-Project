@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+const app = express();
 
 const User = require('../models/User');
 
@@ -52,7 +53,7 @@ const authenticateUser = (req, res, next) => {
 }
 
 
-app.post('/login', authenticateUser);
+router.post('/login', authenticateUser);
 
 
 
