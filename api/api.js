@@ -1,20 +1,21 @@
 const express = require('express');
 const mongoose = require('mongoose');
-// const usersSchema = import('/models/users');
+
+require('dotenv').config();
+require('./config/db');
+
 const User = require('./models/User');
 const Booking = require('./models/Booking')
-require('dotenv').config()
+
 const app = express();
 const port = process.env.PORT || 5001;
 
-app.use(express.json());
-
-
-//sherin - begin
 mongoose.connect(`${process.env.DB_URL}`, { useNewUrlParser: true });
 mongoose.connection.on('connected', () => console.log("Connected to Mongod"));
 mongoose.connection.on('error', () => console.log("Failed to connect to Mongod"));
 
+app.use(express.json());
+app.use(require('./controllers'));
 
 //End point for new user registration
 app.post('/users/new', (req, res) => {
@@ -130,23 +131,6 @@ app.get('/users/:id', (req, res) => {
 //   const {id, name, date_of_birth, parent_name, primary_contact_name, primary_contact_number, address, email, primary_instrument, primary_learning_location, experience, currently_enrolled:{enrolled, day, time}, gender, role} = req.body;
 //   const user = new users
 // });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 app.listen(port, (req, res) => {
