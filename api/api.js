@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 // const usersSchema = import('/models/users');
 const User = require('./models/User');
-
+require('dotenv').config()
 const app = express();
 const port = process.env.PORT || 5001;
 
@@ -10,7 +10,7 @@ app.use(express.json());
 
 
 //sherin - begin
-mongoose.connect('mongodb://localhost:27017/lms-lilla', { useNewUrlParser: true });
+mongoose.connect(`${process.env.DB_URL}`, { useNewUrlParser: true });
 mongoose.connection.on('connected', () => console.log("Connected to Mongod"));
 mongoose.connection.on('error', () => console.log("Failed to connect to Mongod"));
 
@@ -18,34 +18,34 @@ mongoose.connection.on('error', () => console.log("Failed to connect to Mongod")
 //End point for new user registration
 app.post('/users/new', (req, res) => {
   const {
-    name, 
-    date_of_birth, 
-    parent_name, 
-    primary_contact_name, 
-    primary_contact_number, 
-    address, 
-    email, 
-    primary_instrument, 
-    primary_learning_location, 
-    experience, 
-    currently_enrolled:{enrolled, day, time}, 
-    gender, 
+    name,
+    date_of_birth,
+    parent_name,
+    primary_contact_name,
+    primary_contact_number,
+    address,
+    email,
+    primary_instrument,
+    primary_learning_location,
+    experience,
+    currently_enrolled:{enrolled, day, time},
+    gender,
     role
   } = req.body;
 
   const user = new User({
-                        name, 
-                        date_of_birth, 
-                        parent_name, 
-                        primary_contact_name, 
-                        primary_contact_number, 
-                        address, 
-                        email, 
-                        primary_instrument, 
-                        primary_learning_location, 
-                        experience, 
-                        currently_enrolled:{enrolled,  day, time}, 
-                        gender, 
+                        name,
+                        date_of_birth,
+                        parent_name,
+                        primary_contact_name,
+                        primary_contact_number,
+                        address,
+                        email,
+                        primary_instrument,
+                        primary_learning_location,
+                        experience,
+                        currently_enrolled:{enrolled,  day, time},
+                        gender,
                         role
                       });
 
