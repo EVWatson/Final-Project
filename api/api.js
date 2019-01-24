@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 // const usersSchema = import('/models/users');
 const User = require('./models/User');
+const Booking = require('./models/Booking')
 require('dotenv').config()
 const app = express();
 const port = process.env.PORT || 5001;
@@ -63,6 +64,46 @@ app.get('/users', (req, res) => {
 
 //sherin - end
 
+//Taylor - begin
+
+//endpoint for new booking - gonna need to bind this into a form once we have the react side up and running
+
+app.get('/bookings', (req, res) => {
+  Bookings.find({})
+    .then(docs => res.send(docs))
+    .catch(err => res.send(err))
+})
+
+app.post('/bookings/new', (req, res) => {
+  const {
+    term,
+    week,
+    day,
+    block_start,
+    block_end,
+    approval_pending,
+    booked_by,
+    location,
+    instrument
+  } = req.body;
+
+  const booking = new Booking({
+                        term,
+                        week,
+                        day,
+                        block_start,
+                        block_end,
+                        approval_pending,
+                        booked_by,
+                        location,
+                        instrument
+                        });
+
+  booking.save()
+    .then(res.send(booking));
+});
+
+//Taylor End
 
 app.get('/', (req, res) => {
   res.send('hi from api');
