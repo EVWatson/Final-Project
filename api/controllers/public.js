@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
   res.send('hi from api');
 });
 
+//new user registration
 router.post('/users/new', (req, res) => {
 
   const {
