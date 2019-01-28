@@ -13,4 +13,4 @@ const bookingSchema = new schema({
       instrument: String
 })
 
-module.exports = mongoose.model('bookings', bookingSchema);
+module.exports = mongoose.model('booking', bookingSchema);

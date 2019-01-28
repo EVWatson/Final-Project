@@ -3,19 +3,89 @@
 font-family: 'Great Vibes', cursive; 
 font-family: 'Quicksand', sans-serif;
 */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 .App {
   text-align: center;
 }
 
+
+.wrapper {
+  margin-left: 12%;
+  margin-right: 12%;
+  border: 10px solid #2B2321;
+  background-color: #E7DAC9;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-rows: minmax(100px, auto);
+  grid-template-areas: 
+  "nav nav nav nav nav"
+  "cnr cnr cnr cnr cnr"
+  
+}
+
+.container {
+  grid-area: cnr;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-rows: minmax(100px, auto);
+  grid-template-areas: 
+  "idx idx idx idx idx";
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 8%;
+  margin-bottom: 10%;
+  padding-right: 4%;
+  
+}
+
+/*----------------------Index Page ----------------------------------*/
+
+.idx {
+  grid-area: idx;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-rows: minmax(100px, auto);
+  grid-template-areas: 
+  "pic pic abt abt abt"
+  "qual qual qual qual qual"
+  "phil phil phil phil phil"
+  ". . dots . ."
+  "les les les pic1 pic1"
+  "loc loc loc loc loc"
+  "rts rts rts rts rts"
+  "pol pol pol pol pol"
+  ". . dots2 . ."
+  "pic2 pic2 con con con"
+  "cform cform cform cform cform";
+}
+
 /*=================NAVBAR===================*/
+.main-nav {
+  grid-area: nav;
+  /* position: fixed; */
+  /* left: 15%;
+  z-index: 1000;
+  opacity: 1;
+  background-color: yellowgreen; */
+}
+
 .main-heading {
   font-family: 'Great Vibes', cursive;
   font-weight: 200;
   font-size: 250%; 
   text-align: center;
   margin: 0;
-  margin-top: 2%;
+  margin-top: 4%;
 }
 
 .line-under-headings {
@@ -23,17 +93,177 @@ font-family: 'Quicksand', sans-serif;
   margin-top: 0px;
 }
 
-.sub-headings {
+.nav-headings {
   margin-top: 1%;
   text-align: center;
+  overflow: hidden;
 }
 
-.sub-header-links {
+.nav-links {
   color: black;
   text-decoration: none;
   margin-right: 2.5%;
   margin-left: 2.5%;
   font-family: 'Quicksand', sans-serif;
+}
+
+/* .active {
+  text-decoration: underline;
+} */
+
+/*for hamburger menu
+/* Hide the link that should open and close the topnav on small screens */
+.nav-headings .icon {
+  display: none;
+}
+
+/* Add a text shadow on hover */
+.nav-headings a:hover  {
+    text-shadow: 0 0 1px #FF0000, 0 0 1px  orange;
+}
+
+/* =========== Heading styles ===============*/
+
+.main-sub-heading {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 200;
+  font-size: 200%;
+  margin-bottom: 4%;
+}
+
+.sub-heading {
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  margin-bottom: 4%;
+  font-size: 125%;
+  font-weight: 595;
+}
+
+/*========== Index page content =============*/
+
+.bio-text {
+  font-family: 'Quicksand', sans-serif;
+  text-align: left;
+  line-height: 1.5em
+}
+
+.about {
+  grid-area: abt;
+  order: 2;
+  margin-left: 7%;
+}
+
+.lilla-pic {
+  grid-area: pic;
+  width: 100%;
+  height: auto;
+}
+
+.qualifications {
+  grid-area: qual;
+  margin-top: 5%;
+} 
+
+.philosophy {
+  grid-area: phil;
+  margin-top: 5%;
+}
+
+.three-dots {
+  grid-area: dots;
+  align-self: center;
+  justify-self: center;
+}
+
+.center-header {
+  text-align: center;
+}
+
+.lessons {
+  grid-area: les;
+  margin-top: 3%;
+}
+
+.music-pic {
+  grid-area: pic1;
+  width: 100%;
+  height: auto;
+}
+
+.location {
+  grid-area: loc;
+  margin-top: 5%;
+}
+
+.loc-table {
+  border-collapse: collapse;
+  width: 100%;
+  overflow-x:auto;
+}
+
+.loc-table td, th {
+  border: 1px solid black;
+  padding: 2% 5% 2% 2%; 
+  text-align: left; 
+}
+
+.rates {
+  grid-area: rts;
+  margin-top: 5%;
+}
+
+.policies {
+  grid-area: pol;
+  margin-top: 5%;
+}
+
+.three-dots-2 {
+  grid-area: dots2;
+  align-self: center;
+  justify-self: center;
+}
+
+.contact-pic {
+  grid-area: pic2;
+  width: 100%;
+  height: auto;
+}
+
+.phn-label {
+  margin-right: 5%;
+}
+
+.eml-label {
+  margin-right: 7%;
+}
+
+.contact {
+  grid-area: con;
+  margin-top: 5%;
+  margin-left: 10%;
+}
+
+.contact-form {
+  grid-area: cform;
+  margin-top: 8%;
+  text-align: center
+}
+
+.ct-form-fields {
+  width: 50%;
+  padding: 2%;
+  margin-top: 3%;
+}
+
+.ct-form-btn {
+  width: 55%;
+  padding: 2%;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  background-color: #2B2321; 
+  color: #E7DAC9;
+  font-size: 125%;
+  font-family: 'Great Vibes', cursive; 
 }
 
 
