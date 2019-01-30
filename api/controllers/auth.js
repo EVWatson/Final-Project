@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 const User = require('../models/User');
+const Admin = require('../models/Admin');
 
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import '../App.css';
 import MainNav from './MainNav';
+import DropNav from './DropNav';
 import IndexPage from './IndexPage';
 
 
@@ -10,6 +11,7 @@ class App extends Component {
     bio: {},
     locations: []
   }
+
 
   componentDidMount() {
     
@@ -29,7 +31,7 @@ class App extends Component {
       <div className="wrapper" id="home">
         <MainNav />
         <div className="container">
-          <IndexPage bio={this.state.bio} locations={this.state.locations}/>
+        <IndexPage bio={this.state.bio} locations={this.state.locations}/>
         </div>
       </div>
     );

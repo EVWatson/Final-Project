@@ -109,8 +109,8 @@ class IndexPage extends Component {
                 <br/>
                 <button type="submit" className="ct-form-btn">Send &nbsp; Message</button>
             </form>
-        </div>       
-      </div>   
+        </div>
+      </div>
     );
   }
 }
