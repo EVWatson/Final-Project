@@ -54,7 +54,7 @@ class MainNav extends Component {
               <div id="dropNav">
                 <a href="#">Book A Lesson</a>
                 <br />
-                <a href="#">My Details</a>
+                <a href="../../public/user-details.html">My Details</a>
                 <br />
                 <a href="#">Upcoming Lessons</a>
                 <br />
