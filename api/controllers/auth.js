@@ -5,16 +5,17 @@ const LocalStrategy = require('passport-local').Strategy;
 const cookieSession = require('cookie-session');
 const bcrypt = require('bcrypt');
 
+require('dotenv').config();
 const User = require('../models/User');
 const Admin = require('../models/Admin');
-
 
 //1. Sessions for users
 const oneDay = 1000 * 60 * 60 *24;
 
 const cookie = cookieSession({
   maxAge: oneDay, 
-  keys: ['secret-key'] 
+  keys: [`${process.env.COOKIE_KEY}`]
+  // keys: ['secret-key'] 
 })
 
 
