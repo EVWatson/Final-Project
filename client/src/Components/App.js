@@ -10,6 +10,7 @@ class App extends Component {
   state = {
     bio: {},
     locations: []
+    
   }
 
 
@@ -20,21 +21,25 @@ class App extends Component {
         this.setState({bio: resp.data})
       })
 
+    this.getLocationData()
+  }
+
+  getLocationData = () => {
     axios.get("http://localhost:5001/protected/locations")
-      .then(resp => {
-        this.setState({locations: resp.data})
-      })
+    .then(resp => {
+      this.setState({locations: resp.data})
+    })
   }
 
   render() {
-    return (
-      <div className="wrapper" id="home">
-        <MainNav />
-        <div className="container">
-        <IndexPage bio={this.state.bio} locations={this.state.locations}/>
+      return (
+        <div className="wrapper" id="home">
+          <MainNav locations={this.state.locations} />
+          <div className="container">
+            <IndexPage bio={this.state.bio} locations={this.state.locations}/>
+          </div>
         </div>
-      </div>
-    );
+      )
   }
 }
 
