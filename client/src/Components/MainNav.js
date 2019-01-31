@@ -65,7 +65,7 @@ class MainNav extends Component {
             <a href="#lessons" className="nav-links">Lessons</a>
             <a href="#policies" className="nav-links">Policies</a>
             <a href="#contact" className="nav-links">Contact</a>
-            <a href="#about" className="nav-links">Login/Register</a>
+            <a href="/login" className="nav-links">Login/Register</a>
             <a href="javascript:void(0);" className="icon nav-links" onClick={()=> this.myFunction()}>&#9776;</a>
             
 
