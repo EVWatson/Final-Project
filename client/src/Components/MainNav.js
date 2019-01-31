@@ -108,8 +108,8 @@ class MainNav extends Component {
             <Link to='/lessons' component={App} className="nav-links">Lessons</Link>
             <Link to='/policies' component={App} className="nav-links">Policies</Link>
             <Link to='/contact' component={App} className="nav-links">Contact</Link>
-            <Link to='/login/register' component={App} className="nav-links">Login/Register</Link> }
-            <button id="dropNavButton" onClick ={this.dropNav_open}>User Panel</button
+      <Link to='/login/register' component={App} className="nav-links">Login/Register</Link>*/ }
+            <button id="dropNavButton" onClick ={this.dropNav_open}>User Panel</button>
               <div id="dropNav">
                 <a href="#">Book A Lesson</a>
                 <br />
@@ -118,17 +118,15 @@ class MainNav extends Component {
                 <a href="#">Upcoming Lessons</a>
                 <br />
                 <button id="dropNav_closeButton" onClick={this.dropNav_close}>Close</button>
-              </div>*/
+              </div>
             <a href="#home" className="nav-links active">Home</a>
             <a href="#about" className="nav-links">About</a>
             <a href="#lessons" className="nav-links">Lessons</a>
             <a href="#policies" className="nav-links">Policies</a>
             <a href="#contact" className="nav-links">Contact</a>
-            /*<a href="/login" className="nav-links">Login/Register</a>
-            <a href="javascript:void(0);" className="icon nav-links" onClick={()=> this.myFunction()}>&#9776;</a>*/
-            
+            <a href="/login" className="nav-links">Login/Register</a>
+            <a href="javascript:void(0);" className="icon nav-links" onClick={()=> this.myFunction()}>&#9776;</a>
             <Link to={newTo} className="nav-links">Login</Link>
-
             <a href="javascript:void(0);" className="icon nav-links" onClick={()=> this.myFunction()}>&#9776;</a>
         </div>
       </div>
