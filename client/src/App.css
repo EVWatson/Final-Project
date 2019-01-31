@@ -72,7 +72,7 @@ html {
 /*=================NAVBAR===================*/
 .main-nav {
   grid-area: nav;
-  /* position: fixed; */
+  position: relative;
   /* left: 15%;
   z-index: 1000;
   opacity: 1;

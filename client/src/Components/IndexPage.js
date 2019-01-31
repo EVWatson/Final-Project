@@ -8,9 +8,9 @@ import music1 from '../music1.png';
 
 
 class IndexPage extends Component {
-
     
   render() {
+    // const user = localStorage.getItem('user')
     return (
       <div className="idx"> 
         
@@ -57,7 +57,7 @@ class IndexPage extends Component {
                     </tr>
 
                     {this.props.locations.map((loc, i) => 
-                        <tr>
+                        <tr key={i}>
                             <td>{i + 1}</td>
                             <td>{loc.name}</td>
                             <td>{loc.address}</td>
