@@ -19,6 +19,20 @@ class MainNav extends Component {
     }
   }
 
+  /*dropNav_open = () => {
+    document.getElementById("dropNav").style.display = "block";
+    document.getElementById("dropNavButton").style.display = "none";
+  }
+
+  dropNav_close = () => {
+    document.getElementById("dropNav").style.display = "none";
+    document.getElementById("dropNavButton").style.display = "inline-block";
+ }
+
+  render() {
+    return (
+      <div className="main-nav"> */
+
   handleLogOut = () => {
     const url = "http://localhost:5001/auth/logout"
     axios.get(url)
@@ -89,11 +103,29 @@ class MainNav extends Component {
         </div>
         
         <div className="nav-headings" id="myTopnav">
+            {/* <Link to='/home' component={App} className="nav-links">Home</Link>
+            <Link to='/about#contact' component={Bio} ref="#contact" className="nav-links">About</Link>
+            <Link to='/lessons' component={App} className="nav-links">Lessons</Link>
+            <Link to='/policies' component={App} className="nav-links">Policies</Link>
+            <Link to='/contact' component={App} className="nav-links">Contact</Link>
+            <Link to='/login/register' component={App} className="nav-links">Login/Register</Link> }
+            <button id="dropNavButton" onClick ={this.dropNav_open}>User Panel</button
+              <div id="dropNav">
+                <a href="#">Book A Lesson</a>
+                <br />
+                <a href="../../public/user-details.html">My Details</a>
+                <br />
+                <a href="#">Upcoming Lessons</a>
+                <br />
+                <button id="dropNav_closeButton" onClick={this.dropNav_close}>Close</button>
+              </div>*/
             <a href="#home" className="nav-links active">Home</a>
             <a href="#about" className="nav-links">About</a>
             <a href="#lessons" className="nav-links">Lessons</a>
             <a href="#policies" className="nav-links">Policies</a>
             <a href="#contact" className="nav-links">Contact</a>
+            /*<a href="/login" className="nav-links">Login/Register</a>
+            <a href="javascript:void(0);" className="icon nav-links" onClick={()=> this.myFunction()}>&#9776;</a>*/
             
             <Link to={newTo} className="nav-links">Login</Link>
 

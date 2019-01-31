@@ -6,6 +6,7 @@ const cookieSession = require('cookie-session');
 const bcrypt = require('bcrypt');
 
 const User = require('../models/User');
+const Admin = require('../models/Admin');
 
 
 //1. Sessions for users
