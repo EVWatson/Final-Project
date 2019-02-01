@@ -78,9 +78,9 @@ class BookingForm extends Component {
 
         <label for='duration'>Duration: </label>
         <select>
-          <option value="30">30</option>
-          <option value="45">45</option>
-          <option value="60">60</option>
+          <option value="+30">30</option>
+          <option value="+45">45</option>
+          <option value="+60">60</option>
         </select>
 
         <label for='instrument'>Instrument: </label>
