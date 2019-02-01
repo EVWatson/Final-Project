@@ -68,6 +68,16 @@ class MainNav extends Component {
           </div>
           
           <div className="nav-headings" id="myTopnav">
+          <button id="dropNavButton" onClick ={this.dropNav_open}>User Panel</button>
+              <div id="dropNav">
+                <a href="#">Book A Lesson</a>
+                <br />
+                <a href="./UserProfile.js">My Details</a>
+                <br />
+                <a href="#">Upcoming Lessons</a>
+                <br />
+                <button id="dropNav_closeButton" onClick={this.dropNav_close}>Close</button>
+              </div>
               <a href="#home" className="nav-links active">Home</a>
               <a href="#about" className="nav-links">About</a>
               <a href="#lessons" className="nav-links">Lessons</a>
