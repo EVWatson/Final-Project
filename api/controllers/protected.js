@@ -79,13 +79,13 @@ router.get('/admin-bio', (req, res) => {
 
 //make a new record in the collection. may not be used since we update the existing record
 router.post('/admin-bio/new', (req, res) => {
-    const { about, 
-            qualifications, 
-            teachingPhilosophy, 
-            lessons, 
-            ratesPayment, 
-            policies, 
-            phone, 
+    const { about,
+            qualifications,
+            teachingPhilosophy,
+            lessons,
+            ratesPayment,
+            policies,
+            phone,
             email
     } = req.body;
 
@@ -108,12 +108,12 @@ router.post('/admin-bio/new', (req, res) => {
 //Update bio
 router.put('/admin-bio/update', (req, res) => {
   const latestDoc = Bio.findOne().sort({ field: 'asc', _id: -1 }) //gets the latest record
-  
+
   Bio.findOneAndUpdate(latestDoc, {$set:req.body}, {new: true}) // updates from req.body, {new:true}sends back the updated doc
     .then(doc => res.send(doc))
     .catch(err => res.send(err))
 });
-    
+
 //Location endpoints
 router.get('/locations', (req, res) => {
   Location.find({})
@@ -136,6 +136,28 @@ router.post('/locations/new', (req, res) => {
 //add route to update and delete location
 
 
-//Sherin -end
+//Sherin -
+
+rounter.post('/booking/create', (req, res) => {
+  const {
+    day,
+    location,
+    time,
+    duration,
+    instrument,
+    booked_by
+        } = req.body;
+  const booking = new Booking ({
+    day,
+    location,
+    time,
+    duration,
+    instrument,
+    booked_by
+  });
+  booking.save()
+    .then(doc => res.send(doc))
+    .catch(err => res.send(err.response))
+})
 
 module.exports = router;
