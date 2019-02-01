@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Redirect } from "react-router-dom";
+import {BrowserRouter, Route, Switch, Link, Redirect} from 'react-router-dom';
 import '../App.css';
 
 class UserProfile extends Component {
     state = {
         redirectToIndexPage: false
-        
+
     }
 
     logOut = () => {
@@ -14,15 +14,21 @@ class UserProfile extends Component {
         axios.get(url)
             .then(resp => {
                 console.log(resp.data)
-                
-                this.setState({ redirectToIndexPage: true })          
+
+                this.setState({ redirectToIndexPage: true })
             })
             .catch(err => {
                 console.log(err)
             })
     }
 
+      getId = () => {
+        const user = JSON.parse(localStorage.getItem('user'))
+        console.log(user);
+      }
+
     render() {
+      this.getId();
         if (this.state.redirectToIndexPage) {
             return (
                 <Redirect to="/" />
@@ -31,6 +37,7 @@ class UserProfile extends Component {
         return (
             <div className="login-form">
                 <p>In My Dashboard</p>
+                <Link to='/booking' >Make a booking</Link>
                 <button type="submit" onClick={this.logOut}>Logout</button>
             </div>
         );

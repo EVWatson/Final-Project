@@ -5,6 +5,7 @@ import LoginPage from './LoginPage'
 import LoginForm from './LoginForm';
 import UserProfile from './UserProfile';
 import RegisterForm from './RegisterForm';
+import BookingForm from './BookingForm';
 
 const Router = () => (
     <BrowserRouter>
@@ -14,6 +15,7 @@ const Router = () => (
             <Route exact path='/login' component={LoginForm} />
             <Route exact path='/myProfile' component={UserProfile} />
             <Route exact path='/register' component={RegisterForm} />
+            <Route exact path='/booking' component={BookingForm} />
         </Switch>
     </BrowserRouter>
 )
