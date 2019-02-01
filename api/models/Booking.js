@@ -6,8 +6,8 @@ const bookingSchema = new schema({
       location: String,
       time: String,
       duration:  Number,
-      instrument: String,
-      booked_by: {type: 'ObjectId', ref: 'User'}
+      instrument: String
+      // booked_by: {type: 'ObjectId', ref: 'User'}
 
 })
 

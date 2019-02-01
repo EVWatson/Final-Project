@@ -12,6 +12,7 @@ const Booking = require('../models/Booking')
 const Bio = require('../models/Bio')
 const Location = require('../models/Location')
 
+
 // End point for fetching all users
 router.get('/users', (req, res) => {
   User.find({})
@@ -31,40 +32,40 @@ router.get('/users/:id', (req, res) => {
 
 //Taylor - begin
 //endpoint for new booking - gonna need to bind this into a form once we have the react side up and running
-router.get('/bookings', (req, res) => {
-  Bookings.find({})
-    .then(docs => res.send(docs))
-    .catch(err => res.send(err))
-})
-
-router.post('/bookings/new', (req, res) => {
-  const {
-          term,
-          week,
-          day,
-          block_start,
-          block_end,
-          approval_pending,
-          booked_by,
-          location,
-          instrument
-  } = req.body;
-
-  const booking = new Booking({
-          term,
-          week,
-          day,
-          block_start,
-          block_end,
-          approval_pending,
-          booked_by,
-          location,
-          instrument
-  });
-
-  booking.save()
-    .then(res.send(booking));
-});
+// router.get('/bookings', (req, res) => {
+//   Bookings.find({})
+//     .then(docs => res.send(docs))
+//     .catch(err => res.send(err))
+// })
+//
+// router.post('/bookings/new', (req, res) => {
+//   const {
+//           term,
+//           week,
+//           day,
+//           block_start,
+//           block_end,
+//           approval_pending,
+//           booked_by,
+//           location,
+//           instrument
+//   } = req.body;
+//
+//   const booking = new Booking({
+//           term,
+//           week,
+//           day,
+//           block_start,
+//           block_end,
+//           approval_pending,
+//           booked_by,
+//           location,
+//           instrument
+//   });
+//
+//   booking.save()
+//     .then(res.send(booking));
+// });
 //Taylor End
 
 
@@ -138,23 +139,27 @@ router.post('/locations/new', (req, res) => {
 
 //Sherin -
 
-rounter.post('/booking/create', (req, res) => {
+router.post('/booking/create', (req, res) => {
   const {
     day,
     location,
     time,
     duration,
-    instrument,
-    booked_by
-        } = req.body;
+    instrument
+    // booked_by
+        } = req.body
+        // console.log(req.body);
+    // User.findOne({_id: booked_by})
+    // .then(doc => console.log(doc))
   const booking = new Booking ({
     day,
     location,
     time,
     duration,
-    instrument,
-    booked_by
+    instrument
+    // booked_by
   });
+  // console.log(booking);
   booking.save()
     .then(doc => res.send(doc))
     .catch(err => res.send(err.response))
