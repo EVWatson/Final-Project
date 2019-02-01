@@ -10,7 +10,43 @@ import '../App.css';
 class BookingForm extends Component {
   state = {}
 
+  submitForm = (e) => {
+    console.log("in sub")
+    e.preventDefault()
+    const values = Array.from(e.currentTarget.parentNode.childNodes)
+    const day = values[1].value 
+    const location = values[3].value
+    const time = values[5].value
+    const duration = values[7].value
+    const instrument = values[9].value
+    const booked_by = values[10].value
+    const data = {
+      day,
+      location,
+      time,
+      duration,
+      instrument,
+      booked_by
+    }
+    console.log(data)
+    const url = 'http://localhost:5001/protected/booking/create'
+    axios.post(url, data)
+      .then((res) => {
+        console.log(res.data)
+      })
+      .catch((err) => {
+        console.log(err.response)
+      })
+  }
+
+  getId = () => {
+    const user = JSON.parse(localStorage.getItem('user'))
+    const userId = user._id
+    return userId
+}
+
   render() {
+    const userId = this.getId();
     return(
       <div>
         <label for='day'>Day: </label>
@@ -92,7 +128,7 @@ class BookingForm extends Component {
         </select>
 
 
-        <input type='hidden' value=''/>
+        <input type='hidden' value={userId}/>
 
         <button type="submit" onClick={this.submitForm}>Book</button>
       </div>

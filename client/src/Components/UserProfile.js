@@ -22,13 +22,20 @@ class UserProfile extends Component {
             })
     }
 
-      getId = () => {
-        const user = JSON.parse(localStorage.getItem('user'))
-        console.log(user);
-      }
+    // getId = () => {
+    //     const user = JSON.parse(localStorage.getItem('user'))
+    //     const userId = user._id
+    //     return userId
+    // }
 
     render() {
-      this.getId();
+    //   const userId = this.getId();
+    //   const linkToBookingForm = {
+    //     pathname: '/booking',
+    //     state: {
+    //       userId: userId
+    //     }
+    //   }
         if (this.state.redirectToIndexPage) {
             return (
                 <Redirect to="/" />
@@ -37,7 +44,7 @@ class UserProfile extends Component {
         return (
             <div className="login-form">
                 <p>In My Dashboard</p>
-                <Link to='/booking' >Make a booking</Link>
+                <Link to='/booking'>Make a booking</Link>
                 <button type="submit" onClick={this.logOut}>Logout</button>
             </div>
         );
