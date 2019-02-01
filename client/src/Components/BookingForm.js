@@ -71,6 +71,8 @@ class BookingForm extends Component {
 
         <input type='hidden' value=''/>
 
+        <button type="submit" onClick={this.submitForm}>Confirm</button>
+
       </div>
     )
   }
