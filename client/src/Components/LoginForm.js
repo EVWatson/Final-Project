@@ -51,7 +51,7 @@ class LoginForm extends Component {
 
           if (this.state.redirectToProfilePage) {
             const newPrTo = {
-                pathname: '/',
+                pathname: '/myProfile',
                 state: {
                     loggedUser: this.state.loggedUser
                 }
