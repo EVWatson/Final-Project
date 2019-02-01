@@ -30,7 +30,7 @@ class LoginForm extends Component {
             .then(resp => {
                 // console.log(resp.data)
                 this.setState({loggedUser: resp.data, redirectToProfilePage: true })
-                localStorage.setItem('user', JSON.stringify(resp.data));                         
+                localStorage.setItem('user', JSON.stringify(resp.data));
             })
             .catch(err => {
                 const { status } = err.response
@@ -44,7 +44,7 @@ class LoginForm extends Component {
         const newRegTo = {
             pathname: '/register',
             state: {
-              locations: this.props.location.state.locations
+              // locations: this.props.location.state.locations
 
             }
           }
