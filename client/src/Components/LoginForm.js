@@ -44,15 +44,15 @@ class LoginForm extends Component {
         const newRegTo = {
             pathname: '/register',
             state: {
-              /* locations: this.props.location.state.locations */
-             
+              locations: this.props.location.state.locations
+
             }
           }
-          
+
           if (this.state.redirectToProfilePage) {
             const newPrTo = {
                 pathname: '/',
-                state: {             
+                state: {
                     loggedUser: this.state.loggedUser
                 }
             }
@@ -63,7 +63,7 @@ class LoginForm extends Component {
         // console.log(this.props.location.locations)
         const { error, message } = this.state
 
-        return (            
+        return (
             <div className="login-form">
                 <p className="sub-heading">Login</p>
 
@@ -77,18 +77,13 @@ class LoginForm extends Component {
 
                     { error && <p>{ error }</p>}
                     { message && <p>{ message }</p>}
-                    
                     <button type="submit" onClick={this.submitForm}>Login</button>
+                    or
+                    <button><Link to={newRegTo} className="nav-links">Register</Link></button>
                 </form>
-
-                or
-                <br/>
-
-                <button><Link to={newRegTo} className="nav-links">Register</Link></button>
-            </div> 
+            </div>
         );
     }
 }
 
 export default LoginForm;
-

@@ -3,8 +3,6 @@ import axios from 'axios';
 import { Redirect } from "react-router-dom";
 import '../App.css';
 
-
-
 class UserProfile extends Component {
     state = {
         redirectToIndexPage: false
@@ -34,7 +32,7 @@ class UserProfile extends Component {
             <div className="login-form">
                 <p>In My Dashboard</p>
                 <button type="submit" onClick={this.logOut}>Logout</button>
-            </div> 
+            </div>
         );
     }
 }
