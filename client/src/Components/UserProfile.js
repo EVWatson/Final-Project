@@ -1,42 +1,38 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Redirect } from "react-router-dom";
 import '../App.css';
-
+import MainNav from './MainNav';
+import DropNav from './DropNav';
+import IndexPage from './IndexPage';
 
 
 class UserProfile extends Component {
-    state = {
-        redirectToIndexPage: false
-        
-    }
+  state = {
+    bio: {},
+    locations: []
+    
+  }
 
-    logOut = () => {
-        const url = "http://localhost:5001/auth/logout"
-        axios.get(url)
-            .then(resp => {
-                console.log(resp.data)
-                
-                this.setState({ redirectToIndexPage: true })          
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }
 
-    render() {
-        if (this.state.redirectToIndexPage) {
-            return (
-                <Redirect to="/" />
-            )
-        }
-        return (
-            <div className="login-form">
-                <p>In My Dashboard</p>
-                <button type="submit" onClick={this.logOut}>Logout</button>
-            </div> 
-        );
-    }
+//   componentDidMount() {    
+//     getLocationData = () => {
+//         axios.get("http://localhost:5001/protected/locations")
+//         .then(resp => {
+//         this.setState({locations: resp.data})
+//         })
+//   }
+  
+
+  render() {
+      return (
+        <div className="wrapper" id="home">
+          <MainNav locations={this.state.locations} />
+          <div className="container">
+            
+          </div>
+        </div>
+      )
+  }
 }
 
 export default UserProfile;

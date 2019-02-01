@@ -14,8 +14,7 @@ class App extends Component {
   }
 
 
-  componentDidMount() {
-    
+  componentDidMount() {    
     axios.get("http://localhost:5001/protected/admin-bio")
       .then(resp => {
         this.setState({bio: resp.data})
@@ -34,7 +33,7 @@ class App extends Component {
   render() {
       return (
         <div className="wrapper" id="home">
-          <MainNav locations={this.state.locations} />
+          <MainNav bio={this.state.bio}  locations={this.state.locations} />
           <div className="container">
             <IndexPage bio={this.state.bio} locations={this.state.locations}/>
           </div>

@@ -53,7 +53,9 @@ class MainNav extends Component {
       }
     }
 
-    const user = localStorage.getItem('user')
+    const user = JSON.parse(localStorage.getItem('user'))
+
+    console.log(user)
     if(user) {
       return (
         <div className="main-nav">
@@ -74,19 +76,20 @@ class MainNav extends Component {
           <div className="nav-headings" id="myTopnav">
               <a href="#home" className="nav-links active">Home</a>
               <a href="#about" className="nav-links">About</a>
-              <a href="#lessons" className="nav-links">Lessons</a>
+              {/* <a href="#lessons" className="nav-links">Lessons</a> */}
+              <Link to='/lessons' className="nav-links">Lessons</Link>
               <a href="#policies" className="nav-links">Policies</a>
               <a href="#contact" className="nav-links">Contact</a>
 
-              <p onClick={this.handleLogOut}>Logout</p>
+              <a href="#" onClick={this.handleLogOut} className="nav-links">Logout</a>
+              <a href="/userprofile" className="nav-links">Welcome &nbsp;<span className="username">{user.username}</span></a>
               <a href="javascript:void(0);" className="icon nav-links" onClick={()=> this.myFunction()}>&#9776;</a>
 
           </div>
         </div>
-      );
-    }
-    else {
-      return (
+      )
+    } else {
+       return (
         <div className="main-nav">
         <h1 className="main-heading">Music Lessons With Lilla</h1>
         
@@ -103,12 +106,6 @@ class MainNav extends Component {
         </div>
         
         <div className="nav-headings" id="myTopnav">
-            {/* <Link to='/home' component={App} className="nav-links">Home</Link>
-            <Link to='/about#contact' component={Bio} ref="#contact" className="nav-links">About</Link>
-            <Link to='/lessons' component={App} className="nav-links">Lessons</Link>
-            <Link to='/policies' component={App} className="nav-links">Policies</Link>
-            <Link to='/contact' component={App} className="nav-links">Contact</Link>
-      <Link to='/login/register' component={App} className="nav-links">Login/Register</Link>*/ }
             <button id="dropNavButton" onClick ={this.dropNav_open}>User Panel</button>
               <div id="dropNav">
                 <a href="#">Book A Lesson</a>
@@ -124,8 +121,6 @@ class MainNav extends Component {
             <a href="#lessons" className="nav-links">Lessons</a>
             <a href="#policies" className="nav-links">Policies</a>
             <a href="#contact" className="nav-links">Contact</a>
-            <a href="/login" className="nav-links">Login/Register</a>
-            <a href="javascript:void(0);" className="icon nav-links" onClick={()=> this.myFunction()}>&#9776;</a>
             <Link to={newTo} className="nav-links">Login</Link>
             <a href="javascript:void(0);" className="icon nav-links" onClick={()=> this.myFunction()}>&#9776;</a>
         </div>

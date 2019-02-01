@@ -16,7 +16,7 @@ class LoginForm extends Component {
         this.setState({ [id]: value });
     }
 
-    submitForm = (e) => {
+    submitLogin = (e) => {
         e.preventDefault();
 
         const { username, password } = this.state;
@@ -41,15 +41,12 @@ class LoginForm extends Component {
     }
 
     render() {
-        const newRegTo = {
-            pathname: '/register',
-            state: {
-              /* locations: this.props.location.state.locations */
-             
-            }
-          }
-          
-          if (this.state.redirectToProfilePage) {
+        // const newRegTo = {
+        //     pathname: '/register',
+        //     state: {}
+        //   }
+           
+        if (this.state.redirectToProfilePage) {
             const newPrTo = {
                 pathname: '/',
                 state: {             
@@ -78,13 +75,13 @@ class LoginForm extends Component {
                     { error && <p>{ error }</p>}
                     { message && <p>{ message }</p>}
                     
-                    <button type="submit" onClick={this.submitForm}>Login</button>
+                    <button type="submit" onClick={this.submitLogin}>Login</button>
                 </form>
 
                 or
                 <br/>
 
-                <button><Link to={newRegTo} className="nav-links">Register</Link></button>
+                <button><Link to='/register' className="nav-links">Register</Link></button>
             </div> 
         );
     }
