@@ -10,7 +10,7 @@ class MainNav extends Component {
     userPresent: true
   }
 
-  myFunction = () => { 
+  myFunction = () => {
     var x = document.getElementById("myTopnav");
     if (x.className === "nav-headings") {
       x.className += " responsive";
@@ -19,7 +19,7 @@ class MainNav extends Component {
     }
   }
 
-  /*dropNav_open = () => {
+  dropNav_open = () => {
     document.getElementById("dropNav").style.display = "block";
     document.getElementById("dropNavButton").style.display = "none";
   }
@@ -29,16 +29,12 @@ class MainNav extends Component {
     document.getElementById("dropNavButton").style.display = "inline-block";
  }
 
-  render() {
-    return (
-      <div className="main-nav"> */
-
   handleLogOut = () => {
     const url = "http://localhost:5001/auth/logout"
     axios.get(url)
         .then(resp => {
             localStorage.removeItem('user')
-            this.setState({userPresent: false})    
+            this.setState({userPresent: false})
         })
         .catch(err => {
             console.log(err)
@@ -113,7 +109,7 @@ class MainNav extends Component {
               <div id="dropNav">
                 <a href="#">Book A Lesson</a>
                 <br />
-                <a href="../../public/user-details.html">My Details</a>
+                <a href="./UserProfile.js">My Details</a>
                 <br />
                 <a href="#">Upcoming Lessons</a>
                 <br />
@@ -124,7 +120,6 @@ class MainNav extends Component {
             <a href="#lessons" className="nav-links">Lessons</a>
             <a href="#policies" className="nav-links">Policies</a>
             <a href="#contact" className="nav-links">Contact</a>
-            <a href="/login" className="nav-links">Login/Register</a>
             <a href="javascript:void(0);" className="icon nav-links" onClick={()=> this.myFunction()}>&#9776;</a>
             <Link to={newTo} className="nav-links">Login</Link>
             <a href="javascript:void(0);" className="icon nav-links" onClick={()=> this.myFunction()}>&#9776;</a>

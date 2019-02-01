@@ -6,7 +6,6 @@ import LoginForm from './LoginForm';
 import UserProfile from './UserProfile';
 import RegisterForm from './RegisterForm';
 
-
 const Router = () => (
     <BrowserRouter>
         <Switch>
