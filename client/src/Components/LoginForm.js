@@ -44,7 +44,7 @@ class LoginForm extends Component {
         const newRegTo = {
             pathname: '/register',
             state: {
-              locations: this.props.location.state.locations
+            //   locations: this.props.location.state.locations
 
             }
           }
