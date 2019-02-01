@@ -5,19 +5,33 @@ import { Redirect } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import '../App.css';
 
+
+
 class BookingForm extends Component {
   state = {}
 
   render() {
     return(
       <div>
-        <label for='day'>Day</label>
-        <input type='text' id='day'/>
+        <label for='day'>Day: </label>
+        <select>
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+        </select>
 
-        <label for='location'>Location</label>
-        <input type='text' id='location'/>
+        <label for='location'>Location: </label>
+        <select>
+            <option value="Location 1">Home</option>
+            <option value="Location 2">Location 2</option>
+            <option value="Location 3">Location 3</option>
+            <option value="Location 4">Location 4</option>
+        </select>
 
-        <label for='time'>Time</label>
+        <label for='time'>Time: </label>
         <select>
           <option value="0900">09.00</option>
           <option value="0915">09.15</option>
@@ -62,17 +76,25 @@ class BookingForm extends Component {
 
         </select>
 
-        <label for='duration'>Duration</label>
-        <input type='number' id='duration'/>
+        <label for='duration'>Duration: </label>
+        <select>
+          <option value="+30">30</option>
+          <option value="+45">45</option>
+          <option value="+60">60</option>
+        </select>
 
-        <label for='instrument'>Instrument</label>
-        <input type='text' id='instrument'/>
+        <label for='instrument'>Instrument: </label>
+        <select>
+        <option value="Voice">Voice</option>
+        <option value="Piano">Piano</option>
+        <option value="Flute">Flute</option>
+        <option value="Theory">Theory</option>
+        </select>
 
 
         <input type='hidden' value=''/>
 
-        <button type="submit" onClick={this.submitForm}>Confirm</button>
-
+        <button type="submit" onClick={this.submitForm}>Book</button>
       </div>
     )
   }
