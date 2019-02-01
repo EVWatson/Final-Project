@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import '../App.css';
 import '../Responsive.css';
 import lilla from '../lilla.jpg';
-import Lessons from './Lessons';
-import Policies from './Policies';
-import Contact from './Contact';
+// import Lessons from './Lessons';
+// import Policies from './Policies';
+// import Contact from './Contact';
 
 
 class IndexPage extends Component {
@@ -32,7 +32,7 @@ class IndexPage extends Component {
             <p className="bio-text">{this.props.bio.teachingPhilosophy}</p>
         </div> 
 
-        {/* three dots */}
+        {/* three dots
         <svg className="three-dots" width="43" height="5" viewBox="0 0 43 5" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle r="2" transform="matrix(-1 -0.000689088 -0.000689088 1 2.0014 2.09164)" fill="#2B2321"/>
             <circle r="2" transform="matrix(-1 -0.000689088 -0.000689088 1 21.0015 2.00131)" fill="#2B2321"/>
@@ -42,7 +42,7 @@ class IndexPage extends Component {
         <Lessons bio={this.props.bio} locations={this.props.locations}/>
 
         {/* three dots */}
-        <svg className="three-dots-2" width="43" height="5" viewBox="0 0 43 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {/* <svg className="three-dots-2" width="43" height="5" viewBox="0 0 43 5" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle r="2" transform="matrix(-1 -0.000689088 -0.000689088 1 2.0014 2.09164)" fill="#2B2321"/>
             <circle r="2" transform="matrix(-1 -0.000689088 -0.000689088 1 21.0015 2.00131)" fill="#2B2321"/>
             <circle r="2" transform="matrix(-1 -0.000689088 -0.000689088 1 40.0015 2.01449)" fill="#2B2321"/>
@@ -51,14 +51,14 @@ class IndexPage extends Component {
         <Policies bio={this.props.bio} />
         
         {/* three dots */}
-        <svg className="three-dots-2" width="43" height="5" viewBox="0 0 43 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {/* <svg className="three-dots-2" width="43" height="5" viewBox="0 0 43 5" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle r="2" transform="matrix(-1 -0.000689088 -0.000689088 1 2.0014 2.09164)" fill="#2B2321"/>
             <circle r="2" transform="matrix(-1 -0.000689088 -0.000689088 1 21.0015 2.00131)" fill="#2B2321"/>
             <circle r="2" transform="matrix(-1 -0.000689088 -0.000689088 1 40.0015 2.01449)" fill="#2B2321"/>
-        </svg>
+        </svg> */}
 
 
-        <Contact  bio={this.props.bio} />
+        {/* <Contact  bio={this.props.bio} />  */}
        
         
       </div>

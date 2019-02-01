@@ -25,11 +25,10 @@ class Lessons extends Component {
         })
     }
   render() {
-
     return (
 
       <>
-        <div className="wrapper" id="home">
+        {/* <div className="wrapper" id="home"> */}
         <MainNav />
         <div className="container">
         <div className="idx"> 
@@ -62,13 +61,14 @@ class Lessons extends Component {
             </table>
         </div>
 
+
         <div className="rates">
             <p className="sub-heading">Rates and Payment</p>
             <p className="bio-text">{this.state.bio.ratesPayment}</p>
         </div>
         </div>
         </div>
-        </div>
+     
      </>      
     )
   }
