@@ -2,9 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
-
-const app = express();
-app.use(express.json());
+router.use(express.json());
 
 
 const User = require('../models/User');
@@ -138,30 +136,32 @@ router.post('/locations/new', (req, res) => {
 
 //Sherin -end
 
+getUserObj = (booked_by) => {
+  const user = User.findById(booked_by)
+    .then(doc => {
+      return doc
+    })
+  return user
+}
+
 router.post('/booking/create', (req, res) => {
-  const {
-    day,
-    location,
-    time,
-    duration,
-    instrument,
-    booked_by
-        } = req.body
-        // console.log(req.body);
-    // User.findOne({_id: booked_by})
-    // .then(doc => console.log(doc))
-  const booking = new Booking ({
-    day,
-    location,
-    time,
-    duration,
-    instrument,
-    booked_by
-  });
-  // console.log(booking);
-  booking.save()
-    .then(doc => res.send(doc))
-    .catch(err => res.send(err.response))
+  const { day, location, time, duration, instrument, booked_by } = req.body
+    const user = getUserObj(booked_by)
+      .then((booked_by) => {
+        const booking = new Booking ({
+          day,
+          location,
+          time,
+          duration,
+          instrument,
+          booked_by
+        });
+        booking.save()
+          .then((doc) => {
+            console.log(doc)
+            res.send(doc)
+          })
+      })
 })
 
 module.exports = router;

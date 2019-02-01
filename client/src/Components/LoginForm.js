@@ -32,11 +32,11 @@ class LoginForm extends Component {
                 this.setState({loggedUser: resp.data, redirectToProfilePage: true })
                 localStorage.setItem('user', JSON.stringify(resp.data));
             })
-            .catch(err => {
-                const { status } = err.response
-                if (status === 401){
-                    this.setState({error: 'Incorrect username or password.', message: undefined})
-                }
+            .catch(err => { console.log(err)
+                // const { status } = err.response
+                // if (status === 401){
+                //     this.setState({error: 'Incorrect username or password.', message: undefined})
+                // }
             })
     }
 
@@ -50,14 +50,14 @@ class LoginForm extends Component {
           }
 
           if (this.state.redirectToProfilePage) {
-            const newPrTo = {
-                pathname: '/myProfile',
-                state: {
-                    loggedUser: this.state.loggedUser
-                }
-            }
+            // const newPrTo = {
+            //     pathname: '/myProfile',
+            //     state: {
+            //         loggedUser: this.state.loggedUser
+            //     }
+            // } 
             return (
-                <Redirect to={newPrTo} />
+                <Redirect to='/myProfile' />
             )
         }
         // console.log(this.props.location.locations)
