@@ -7,8 +7,6 @@ class RegisterForm extends Component {
     state = {
         redirectToNewPage: false,
         locations: []
-<<<<<<< HEAD
-=======
     }
 
     componentDidMount() {
@@ -16,15 +14,8 @@ class RegisterForm extends Component {
             .then(resp => {
                  this.setState({locations: resp.data})
             })
->>>>>>> forms-style
     }
 
-    componentDidMount() {
-            axios.get("http://localhost:5001/protected/locations")
-            .then(resp => {
-              this.setState({locations: resp.data})
-            })
-    }
 
     handleInputChange = (e) => {
         const { value, id } = e.currentTarget;
@@ -98,11 +89,7 @@ class RegisterForm extends Component {
     }
 
     getLocData = () => {
-<<<<<<< HEAD
-        // const locations = this.props.location.state.locations
-=======
         const locations = this.state.locations
->>>>>>> forms-style
         return (
             this.state.locations.map(loc =>{ 
                return <option value={loc.name}>{loc.name}</option>
