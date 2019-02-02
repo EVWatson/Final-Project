@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import '../Headings.css';
 import '../App.css';
 import MainNav from './MainNav';
-import DropNav from './DropNav';
+// import DropNav from './DropNav';
 import IndexPage from './IndexPage';
 
 
@@ -12,7 +13,6 @@ class App extends Component {
     locations: []
     
   }
-
 
   componentDidMount() {    
     axios.get("http://localhost:5001/protected/admin-bio")
@@ -33,10 +33,8 @@ class App extends Component {
   render() {
       return (
         <div className="wrapper" id="home">
-          <MainNav bio={this.state.bio}  locations={this.state.locations} />
-          <div className="container">
-            <IndexPage bio={this.state.bio} locations={this.state.locations}/>
-          </div>
+          <MainNav />
+          <IndexPage bio={this.state.bio} locations={this.state.locations}/>
         </div>
       )
   }

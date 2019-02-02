@@ -5,7 +5,15 @@ import '../App.css';
 
 class RegisterForm extends Component {
     state = {
-        redirectToNewPage: false
+        redirectToNewPage: false,
+        locations: []
+    }
+
+    componentDidMount() {
+        axios.get("http://localhost:5001/protected/locations")
+            .then(resp => {
+                 this.setState({locations: resp.data})
+            })
     }
 
 
@@ -81,7 +89,7 @@ class RegisterForm extends Component {
     }
 
     getLocData = () => {
-        const locations = this.props.location.state.locations
+        const locations = this.state.locations
         return (
             locations.map(loc =>{ 
                return <option value={loc.name}>{loc.name}</option>

@@ -41,11 +41,7 @@ class LoginForm extends Component {
     }
 
     render() {
-        // const newRegTo = {
-        //     pathname: '/register',
-        //     state: {}
-        //   }
-           
+
         if (this.state.redirectToProfilePage) {
             const newPrTo = {
                 pathname: '/',
@@ -57,7 +53,7 @@ class LoginForm extends Component {
                 <Redirect to={newPrTo} />
             )
         }
-        // console.log(this.props.location.locations)
+        
         const { error, message } = this.state
 
         return (            

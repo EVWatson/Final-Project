@@ -1,0 +1,110 @@
+/*=================NAVBAR===================*/
+.main-nav {
+    grid-area: nav;
+    position: relative;
+    /* left: 15%;
+    z-index: 1000;
+    opacity: 1;
+    background-color: yellowgreen; */
+  }
+  
+  .main-heading {
+    font-family: 'Great Vibes', cursive;
+    font-weight: 200;
+    font-size: 250%;
+    text-align: center;
+    margin: 0;
+    margin-top: 4%;
+  }
+  
+  .line-under-headings {
+    text-align: center;
+    margin-top: 0px;
+  }
+  
+  .nav-headings {
+    margin-top: 1%;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  /* .nav-links { */
+  .nav-headings a {
+    color: #000;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    font-family: 'Quicksand', sans-serif;
+    text-decoration: none;
+    /* transition:font-size 12s; */
+    /* color: #FDFEFE; */
+    transition: font-size 0.5s; 
+  }
+  
+  
+  .username {
+    font-family: 'Great Vibes', cursive;
+    font-size: 150%;
+  }
+  
+  
+  /* .active {
+    text-decoration: underline;
+  } */
+  
+  /*for hamburger menu
+  /* Hide the link that should open and closbe the topnav on small screens */
+  .nav-headings .icon {
+    display: none;
+  }
+  
+  /* Add a text shadow on hover */
+  .nav-headings a:hover  {
+      font-size: 110%;
+      color: #3364FF;
+      font-weight: 800;
+      /* text-shadow: 0 0 1px #FF0000, 0 0 1px  orange; */
+  }
+  
+  /* Side Nav Bar */
+  
+  #dropNav {
+    display: none;
+    z-index: 100;
+    position: absolute;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 150%;
+    margin-bottom: 4%;
+    background-color: #000;
+  }
+  
+  #dropNavButton {
+    display: inline-block;
+    background-color: #E7DAC9;
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 100%;
+    text-decoration: underline;
+  }
+  
+  #dropNavButton:hover {
+    text-shadow: 0 0 1px #FF0000, 0 0 1px  orange;
+  }
+  
+  /* =========== Heading styles ===============*/
+  
+  .main-sub-heading {
+    font-family: 'Great Vibes', cursive;
+    font-weight: 200;
+    font-size: 200%;
+    margin-bottom: 4%;
+  }
+  
+  .sub-heading {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 4%;
+    font-size: 125%;
+    font-weight: 595;
+  }
+
+  
