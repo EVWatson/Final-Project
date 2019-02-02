@@ -1,0 +1,169 @@
+
+  .container {
+    grid-area: cnr;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas: 
+    "lsn lsn lsn lsn lsn";
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 8%;
+    margin-bottom: 10%;
+    padding-right: 4%;  
+  }
+  
+  .lsn {
+    grid-area: lsn;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas: 
+    "les les les pic1 pic1"
+    "loc loc loc loc loc"
+    "rts rts rts rts rts";
+  }
+
+
+  .lessons {
+    grid-area: les;
+    margin-top: 3%;
+  }
+  
+  .music-pic {
+    grid-area: pic1;
+    width: 100%;
+    height: auto;
+  }
+  
+  .location {
+    grid-area: loc;
+    margin-top: 5%;
+  }
+  
+  .loc-table {
+    border-collapse: collapse;
+    width: 100%;
+    overflow-x:auto;
+  }
+  
+  .loc-table td, th {
+    border: 1px solid black;
+    padding: 2% 5% 2% 2%; 
+    text-align: left; 
+  }
+  
+  .rates {
+    grid-area: rts;
+    margin-top: 5%;
+  }
+
+
+
+/*code to make responsive layout*/
+@media only screen and (max-width: 1023px) {   
+      .lsn {
+        grid-area: lsn;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-auto-rows: minmax(100px, auto);
+        grid-template-areas: 
+        "pic1 pic1 pic1 pic1 pic1"
+        "les les les les les"
+        "loc loc loc loc loc"
+        "rts rts rts rts rts";
+      }
+
+      .loc-table {
+        border-collapse: collapse;
+        width: 100%;
+        overflow-x:auto;
+      }
+}
+        
+
+/* small phones to small tablets. from 481px - 767px */
+@media only screen and (max-width: 767px) {    
+      .lsn {
+        grid-area: lsn;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-auto-rows: minmax(100px, auto);
+        grid-template-areas: 
+        "pic1 pic1 pic1 pic1 pic1"
+        "les les les les les"
+        "loc loc loc loc loc"
+        "rts rts rts rts rts";
+      }
+
+      .loc-table {
+        border-collapse: collapse;
+        width: 100%;
+        overflow-x:auto;
+      }
+}
+
+
+@media only screen and (max-width: 1023px) {
+      .lsn {
+        grid-area: lsn;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-auto-rows: minmax(100px, auto);
+        grid-template-areas: 
+        "pic1 pic1 pic1 pic1 pic1"
+        "les les les les les"
+        "loc loc loc loc loc"
+        "rts rts rts rts rts";
+      }
+
+      .loc-table {
+        border-collapse: collapse;
+        width: 100%;
+        overflow-x:auto;
+      }
+}
+        
+
+/* small phones to small tablets. from 481px - 767px */
+@media only screen and (max-width: 767px) {
+      .lsn {
+        grid-area: lsn;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-auto-rows: minmax(100px, auto);
+        grid-template-areas: 
+        "pic1 pic1 pic1 pic1 pic1"
+        "les les les les les"
+        "loc loc loc loc loc"
+        "rts rts rts rts rts";
+      }
+
+      .loc-table {
+        border-collapse: collapse;
+        width: 100%;
+        overflow-x:auto;
+      }
+    }
+
+
+/* for small phones. from 0 - 480px */
+@media only screen and (max-width: 480px) {  
+      .lsn {
+        grid-area: lsn;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-auto-rows: minmax(100px, auto);
+        grid-template-areas: 
+        "pic1 pic1 pic1 pic1 pic1"
+        "les les les les les"
+        "loc loc loc loc loc"
+        "rts rts rts rts rts";
+      }
+
+      .loc-table {
+        border-collapse: collapse;
+        width: 100%;
+        overflow-x:auto;
+    }
+}

@@ -132,8 +132,6 @@ router.post('/locations/new', (req, res) => {
 });
 
 //add route to update and delete location
-
-
 //Sherin -end
 
 getUserObj = (booked_by) => {
@@ -165,3 +163,4 @@ router.post('/booking/create', (req, res) => {
 })
 
 module.exports = router;
+

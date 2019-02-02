@@ -16,7 +16,7 @@ class LoginForm extends Component {
         this.setState({ [id]: value });
     }
 
-    submitForm = (e) => {
+    submitLogin = (e) => {
         e.preventDefault();
 
         const { username, password } = this.state;
@@ -60,7 +60,7 @@ class LoginForm extends Component {
                 <Redirect to='/myProfile' />
             )
         }
-        // console.log(this.props.location.locations)
+        
         const { error, message } = this.state
 
         return (
@@ -77,11 +77,15 @@ class LoginForm extends Component {
 
                     { error && <p>{ error }</p>}
                     { message && <p>{ message }</p>}
-                    <button type="submit" onClick={this.submitForm}>Login</button>
-                    or
-                    <button><Link to={newRegTo} className="nav-links">Register</Link></button>
+                    
+                    <button type="submit" onClick={this.submitLogin}>Login</button>
                 </form>
-            </div>
+
+                or
+                <br/>
+
+                <button><Link to='/register' className="nav-links">Register</Link></button>
+            </div> 
         );
     }
 }

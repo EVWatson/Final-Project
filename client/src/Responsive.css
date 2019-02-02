@@ -74,8 +74,8 @@
         "pic pic pic pic pic"
         "abt abt abt abt abt"
         "qual qual qual qual qual"
-        "phil phil phil phil phil"
-        ". . dots . ."
+        "phil phil phil phil phil";
+        /* ". . dots . ."
         "pic1 pic1 pic1 pic1 pic1"
         "les les les les les"
         "loc loc loc loc loc"
@@ -84,7 +84,7 @@
         ". . dots2 . ."
         "pic2 pic2 pic2 pic2 pic2"
         "con con con con con"
-        "cform cform cform cform cform";
+        "cform cform cform cform cform"; */
       }
 
       .main-sub-heading {
@@ -103,12 +103,6 @@
         margin-top: 5%;
         font-size: 125%;
         font-weight: 590;
-      }
-
-      .loc-table {
-        border-collapse: collapse;
-        width: 100%;
-        overflow-x:auto;
       }
 
       .main-heading {
@@ -134,7 +128,7 @@
         "abt abt abt abt abt"
         "qual qual qual qual qual"
         "phil phil phil phil phil"
-        ". . dots . ."
+        /* ". . dots . ."
         "pic1 pic1 pic1 pic1 pic1"
         "les les les les les"
         "loc loc loc loc loc"
@@ -143,7 +137,7 @@
         ". . dots2 . ."
         "pic2 pic2 pic2 pic2 pic2"
         "con con con con con"
-        "cform cform cform cform cform";
+        "cform cform cform cform cform"; */
       }
 
       .main-sub-heading {
@@ -162,12 +156,6 @@
         margin-top: 5%;
         font-size: 125%;
         font-weight: 590;
-      }
-
-      .loc-table {
-        border-collapse: collapse;
-        width: 100%;
-        overflow-x:auto;
       }
 
       .main-heading {
@@ -193,7 +181,7 @@
         "abt abt abt abt abt"
         "qual qual qual qual qual"
         "phil phil phil phil phil"
-        ". . dots . ."
+        /* ". . dots . ."
         "pic1 pic1 pic1 pic1 pic1"
         "les les les les les"
         "loc loc loc loc loc"
@@ -202,7 +190,7 @@
         ". . dots2 . ."
         "pic2 pic2 pic2 pic2 pic2"
         "con con con con con"
-        "cform cform cform cform cform";
+        "cform cform cform cform cform"; */
       }
 
       .main-sub-heading {
@@ -222,12 +210,6 @@
         font-size: 125%;
         font-weight: 590;
       }
-
-      .loc-table {
-        border-collapse: collapse;
-        width: 100%;
-        overflow-x:auto;
-    }
 
     .main-heading {
         font-family: 'Great Vibes', cursive;

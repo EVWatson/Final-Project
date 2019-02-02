@@ -46,15 +46,12 @@ class MainNav extends Component {
   }
 
   render() {
-    const newTo = {
-      pathname: '/login',
-      state: {
-        locations: this.props.locations
-      }
-    }
 
     const user = JSON.parse(localStorage.getItem('user'))
+<<<<<<< HEAD
     
+=======
+>>>>>>> forms-style
 
     console.log(user)
     if(user) {
@@ -75,6 +72,7 @@ class MainNav extends Component {
           </div>
           
           <div className="nav-headings" id="myTopnav">
+<<<<<<< HEAD
               <a href="#home" className="nav-links active">Home</a>
               <a href="#about" className="nav-links">About</a>
               {/* <a href="#lessons" className="nav-links">Lessons</a> */}
@@ -84,6 +82,15 @@ class MainNav extends Component {
 
               <a href="#" onClick={this.handleLogOut} className="nav-links">Logout</a>
               <a href="/userprofile" className="nav-links">Welcome &nbsp;<span className="username">{user.username}</span></a>
+=======
+              <Link to='/home' className="nav-links">Home</Link>
+              <Link to='/lessons' className="nav-links">Lessons</Link>
+              <Link to='/policies' className="nav-links">Policies</Link>
+              <Link to='/contact' className="nav-links">Contact</Link>
+              
+              <a href="/userprofile" className="nav-links">Welcome &nbsp;<span className="username">{user.username}</span></a>
+              <a href="#logout" onClick={this.handleLogOut} className="nav-links">Logout</a>
+>>>>>>> forms-style
               <a href="javascript:void(0);" className="icon nav-links" onClick={()=> this.myFunction()}>&#9776;</a>
 
           </div>
@@ -105,7 +112,7 @@ class MainNav extends Component {
                 <circle cx="888.003" cy="3.02206" r="1.5" fill="#2B2321"/>
             </svg>
         </div>
-        
+          
         <div className="nav-headings" id="myTopnav">
             <button id="dropNavButton" onClick ={this.dropNav_open}>User Panel</button>
               <div id="dropNav">
@@ -117,12 +124,21 @@ class MainNav extends Component {
                 <br />
                 <button id="dropNav_closeButton" onClick={this.dropNav_close}>Close</button>
               </div>
+<<<<<<< HEAD
             <a href="#home" className="nav-links active">Home</a>
             <a href="#about" className="nav-links">About</a>
             <a href="#lessons" className="nav-links">Lessons</a>
             <a href="#policies" className="nav-links">Policies</a>
             <a href="#contact" className="nav-links">Contact</a>
             <Link to={newTo} className="nav-links">Login</Link>
+=======
+            <Link to='/home' className="nav-links">Home</Link>
+            {/* <a href="#about" className="nav-links">About</a> */}
+            <Link to='/lessons' className="nav-links">Lessons</Link>
+            <Link to='/policies' className="nav-links">Policies</Link>
+            <Link to='/contact' className="nav-links">Contact</Link>
+            <Link to='/login' className="nav-links">Login</Link>
+>>>>>>> forms-style
             <a href="javascript:void(0);" className="icon nav-links" onClick={()=> this.myFunction()}>&#9776;</a>
         </div>
       </div>

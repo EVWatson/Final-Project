@@ -1,0 +1,109 @@
+:local(.container) {
+    grid-area: cnr;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas: 
+    "con con con con con";
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 8%;
+    margin-bottom: 10%;
+    padding-right: 4%;  
+  }
+
+.con {
+    grid-area: con;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas: 
+    "pic2 pic2 con con con"
+    "cform cform cform cform cform"; 
+  }
+
+.contact-pic {
+    grid-area: pic2;
+    width: 100%;
+    height: auto;
+  }
+  
+  .phn-label {
+    margin-right: 5%;
+  }
+  
+  .eml-label {
+    margin-right: 7%;
+  }
+  
+  .contact {
+    grid-area: con;
+    margin-top: 5%;
+    margin-left: 10%;
+  }
+  
+  .contact-form {
+    grid-area: cform;
+    margin-top: 8%;
+    text-align: center
+  }
+  
+  .ct-form-fields {
+    width: 50%;
+    padding: 2%;
+    margin-top: 3%;
+  }
+  
+  .ct-form-btn {
+    width: 55%;
+    padding: 2%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    background-color: #2B2321; 
+    color: #E7DAC9;
+    font-size: 125%;
+    font-family: 'Great Vibes', cursive; 
+  }
+  
+
+  @media only screen and (max-width: 1023px) {
+    .con {
+        grid-area: con;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-auto-rows: minmax(100px, auto);
+        grid-template-areas: 
+        "pic2 pic2 pic2 pic2 pic2"
+        "con con con con con"
+        "cform cform cform cform cform";
+      }
+}
+        
+/* small phones to small tablets. from 481px - 767px */
+@media only screen and (max-width: 767px) {
+    .con {
+        grid-area: con;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-auto-rows: minmax(100px, auto);
+        grid-template-areas: 
+        "pic2 pic2 pic2 pic2 pic2"
+        "con con con con con"
+        "cform cform cform cform cform";
+      }
+}
+
+
+/* for small phones. from 0 - 480px */
+@media only screen and (max-width: 480px) {
+    .con {
+        grid-area: con;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-auto-rows: minmax(100px, auto);
+        grid-template-areas: 
+        "pic2 pic2 pic2 pic2 pic2"
+        "con con con con con"
+        "cform cform cform cform cform";
+      }
+}
