@@ -3,12 +3,14 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Redirect } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import loginstyles from '../LoginForm.css';
 import '../App.css';
+import MainNav from './MainNav';
 
 class LoginForm extends Component {
     state = {
-        redirectToProfilePage: false,
-        loggedUser: {}
+        redirectToProfilePage: false
+        // loggedUser: {}
     }
 
     handleInputChange = (e) => {
@@ -16,7 +18,7 @@ class LoginForm extends Component {
         this.setState({ [id]: value });
     }
 
-    submitForm = (e) => {
+    submitLogin = (e) => {
         e.preventDefault();
 
         const { username, password } = this.state;
@@ -28,28 +30,20 @@ class LoginForm extends Component {
 
         axios.post(url, data)
             .then(resp => {
-                // console.log(resp.data)
-                this.setState({loggedUser: resp.data, redirectToProfilePage: true })
-                localStorage.setItem('user', JSON.stringify(resp.data));
+                localStorage.setItem('user', JSON.stringify(resp.data._id));
+                this.setState({redirectToProfilePage: true }) //the page rerenders asa redirectToProfilePage became true. so moved this line after local storage is set 
             })
-            .catch(err => { console.log(err)
-                // const { status } = err.response
-                // if (status === 401){
-                //     this.setState({error: 'Incorrect username or password.', message: undefined})
-                // }
+            .catch(err => { console.log(err) //fix the err here
+                const { status } = err.response
+                if (status === 401){
+                    this.setState({error: 'Incorrect username or password.', message: undefined})
+                }
             })
     }
 
     render() {
-        const newRegTo = {
-            pathname: '/register',
-            state: {
-              // locations: this.props.location.state.locations
 
-            }
-          }
-
-          if (this.state.redirectToProfilePage) {
+        if (this.state.redirectToProfilePage) {
             // const newPrTo = {
             //     pathname: '/myProfile',
             //     state: {
@@ -57,30 +51,36 @@ class LoginForm extends Component {
             //     }
             // } 
             return (
-                <Redirect to='/myProfile' />
+                <Redirect to='/userprofile' />
             )
         }
-        // console.log(this.props.location.locations)
+        
         const { error, message } = this.state
 
         return (
-            <div className="login-form">
-                <p className="sub-heading">Login</p>
+            <div className="wrapper">
+                <MainNav />
+                <div className={loginstyles.container}>
+                    <div className="login">
+                        <p className="sub-heading login-hdr">Login</p>
 
-                <form>
-                    <label for="sender-name" className="cform-label">User Name</label>
-                    <input type="text" id="username" placeholder="Username" onChange={this.handleInputChange}className="ct-form-fields"/>
-                    <br/>
-                    <label for="sender-phone" className="cform-label">Password</label>
-                    <input type="text" id="password" placeholder="Password" onChange={this.handleInputChange} className="ct-form-fields"/>
-                    <br/>
+                        <form className="loginform">
+                            {/* <label for="sender-name" className="cform-label">User Name</label> */}
+                            <input type="text" id="username" placeholder="Username" onChange={this.handleInputChange} className="login-form-fields"/>
+                            <br/>
+                            {/* <label for="sender-phone" className="cform-label">Password</label> */}
+                            <input type="text" id="password" placeholder="Password" onChange={this.handleInputChange} className="login-form-fields"/>
+                            <br/>
 
-                    { error && <p>{ error }</p>}
-                    { message && <p>{ message }</p>}
-                    <button type="submit" onClick={this.submitForm}>Login</button>
-                    or
-                    <button><Link to={newRegTo} className="nav-links">Register</Link></button>
-                </form>
+                            { error && <p>{ error }</p>}
+                            { message && <p>{ message }</p>}
+                            
+                            <button type="submit" onClick={this.submitLogin} className="lbtn">Login</button>
+                            <p className="or"> Or</p>
+                            <button className="rbtn"><Link to='/register' className="rbtn-link">Register</Link></button>
+                        </form>
+                    </div> 
+                </div>
             </div>
         );
     }

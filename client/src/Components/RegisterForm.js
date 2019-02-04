@@ -10,11 +10,12 @@ class RegisterForm extends Component {
     }
 
     componentDidMount() {
-            axios.get("http://localhost:5001/protected/locations")
+        axios.get("http://localhost:5001/protected/locations")
             .then(resp => {
-              this.setState({locations: resp.data})
+                 this.setState({locations: resp.data})
             })
     }
+
 
     handleInputChange = (e) => {
         const { value, id } = e.currentTarget;
@@ -88,7 +89,7 @@ class RegisterForm extends Component {
     }
 
     getLocData = () => {
-        // const locations = this.props.location.state.locations
+        const locations = this.state.locations
         return (
             this.state.locations.map(loc =>{ 
                return <option value={loc.name}>{loc.name}</option>

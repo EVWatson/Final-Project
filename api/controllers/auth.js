@@ -63,7 +63,7 @@ passport.use(new LocalStrategy(
   
 const isAuthenticated = (req, res, next) => {
     if(!req.user) {
-    return res.status(403).send('Not authorized!');
+      return res.status(403).send('Not authorized!');
   }
   next();
 };

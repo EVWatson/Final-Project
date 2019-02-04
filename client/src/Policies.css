@@ -1,0 +1,21 @@
+/* ref: https://codeburst.io/4-four-ways-to-style-react-components-ac6f323da822 */
+:local(.container) {
+    grid-area: cnr;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas: 
+    "pol pol pol pol pol";
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 8%;
+    margin-bottom: 10%;
+    padding-right: 4%; 
+  }
+
+  
+  .policies {
+    grid-area: pol;
+    margin-top: 5%;
+  }
+  

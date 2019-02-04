@@ -13,7 +13,6 @@ class LoginPage extends Component {
                 onSubmit={this.doLogin.bind(this)} />
         )
     }
-
 };
 
 export default LoginPage;
