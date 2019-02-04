@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link, Redirect} from 'react-router-dom';
-import userstyles from '../UserProfile.css'; 
+import userstyles from '../UserProfile.css';
 import '../App.css';
 import MainNav from './MainNav';
 import userimage from '../userimage.png'
@@ -16,20 +16,22 @@ class UserProfile extends Component {
     componentDidMount = () => {
         const userId = this.getId();
 
-        axios.get(`http://localhost:5001/protected/users/${userId}`)
+        // axios.get(`http://localhost:5001/protected/users/${userId}`)
+        axios.get(`https://lms-lilla-21rmd2qxr.now.sh/protected/users/${userId}`)
+
         .then(resp => {
             console.log(resp.data);
             this.setState({userObject: resp.data})
         })
 
         // const url="http://localhost:5001/protected/booking/getuserbooking"
-        
+
         //axios.get dint work with a req.body. was fine in postman
         // const data = {
             //     userId
             // }
-        const url=`http://localhost:5001/protected/booking/${userId}`
-            
+        const url=`https://lms-lilla-21rmd2qxr.now.sh/protected/booking/${userId}`
+
         axios.get(url)
         .then((res) => {
             console.log(res.data);
@@ -50,7 +52,7 @@ class UserProfile extends Component {
                 userId: userId
             }
         }
-        
+
         const userObject = this.state.userObject
         const userBooking = this.state.userBooking
 
@@ -101,7 +103,7 @@ class UserProfile extends Component {
                                 </tbody>
                             </table>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
