@@ -5,3 +5,4 @@
 api/now.json
 /client/.env.production
 /client/.env.development
+/client/netlify.toml
