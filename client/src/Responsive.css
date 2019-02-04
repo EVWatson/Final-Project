@@ -7,6 +7,21 @@
 /* ===========Hamburger menu options ==============*/
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
+  .wrapper {
+    margin-left: 0px;
+    margin-right: 0px;
+    border: 10px solid #2B2321;
+    /* border-style: double; */
+    background-color: #FFFFF0;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas:
+    "nav nav nav nav nav"
+    "cnr cnr cnr cnr cnr";
+  }
+
     .nav-headings {
         text-align: left;
         margin-left: 10%;       
@@ -32,6 +47,21 @@
 
   /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 @media screen and (max-width: 600px) {
+  .wrapper {
+    margin-left: 0px;
+    margin-right: 0px;
+    border: 10px solid #2B2321;
+    /* border-style: double; */
+    background-color: #FFFFF0;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas:
+    "nav nav nav nav nav"
+    "cnr cnr cnr cnr cnr";
+  }
+
     .nav-headings.responsive {position: relative;}
     .nav-headings.responsive a.icon {
       position: absolute;
@@ -65,6 +95,21 @@
 
 /* small tablets to big tablets. from 768px - 1023px */
 @media only screen and (max-width: 1023px) {
+  .wrapper {
+    margin-left: 0px;
+    margin-right: 0px;
+    border: 10px solid #2B2321;
+    /* border-style: double; */
+    background-color: #FFFFF0;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas:
+    "nav nav nav nav nav"
+    "cnr cnr cnr cnr cnr";
+  }
+
     .idx {
         grid-area: idx;
         display: grid;
@@ -118,6 +163,21 @@
 
 /* small phones to small tablets. from 481px - 767px */
 @media only screen and (max-width: 767px) {
+  .wrapper {
+    margin-left: 0px;
+    margin-right: 0px;
+    border: 10px solid #2B2321;
+    /* border-style: double; */
+    background-color: #FFFFF0;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas:
+    "nav nav nav nav nav"
+    "cnr cnr cnr cnr cnr";
+  }
+
     .idx {
         grid-area: idx;
         display: grid;
@@ -171,6 +231,21 @@
 
 /* for small phones. from 0 - 480px */
 @media only screen and (max-width: 480px) {
+  .wrapper {
+    margin-left: 0px;
+    margin-right: 0px;
+    border: 10px solid #2B2321;
+    /* border-style: double; */
+    background-color: #FFFFF0;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas:
+    "nav nav nav nav nav"
+    "cnr cnr cnr cnr cnr";
+  }
+  
     .idx {
         grid-area: idx;
         display: grid;
