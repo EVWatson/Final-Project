@@ -11,13 +11,13 @@ class Policies extends Component {
     bio: {}
   }
 
-  componentDidMount() {    
-  axios.get("http://localhost:5001/protected/admin-bio")
+  componentDidMount() {
+  axios.get(process.env.REACT_APP_API_URL + "/protected/admin-bio")
     .then(resp => {
       this.setState({bio: resp.data})
     })
   }
-    
+
   render() {
     // const user = localStorage.getItem('user')
     return (
@@ -29,10 +29,10 @@ class Policies extends Component {
                 <div className="policies" id="policies">
                     <p className="main-sub-heading center-header">Policies</p>
                     <p className="bio-text">{this.state.bio.policies}</p>
-                </div>  
+                </div>
               {/* </div> */}
           </div>
-      </div>      
+      </div>
     );
   }
 }

@@ -22,7 +22,7 @@ class LoginForm extends Component {
         e.preventDefault();
 
         const { username, password } = this.state;
-        const url = "https://lms-lilla-21rmd2qxr.now.sh/auth/login"
+        const url = process.env.REACT_APP_API_URL + "/auth/login"
         const data = {
             username,
             password

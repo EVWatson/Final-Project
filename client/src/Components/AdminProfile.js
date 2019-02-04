@@ -17,7 +17,7 @@ componentDidMount() {
       let html = ''
       booking.forEach((book) => {
         html += `
-        <p>Time: ${book.time}, Duration: ${book.duration}, Location: ${book.location}</p></br>
+        <p>Time: ${book.time}, Duration: ${book.duration}, Location: ${book.location}</p>
         `
       })
       const list = document.querySelector('.schedule')

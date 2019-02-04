@@ -10,13 +10,13 @@ import MainNav from './MainNav';
 class Lessons extends Component {
   state = {bio: {}}
 
-  componentDidMount() {    
-    axios.get("http://localhost:5001/protected/admin-bio")
+  componentDidMount() {
+    axios.get(process.env.REACT_APP_API_URL + "/protected/admin-bio")
       .then(resp => {
         this.setState({bio: resp.data})
       })
   }
-    
+
   render() {
     return (
       <div className="wrapper">
@@ -24,7 +24,7 @@ class Lessons extends Component {
         <div className={constyles.container}>
             <div className="con">
                 <img src={music1}  className="contact-pic" id="contact" alt="Music Signs"/>
-                
+
                 <div className="contact" >
                     <p className="main-sub-heading">Contact Lilla</p>
                     <p className="bio-text"><span className="phn-label"><b>Phone: </b></span>{this.state.bio.phone}</p>
@@ -52,7 +52,7 @@ class Lessons extends Component {
               </div>
             </div>
            </div>
-           
+
     );
   }
 }

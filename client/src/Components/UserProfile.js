@@ -17,7 +17,7 @@ class UserProfile extends Component {
         const userId = this.getId();
 
         // axios.get(`http://localhost:5001/protected/users/${userId}`)
-        axios.get(`https://lms-lilla-21rmd2qxr.now.sh/protected/users/${userId}`)
+        axios.get(process.env.REACT_APP_API_URL + `/protected/users/${userId}`)
 
         .then(resp => {
             console.log(resp.data);
@@ -30,7 +30,7 @@ class UserProfile extends Component {
         // const data = {
             //     userId
             // }
-        const url=`https://lms-lilla-21rmd2qxr.now.sh/protected/booking/${userId}`
+        const url=process.env.REACT_APP_API_URL + `/protected/booking/${userId}`
 
         axios.get(url)
         .then((res) => {

@@ -11,11 +11,11 @@ class App extends Component {
   state = {
     bio: {},
     locations: []
-    
+
   }
 
-  componentDidMount() {    
-    axios.get("http://localhost:5001/protected/admin-bio")
+  componentDidMount() {
+    axios.get(process.env.REACT_APP_API_URL + "/protected/admin-bio")
       .then(resp => {
         this.setState({bio: resp.data})
       })
@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   getLocationData = () => {
-    axios.get("http://localhost:5001/protected/locations")
+    axios.get(process.env.REACT_APP_API_URL + "/protected/locations")
     .then(resp => {
       this.setState({locations: resp.data})
     })
