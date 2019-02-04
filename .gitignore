@@ -1,5 +1,7 @@
 /api/node_modules
 /api/users.json
 
-.env
-now.json
+**/.env
+api/now.json
+/client/.env.production
+/client/.env.development
