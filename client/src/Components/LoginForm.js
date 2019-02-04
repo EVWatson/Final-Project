@@ -22,7 +22,7 @@ class LoginForm extends Component {
         e.preventDefault();
 
         const { username, password } = this.state;
-        const url = "http://localhost:5001/auth/login"
+        const url = "https://lms-lilla-21rmd2qxr.now.sh/auth/login"
         const data = {
             username,
             password
@@ -31,7 +31,7 @@ class LoginForm extends Component {
         axios.post(url, data)
             .then(resp => {
                 localStorage.setItem('user', JSON.stringify(resp.data._id));
-                this.setState({redirectToProfilePage: true }) //the page rerenders asa redirectToProfilePage became true. so moved this line after local storage is set 
+                this.setState({redirectToProfilePage: true }) //the page rerenders asa redirectToProfilePage became true. so moved this line after local storage is set
             })
             .catch(err => { console.log(err) //fix the err here
                 const { status } = err.response
@@ -44,17 +44,12 @@ class LoginForm extends Component {
     render() {
 
         if (this.state.redirectToProfilePage) {
-            // const newPrTo = {
-            //     pathname: '/myProfile',
-            //     state: {
-            //         loggedUser: this.state.loggedUser
-            //     }
-            // } 
+
             return (
                 <Redirect to='/userprofile' />
             )
         }
-        
+
         const { error, message } = this.state
 
         return (
@@ -74,12 +69,12 @@ class LoginForm extends Component {
 
                             { error && <p>{ error }</p>}
                             { message && <p>{ message }</p>}
-                            
+
                             <button type="submit" onClick={this.submitLogin} className="lbtn">Login</button>
                             <p className="or"> Or</p>
                             <button className="rbtn"><Link to='/register' className="rbtn-link">Register</Link></button>
                         </form>
-                    </div> 
+                    </div>
                 </div>
             </div>
         );
