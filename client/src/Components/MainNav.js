@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect} from 'react-router-dom';
 import '../App.css';
 import '../Responsive.css';
 import axios from 'axios';
@@ -7,7 +7,7 @@ import axios from 'axios';
 
 class MainNav extends Component {
   state = {
-    userPresent: true
+    loggedOut: false
   }
 
   myFunction = () => { 
@@ -38,7 +38,8 @@ class MainNav extends Component {
     axios.get(url)
         .then(resp => {
             localStorage.removeItem('user')
-            this.setState({userPresent: false})    
+            this.setState({loggedOut: true})
+            // this.setState({userPresent: false})    
         })
         .catch(err => {
             console.log(err)
@@ -46,10 +47,15 @@ class MainNav extends Component {
   }
 
   render() {
+    if(this.state.loggedOut){
+      return(
+        <Redirect to='/' />
+      )
+    }
 
     const user = JSON.parse(localStorage.getItem('user'))
 
-    console.log(user)
+    // console.log(user)
     if(user) {
       return (
         <div className="main-nav">

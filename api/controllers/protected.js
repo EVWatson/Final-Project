@@ -20,53 +20,13 @@ router.get('/users', (req, res) => {
 
 router.get('/users/:id', (req, res) => {
   const { id } = req.params;
-  console.log(typeof(id))
+  // console.log(typeof(id))
   const user = User.findOne({ _id: id})
     .then(doc => res.send(doc))
     .catch(err => res.send(err))
 });
 
 
-//Taylor - begin
-//endpoint for new booking - gonna need to bind this into a form once we have the react side up and running
-router.get('/bookings', (req, res) => {
-  Bookings.find({})
-    .then(docs => res.send(docs))
-    .catch(err => res.send(err))
-})
-
-router.post('/bookings/new', (req, res) => {
-  const {
-          term,
-          week,
-          day,
-          block_start,
-          block_end,
-          approval_pending,
-          booked_by,
-          location,
-          instrument
-  } = req.body;
-
-  const booking = new Booking({
-          term,
-          week,
-          day,
-          block_start,
-          block_end,
-          approval_pending,
-          booked_by,
-          location,
-          instrument
-  });
-
-  booking.save()
-    .then(res.send(booking));
-});
-//Taylor End
-
-
-//Sherin begin
 //Endpoints for Lillas bio which she can be edited from her dashboard. Also display on index page
 //get bio info from client
 router.get('/admin-bio', (req, res) => {
@@ -132,13 +92,15 @@ router.post('/locations/new', (req, res) => {
 });
 
 //add route to update and delete location
-//Sherin -end
 
+
+//create a new booking by user
 getUserObj = (booked_by) => {
   const user = User.findById(booked_by)
     .then(doc => {
       return doc
     })
+  console.log(user);
   return user
 }
 
@@ -161,6 +123,20 @@ router.post('/booking/create', (req, res) => {
           })
       })
 })
+
+//get booking object based on userid 
+// router.get('/booking/getuserbooking', (req, res) => {
+router.get('/booking/:userId', (req, res) => {
+
+  const { userId } = req.params;
+  
+  //find the latest record
+  Booking.findOne({ booked_by: userId}).sort({ field: 'asc', _id: -1 })
+  // Booking.findOne({ booked_by: studentid})
+    .then(doc => res.send(doc))
+    .catch(err => res.send(err))
+});
+
 
 module.exports = router;
 

@@ -7,6 +7,7 @@ import RegisterForm from './RegisterForm';
 import Lessons from './Lessons';
 import Policies from './Policies';
 import Contact from './Contact';
+import BookingForm from './BookingForm';
 
  
 const Router = () => (
@@ -20,6 +21,8 @@ const Router = () => (
             <Route exact path='/lessons' component={Lessons} />
             <Route exact path='/policies' component={Policies} />
             <Route exact path='/contact' component={Contact} />
+            <Route exact path='/booking' component={BookingForm} />
+
            
         </Switch>
     </BrowserRouter>

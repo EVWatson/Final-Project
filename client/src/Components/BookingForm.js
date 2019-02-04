@@ -28,7 +28,7 @@ class BookingForm extends Component {
       instrument,
       booked_by
     }
-    console.log(data)
+    // console.log(data)
     const url = 'http://localhost:5001/protected/booking/create'
     axios.post(url, data)
       .then((res) => {
@@ -40,8 +40,7 @@ class BookingForm extends Component {
   }
 
   getId = () => {
-    const user = JSON.parse(localStorage.getItem('user'))
-    const userId = user._id
+    const userId = JSON.parse(localStorage.getItem('user'))
     return userId
 }
 
