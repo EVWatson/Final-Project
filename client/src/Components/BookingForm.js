@@ -14,7 +14,7 @@ class BookingForm extends Component {
     console.log("in sub")
     e.preventDefault()
     const values = Array.from(e.currentTarget.parentNode.childNodes)
-    const day = values[1].value 
+    const day = values[1].value
     const location = values[3].value
     const time = values[5].value
     const duration = values[7].value
@@ -29,7 +29,7 @@ class BookingForm extends Component {
       booked_by
     }
     // console.log(data)
-    const url = 'http://localhost:5001/protected/booking/create'
+    const url = process.env.REACT_APP_API_URL + '/protected/booking/create'
     axios.post(url, data)
       .then((res) => {
         console.log(res.data)

@@ -8,8 +8,8 @@ import Lessons from './Lessons';
 import Policies from './Policies';
 import Contact from './Contact';
 import BookingForm from './BookingForm';
+import AdminProfile from './AdminProfile';
 
- 
 const Router = () => (
     <BrowserRouter>
         <Switch>
@@ -22,11 +22,10 @@ const Router = () => (
             <Route exact path='/policies' component={Policies} />
             <Route exact path='/contact' component={Contact} />
             <Route exact path='/booking' component={BookingForm} />
+            <Route exact path='/adminprofile' component={AdminProfile} />
 
-           
         </Switch>
     </BrowserRouter>
 )
 
 export default Router;
-

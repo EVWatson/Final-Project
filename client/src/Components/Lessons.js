@@ -15,13 +15,13 @@ class Lessons extends Component {
             locations: []
         }
 
-    componentDidMount() {    
-      axios.get("http://localhost:5001/protected/admin-bio")
+    componentDidMount() {
+      axios.get(process.env.REACT_APP_API_URL + "/protected/admin-bio")
         .then(resp => {
           this.setState({bio: resp.data})
         })
 
-      axios.get("http://localhost:5001/protected/locations")
+      axios.get(process.env.REACT_APP_API_URL + "/protected/locations")
         .then(resp => {
           this.setState({locations: resp.data})
         })
@@ -29,11 +29,11 @@ class Lessons extends Component {
 
   render() {
     return (
-        <div className="wrapper"> 
+        <div className="wrapper">
             <MainNav />
             <div className="container">
                 <div className="lsn">
-                
+
                     <div className="lessons">
                         <p className="main-sub-heading center-header ">Music Lessons</p>
                         <p className="bio-text">{this.state.bio.lessons}</p>
@@ -43,21 +43,21 @@ class Lessons extends Component {
 
                     <div className="location">
                         <p className="sub-heading">Teaching Locations</p>
-                            
-                        <table className="loc-table"> 
+
+                        <table className="loc-table">
                             <tbody>
                                 <tr>
                                     <td><b>No:</b></td>
                                     <td><b>Location</b></td>
-                                    <td><b>Address</b></td>                    
+                                    <td><b>Address</b></td>
                                 </tr>
 
-                                {this.state.locations.map((loc, i) => 
+                                {this.state.locations.map((loc, i) =>
                                     <tr key={i}>
                                         <td>{i + 1}</td>
                                         <td>{loc.name}</td>
                                         <td>{loc.address}</td>
-                                    </tr>                   
+                                    </tr>
                                 )}
                             </tbody>
                         </table>
@@ -69,7 +69,7 @@ class Lessons extends Component {
                     </div>
                 </div>
             </div>
-        </div>     
+        </div>
     )
   }
 }
