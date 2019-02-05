@@ -5,9 +5,9 @@ import adminstyles from '../AdminProfile.css';
 import '../App.css';
 import MainNav from './MainNav';
 import userimage from '../userimage.png'
+import UserDetails from './UserDetails'
 
 class Users extends Component {
-    state = {  }
 
 componentDidMount() {
   const url = 'http://localhost:5001/protected/users/'
@@ -19,11 +19,10 @@ componentDidMount() {
         console.log(user)
         const id = user._id
         html += `
-        <a href="${url}${id}"> 
+        <a href="http://localhost:3000/users/${id}"> 
             <p>${user.student_first_name} ${user.student_last_name}</p>
         </a>
         `
-        // Link currently doesn't work
       })
       const list = document.querySelector('.users')
       list.innerHTML = html
