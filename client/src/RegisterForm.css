@@ -21,56 +21,56 @@ body {
   .register-form {
     grid-area: reg;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-auto-rows: minmax(100px, auto);
     grid-template-areas:
-    ". . hdr ."
-    "frm . frm .";
+    " hd hd "
+    "frm1 frm2 ";
   }
 
   .heading {
-    grid-area: hdr;
+    grid-area: hd;
     font-family: 'Quicksand', sans-serif;
     font-size: 190%;
+    padding: 0.5em;
+    margin-left: 8em;
   }
 
-  .rg-form-fields {
-    grid-area: frm;
+  .sub-heading {
+    grid-area: frm1;
+    margin-right: 12em;
+    margin-bottom: 1em;
+  }
+
+  .rg-form-fieldsA {
+    grid-area: frm1;
+  }
+
+  .rg-form-fieldsB {
+    grid-area: frm1;
+    margin-left: 12em;
+    margin-bottom: 1.5em;
+  }
+
+  .dropdown {
+    grid-area: frm1;
+    margin-bottom: 2em;
   }
 
   .login-form-fields {
     width: 95%;
     padding: 5%;
     padding-right: 0px;
-    margin-bottom: 10%;
-    border:none;
+    margin-bottom: 60%;
     border: solid black 1px;
   }
 
-  .lbtn {
+  .button {
     width: 50%;
     margin-left: 25%;
     margin-bottom: 7%;
     padding: 3%;
     background-color: #2B2321;
-    color: #FFFFF0;
-  }
-
-  .rbtn {
-    width: 50%;
-    margin-left: 25%;
-    margin-bottom: 7%;
-    padding: 3%;
-    background-color: #2B2321;
-  }
-
-  .rbtn-link {
     text-decoration: none;
     color: #FFFFF0;
-  }
-
-  .or {
-    margin-left: 46%;
-    margin-bottom: 7%;
-
   }
