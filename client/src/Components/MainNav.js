@@ -63,7 +63,7 @@ class MainNav extends Component {
 
           <div className="line-under-headings">
               <svg width="90%" height="6" viewBox="0 0 929 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <line x1="64.0007" y1="3.88623" x2="864.081" y2="3.02206" stroke="#2B2321" stroke-width="1"/>
+                  <line x1="64.0007" y1="3.88623" x2="864.081" y2="3.02206" stroke="#2B2321" strokeWidth="1"/>
                   <circle cx="40.0029" cy="3.02206" r="1.5" fill="#2B2321"/>
                   <circle cx="21.0029" cy="3.02206" r="1.5" fill="#2B2321"/>
                   <circle cx="2.00287" cy="3.02206" r="1.5" fill="#2B2321"/>
