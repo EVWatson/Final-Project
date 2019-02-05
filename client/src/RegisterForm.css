@@ -36,7 +36,7 @@ body {
     margin-left: 8em;
   }
 
-  .sub-heading {
+  :local(.sub-heading) {
     grid-area: frm1;
     margin-right: 12em;
     margin-bottom: 1em;
@@ -56,14 +56,6 @@ body {
   .dropdown {
     grid-area: frm1;
     margin-bottom: 2em;
-  }
-
-  .login-form-fields {
-    width: 95%;
-    padding: 5%;
-    padding-right: 0px;
-    margin-bottom: 60%;
-    border: solid black 1px;
   }
 
   .button {
