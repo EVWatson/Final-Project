@@ -37,7 +37,8 @@ componentDidMount() {
                             <img src={userimage}  className="user-pic" alt="User"/>
                             <Link to='/editbiodetails' className="pnl-link-1">Edit my Profile</Link><br/>
                             <Link to='/students' className="pnl-link-2">Students</Link><br/>
-                            // <Link to='/availability' className="pnl-link-3">Set Availability</Link> to be added later
+                            <Link to='/availability' className="pnl-link-3">Set Availability</Link> to be added later
+                            <Link to='/bookings/reset' className="pnl-link-4">Delete Entire Schedule</Link>
                         </div>
                         <div className="schedule">
 
