@@ -9,6 +9,7 @@ import Policies from './Policies';
 import Contact from './Contact';
 import BookingForm from './BookingForm';
 import AdminProfile from './AdminProfile';
+import Users from './Users';
 
 const Router = () => (
     <BrowserRouter>
@@ -23,6 +24,8 @@ const Router = () => (
             <Route exact path='/contact' component={Contact} />
             <Route exact path='/booking' component={BookingForm} />
             <Route exact path='/adminprofile' component={AdminProfile} />
+            <Route exact path='/users' component={Users} />
+            <Route exact path='/users/:id' component={UserProfile} />
 
         </Switch>
     </BrowserRouter>
