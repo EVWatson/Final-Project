@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Redirect } from "react-router-dom";
 import '../App.css';
+import registerstyles from '../RegisterForm.css';
+import MainNav from './MainNav';
 
 class RegisterForm extends Component {
     state = {
@@ -109,169 +111,159 @@ class RegisterForm extends Component {
 
         const { error, message } = this.state
         return (
-            <div className="register-form">
-                <p className="sub-heading">Register</p>
+          <div className="wrapper">
+            <MainNav />
+            <div className={registerstyles.container}>
+              <div className="register-form">
+                  <form>
+                    <p className="heading">Register</p>
+                      <p className="sub-heading">Student Details</p>
+                      <div>
+                          <input type="text"
+                                 id="student_first_name"
+                                 placeholder="First name"
+                                 onChange={this.handleInputChange}
+                                 className="rg-form-fieldsA"
+                          />
+                          <input type="text"
+                                 id="student_last_name"
+                                 placeholder="Last name"
+                                 onChange={this.handleInputChange}
+                                 className="rg-form-fieldsB"
+                          />
+                      </div>
+                      <div>
+                          <input type="text"
+                                 id="student_dob"
+                                 placeholder="Date of birth"
+                                 onChange={this.handleInputChange}
+                                 className="rg-form-fieldsA"
+                          />
+                          <input type="text"
+                                 id="student_gender"
+                                 placeholder="Gender"
+                                 onChange={this.handleInputChange}
+                                 className="rg-form-fieldsB"
+                          />
+                      </div>
+                      <div>
+                          <input type="text"
+                                 id="primary_instrument"
+                                 placeholder="Instrument"
+                                 onChange={this.handleInputChange}
+                                 className="rg-form-fieldsA"
+                          />
+                          <input type="text"
+                                 id="experience"
+                                 placeholder="Experience"
+                                 onChange={this.handleInputChange}
+                                 className="rg-form-fieldsB"
+                          />
+                      </div>
+                      <div>
+                          <select id="primary_learning_location"
+                                  default="Primary Learning Locations"
+                                  onChange={this.handleInputChange}
+                                  className="dropdown">
+                              <option value="" disabled selected>Select Learning Location</option>
+                              {locOptions}
+                          </select>
+                      </div>
 
-                <form>
-                    <p className="sub-heading">Student Details</p>
-                    <div>
-                        <input type="text"
-                               id="student_first_name"
-                               placeholder="Student first name"
-                               onChange={this.handleInputChange}
-                               className="rg-form-fields"
-                        />
-                        <input type="text"
-                               id="student_last_name"
-                               placeholder="Student last name"
-                               onChange={this.handleInputChange}
-                               className="rg-form-fields"
-                        />
-                    </div>
-                    <div>
-                        <input type="text"
-                               id="student_dob"
-                               placeholder="Student date of birth"
-                               onChange={this.handleInputChange}
-                               className="rg-form-fields"
-                        />
-                        <input type="text"
-                               id="student_gender"
-                               placeholder="Student gender"
-                               onChange={this.handleInputChange}
-                               className="rg-form-fields"
-                        />
-                    </div>
-                    <div>
-                        <input type="text"
-                               id="email"
-                               placeholder="Contact Email"
-                               onChange={this.handleInputChange}
-                               className="rg-form-fields"
-                        />
-                        <select id="primary_learning_location"
-                                default="Primary Learning Locations"
-                                onChange={this.handleInputChange}
-                                className="rg-form-fields">
-                            <option value="" disabled selected>Choose Learning Location</option>
-                            {locOptions}
-                        </select>
-
-                    </div>
-                    <div>
-                        <input type="text"
-                               id="primary_instrument"
-                               placeholder="Instrument"
-                               onChange={this.handleInputChange}
-                               className="rg-form-fields"
-                        />
-                        <input type="text"
-                               id="experience"
-                               placeholder="Experience"
-                               onChange={this.handleInputChange}
-                               className="rg-form-fields"
-                        />
-                    </div>
-                    <div>
-                        <input type="text"
-                               id="parent_first_name"
-                               placeholder="Parent first name"
-                               onChange={this.handleInputChange}
-                               className="rg-form-fields"
-                        />
-                        <input type="text"
-                               id="parent_last_name"
-                               placeholder="Parent last name"
-                               onChange={this.handleInputChange}
-                               className="rg-form-fields"
-                        />
-                    </div>
-
-                    <p className="sub-heading">Contact Details</p>
-                    <div>
-                        <input type="text"
-                               id="primary_contact_first_name"
-                               placeholder="Primary contact first name"
-                               onChange={this.handleInputChange}
-                               className="rg-form-fields"
-                        />
-                        <input type="text"
-                               id="primary_contact_last_name"
-                               placeholder="Primary contact last name"
-                               onChange={this.handleInputChange}
-                               className="rg-form-fields"
-                        />
-                    </div>
-                    <div>
-                        <input type="text"
-                               id="primary_contact_number"
-                               placeholder="Primary contact number"
-                               onChange={this.handleInputChange}
-                               className="rg-form-fields"
-                        />
-                    </div>
+                      <p className="sub-heading">Contact Details</p>
+                       Primary Contact:
+                       <br/>
+                      <div>
+                          <input type="text"
+                                 id="primary_contact_first_name"
+                                 placeholder="First name"
+                                 onChange={this.handleInputChange}
+                                 className="rg-form-fieldsA"
+                          />
+                          <input type="text"
+                                 id="primary_contact_last_name"
+                                 placeholder="Last name"
+                                 onChange={this.handleInputChange}
+                                 className="rg-form-fieldsB"
+                          />
+                      </div>
+                      <div>
+                          <input type="text"
+                                 id="primary_contact_number"
+                                 placeholder="Contact number"
+                                 onChange={this.handleInputChange}
+                                 className="rg-form-fieldsA"
+                          />
+                          <input type="text"
+                                 id="email"
+                                 placeholder="Contact Email"
+                                 onChange={this.handleInputChange}
+                                 className="rg-form-fieldsB"
+                          />
+                      </div>
 
 
-                    Address:
-                    <br/>
-                    <div>
-                        <input type="text"
-                               id="address_1"
-                               placeholder="Line 1"
-                               onChange={this.handleInputChange}
-                               className="rg-form-fields"
-                        />
-                    </div>
-                    <div>
-                        <input type="text"
-                               id="address_2"
-                               placeholder="Line 2"
-                               onChange={this.handleInputChange}
-                               className="rg-form-fields"
-                        />
-                    </div>
-                    <div>
-                        <input type="text"
-                               id="address_3"
-                               placeholder="Suburb"
-                               onChange={this.handleInputChange}
-                               className="rg-form-fields"
-                        />
-                        <input type="text"
-                               id="address_4"
-                               placeholder="State"
-                               onChange={this.handleInputChange}
-                               className="rg-form-fields"
-                        />
-                        <input type="text"
-                               id="address_5"
-                               placeholder="Post Code"
-                               onChange={this.handleInputChange}
-                               className="rg-form-fields"
-                        />
-                    </div>
-                    <div>
-                        <input type="text"
-                               id="username"
-                               placeholder="Username"
-                               onChange={this.handleInputChange}
-                               className="rg-form-fields"
-                        />
-                        <input type="text"
-                               id="password"
-                               placeholder="Password"
-                               onChange={this.handleInputChange}
-                               className="rg-form-fields"
-                        />
-                    </div>
+                      Address:
+                      <br/>
+                      <div>
+                          <input type="text"
+                                 id="address_1"
+                                 placeholder="Line 1"
+                                 onChange={this.handleInputChange}
+                                 className="rg-form-fields"
+                          />
+                      </div>
+                      <div>
+                          <input type="text"
+                                 id="address_2"
+                                 placeholder="Line 2"
+                                 onChange={this.handleInputChange}
+                                 className="rg-form-fields"
+                          />
+                      </div>
+                      <div>
+                          <input type="text"
+                                 id="address_3"
+                                 placeholder="Suburb"
+                                 onChange={this.handleInputChange}
+                                 className="rg-form-fields"
+                          />
+                          <input type="text"
+                                 id="address_4"
+                                 placeholder="State"
+                                 onChange={this.handleInputChange}
+                                 className="rg-form-fields"
+                          />
+                          <input type="text"
+                                 id="address_5"
+                                 placeholder="Post Code"
+                                 onChange={this.handleInputChange}
+                                 className="rg-form-fields"
+                          />
+                      </div>
+                      <div>
+                          <input type="text"
+                                 id="username"
+                                 placeholder="Username"
+                                 onChange={this.handleInputChange}
+                                 className="rg-form-fields"
+                          />
+                          <input type="text"
+                                 id="password"
+                                 placeholder="Password"
+                                 onChange={this.handleInputChange}
+                                 className="rg-form-fields"
+                          />
+                      </div>
 
-                    { error && <p>{ error }</p>}
-                    { message && <p>{ message }</p>}
+                      { error && <p>{ error }</p>}
+                      { message && <p>{ message }</p>}
 
-                    <button type="submit" onClick={this.submitForm}>Register</button>
+                    <button type="submit" className="button" onClick={this.submitForm}>Register</button>
                 </form>
-
+              </div>
             </div>
+          </div>
         );
     }
 }
