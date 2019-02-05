@@ -10,6 +10,7 @@ import Contact from './Contact';
 import BookingForm from './BookingForm';
 import AdminProfile from './AdminProfile';
 import Users from './Users';
+import UserDetails from './UserDetails'
 
 const Router = () => (
     <BrowserRouter>
@@ -25,7 +26,7 @@ const Router = () => (
             <Route exact path='/booking' component={BookingForm} />
             <Route exact path='/adminprofile' component={AdminProfile} />
             <Route exact path='/users' component={Users} />
-            <Route exact path='/users/:id' component={UserProfile} />
+            <Route exact path='/users/:id' component={UserDetails} />
 
         </Switch>
     </BrowserRouter>
