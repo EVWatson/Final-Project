@@ -10,14 +10,16 @@ class Users extends Component {
     state = {  }
 
 componentDidMount() {
-  const url = 'http://localhost:5001/protected/users'
+  const url = 'http://localhost:5001/protected/users/'
   axios.get(url)
     .then(resp => {
       const users = resp.data
       let html = ''
       users.forEach((user) => {
+        console.log(user)
+        const id = user._id
         html += `
-        <a href="http://localhost:5001/protected/users/${user.id}> 
+        <a href="${url}${id}"> 
             <p>${user.student_first_name} ${user.student_last_name}</p>
         </a>
         `
