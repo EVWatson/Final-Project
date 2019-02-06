@@ -77,7 +77,7 @@ class LoginForm extends Component {
                             <input type="text" id="username" placeholder="Username" onChange={this.handleInputChange} className="login-form-fields"/>
                             <br/>
                             {/* <label for="sender-phone" className="cform-label">Password</label> */}
-                            <input type="text" id="password" placeholder="Password" onChange={this.handleInputChange} className="login-form-fields"/>
+                            <input type="password" id="password" placeholder="Password" onChange={this.handleInputChange} className="login-form-fields"/>
                             <br/>
 
                             { error && <p>{ error }</p>}
