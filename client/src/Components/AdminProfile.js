@@ -54,7 +54,7 @@ class AdminProfile extends Component {
 
             if(res){
             return res.rowStart
-          }
+            }
     }
 
     gridRowEnd = (duration) => {

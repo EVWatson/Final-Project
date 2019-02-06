@@ -11,24 +11,24 @@ class MainNav extends Component {
     name: ''
   }
 
-  myFunction = () => {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "nav-headings") {
-      x.className += " responsive";
-    } else {
-      x.className = "nav-headings";
-    }
-  }
-
-  dropNav_open = () => {
-    document.getElementById("dropNav").style.display = "block";
-    document.getElementById("dropNavButton").style.display = "none";
-  }
-
-  dropNav_close = () => {
-    document.getElementById("dropNav").style.display = "none";
-    document.getElementById("dropNavButton").style.display = "inline-block";
- }
+ //  myFunction = () => {
+ //    var x = document.getElementById("myTopnav");
+ //    if (x.className === "nav-headings") {
+ //      x.className += " responsive";
+ //    } else {
+ //      x.className = "nav-headings";
+ //    }
+ //  }
+ //
+ //  dropNav_open = () => {
+ //    document.getElementById("dropNav").style.display = "block";
+ //    document.getElementById("dropNavButton").style.display = "none";
+ //  }
+ //
+ //  dropNav_close = () => {
+ //    document.getElementById("dropNav").style.display = "none";
+ //    document.getElementById("dropNavButton").style.display = "inline-block";
+ // }
 
   // render() {
   //   return (
@@ -61,8 +61,7 @@ class MainNav extends Component {
         <Redirect to='/login' />
       )
     }
-    
-    // const user = JSON.parse(localStorage.getItem('user'))
+
 
     const user = localStorage.getItem('user')
 
@@ -86,16 +85,7 @@ class MainNav extends Component {
           </div>
 
           <div className="nav-headings" id="myTopnav">
-          <button id="dropNavButton" onClick ={this.dropNav_open}>User Panel</button>
-              <div id="dropNav">
-                <Link to='/booking'>Book a lesson</Link>
-                <br />
-                <Link to='/UserProfile'>My Details</Link>
-                <br />
-                <a href="#">Upcoming Lessons</a>
-                <br />
-                <button id="dropNav_closeButton" onClick={this.dropNav_close}>Close</button>
-              </div>
+
               <Link to='/home' className="nav-links">Home</Link>
               <Link to='/lessons' className="nav-links">Lessons</Link>
               <Link to='/policies' className="nav-links">Policies</Link>
@@ -104,9 +94,8 @@ class MainNav extends Component {
               <a href="/userprofile" className="nav-links">Welcome &nbsp;<span className="username">{this.state.name}</span></a>
               <a href="#logout" onClick={this.handleLogOut} className="nav-links">Logout</a>
               <a href="javascript:void(0);" className="icon nav-links" onClick={()=> this.myFunction()}>&#9776;</a>
-
-          </div>
         </div>
+      </div>
       )
     } else {
        return (
@@ -126,16 +115,6 @@ class MainNav extends Component {
         </div>
 
         <div className="nav-headings" id="myTopnav">
-            <button id="dropNavButton" onClick ={this.dropNav_open}>User Panel</button>
-              <div id="dropNav">
-                <a href="#">Book A Lesson</a>
-                <br />
-                <Link to='/UserProfile'>My Details</Link>
-                <br />
-                <a href="#">Upcoming Lessons</a>
-                <br />
-                <button id="dropNav_closeButton" onClick={this.dropNav_close}>Close</button>
-              </div>
             <Link to='/home' className="nav-links">Home</Link>
             {/* <a href="#about" className="nav-links">About</a> */}
             <Link to='/lessons' className="nav-links">Lessons</Link>
