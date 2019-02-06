@@ -117,34 +117,36 @@ class RegisterForm extends Component {
             <div className={registerstyles.container}>
               <div className="register-form">
                   <form>
-                    <p className="heading">Register</p>
-                      <p className="sub-heading">Student Details</p>
+                   <div className="heading">
+                    Register
+                   </div>
+                      <div className="sub-heading"><p id="student">Student Details</p></div>
                       <div>
                           <input type="text"
                                  id="student_first_name"
-                                 placeholder="First name"
+                                 placeholder="First Name"
                                  onChange={this.handleInputChange}
-                                 className="rg-form-fieldsA"
+                                 className="rg-form-fieldsA fieldsize"
                           />
                           <input type="text"
                                  id="student_last_name"
-                                 placeholder="Last name"
+                                 placeholder="Last Name"
                                  onChange={this.handleInputChange}
-                                 className="rg-form-fieldsB"
+                                 className="rg-form-fieldsB fieldsize"
                           />
                       </div>
                       <div>
                           <input type="text"
                                  id="student_dob"
-                                 placeholder="Date of birth"
+                                 placeholder="Date of Birth"
                                  onChange={this.handleInputChange}
-                                 className="rg-form-fieldsA"
+                                 className="rg-form-fieldsA fieldsize"
                           />
                           <input type="text"
                                  id="student_gender"
                                  placeholder="Gender"
                                  onChange={this.handleInputChange}
-                                 className="rg-form-fieldsB"
+                                 className="rg-form-fieldsB fieldsize"
                           />
                       </div>
                       <div>
@@ -152,13 +154,13 @@ class RegisterForm extends Component {
                                  id="primary_instrument"
                                  placeholder="Instrument"
                                  onChange={this.handleInputChange}
-                                 className="rg-form-fieldsA"
+                                 className="rg-form-fieldsA fieldsize"
                           />
                           <input type="text"
                                  id="experience"
                                  placeholder="Experience"
                                  onChange={this.handleInputChange}
-                                 className="rg-form-fieldsB"
+                                 className="rg-form-fieldsB fieldsize"
                           />
                       </div>
                       <div>
@@ -169,49 +171,50 @@ class RegisterForm extends Component {
                               <option value="" disabled selected>Select Learning Location</option>
                               {locOptions}
                           </select>
+                          <br/>
                       </div>
 
-                      <p className="sub-heading">Contact Details</p>
-                       Primary Contact:
+                      <div className="sub-heading"><p>Contact Details</p></div>
+                       <p id="category">Primary Contact:</p>
                        <br/>
                       <div>
                           <input type="text"
                                  id="primary_contact_first_name"
-                                 placeholder="First name"
+                                 placeholder="First Name"
                                  onChange={this.handleInputChange}
-                                 className="rg-form-fieldsA"
+                                 className="rg-form-fieldsA fieldsize"
                           />
                           <input type="text"
                                  id="primary_contact_last_name"
-                                 placeholder="Last name"
+                                 placeholder="Last Name"
                                  onChange={this.handleInputChange}
-                                 className="rg-form-fieldsB"
+                                 className="rg-form-fieldsB fieldsize"
                           />
                       </div>
                       <div>
                           <input type="text"
                                  id="primary_contact_number"
-                                 placeholder="Contact number"
+                                 placeholder="Contact Number"
                                  onChange={this.handleInputChange}
-                                 className="rg-form-fieldsA"
+                                 className="rg-form-fieldsA fieldsize"
                           />
                           <input type="text"
                                  id="email"
                                  placeholder="Contact Email"
                                  onChange={this.handleInputChange}
-                                 className="rg-form-fieldsB"
+                                 className="rg-form-fieldsB fieldsize"
                           />
                       </div>
 
 
-                      Address:
+                      <p id="category">Address:</p>
                       <br/>
                       <div>
                           <input type="text"
                                  id="address_1"
                                  placeholder="Line 1"
                                  onChange={this.handleInputChange}
-                                 className="rg-form-fields"
+                                 className="rg-form-fieldsA fieldsize"
                           />
                       </div>
                       <div>
@@ -219,7 +222,13 @@ class RegisterForm extends Component {
                                  id="address_2"
                                  placeholder="Line 2"
                                  onChange={this.handleInputChange}
-                                 className="rg-form-fields"
+                                 className="rg-form-fieldsA fieldsize"
+                          />
+                          <input type="text"
+                                 id="address_5"
+                                 placeholder="Post Code"
+                                 onChange={this.handleInputChange}
+                                 className="rg-form-fieldsB fieldsize"
                           />
                       </div>
                       <div>
@@ -227,33 +236,28 @@ class RegisterForm extends Component {
                                  id="address_3"
                                  placeholder="Suburb"
                                  onChange={this.handleInputChange}
-                                 className="rg-form-fields"
+                                 className="rg-form-fieldsA fieldsize"
                           />
                           <input type="text"
                                  id="address_4"
                                  placeholder="State"
                                  onChange={this.handleInputChange}
-                                 className="rg-form-fields"
-                          />
-                          <input type="text"
-                                 id="address_5"
-                                 placeholder="Post Code"
-                                 onChange={this.handleInputChange}
-                                 className="rg-form-fields"
+                                 className="rg-form-fieldsB fieldsize"
                           />
                       </div>
+                      <div><p id="category">Set Login Details:</p></div>
                       <div>
                           <input type="text"
                                  id="username"
                                  placeholder="Username"
                                  onChange={this.handleInputChange}
-                                 className="rg-form-fields"
+                                 className="rg-form-fieldsA fieldsize"
                           />
                           <input type="text"
                                  id="password"
                                  placeholder="Password"
                                  onChange={this.handleInputChange}
-                                 className="rg-form-fields"
+                                 className="rg-form-fieldsB fieldsize"
                           />
                       </div>
 

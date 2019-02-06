@@ -21,17 +21,17 @@ componentDidMount() {
       console.log(userDetails)
       const html =`
       <ul>
-      <li>Name: ${userDetails.student_first_name} ${userDetails.student_last_name}</li>
-      <li>DOB: ${userDetails.student_dob}</li>
-      <li>Email: ${userDetails.email}</li>
-      <li>Gender: ${userDetails.student_gender}</li>
-      <li>Address: ${userDetails.address}</li>
-      <li>Primary Instrument: ${userDetails.primary_instrument}</li>
-      <li>Primary Contact: ${userDetails.primary_contact_first_name} ${userDetails.primary_contact_last_name}</li>
-      <li>Primary Contact Number: ${userDetails.primary_contact_number}</li>
-      <li>Primary Learning Location: ${userDetails.primary_learning_location}</li>
-      <li>Experience: ${userDetails.experience}</li>
-      <li>Enrollment Status: ${userDetails.currently_enrolled.enrolled} ${userDetails.currently_enrolled.day} ${userDetails.currently_enrolled.time}</li>
+      <li><strong>Name:</strong> ${userDetails.student_first_name} ${userDetails.student_last_name}</li> <br />
+      <li><strong>DOB:</strong> ${userDetails.student_dob}</li> <br />
+      <li><strong>Email:</strong>  ${userDetails.email}</li> <br />
+      <li><strong>Gender:</strong> ${userDetails.student_gender}</li> <br />
+      <li><strong>Address:</strong> ${userDetails.address}</li> <br />
+      <li><strong>Primary Instrument:</strong> ${userDetails.primary_instrument}</li> <br />
+      <li><strong>Primary Contact:</strong> ${userDetails.primary_contact_first_name} ${userDetails.primary_contact_last_name}</li> <br />
+      <li><strong>Primary Contact Number:</strong> ${userDetails.primary_contact_number}</li> <br />
+      <li><strong>Primary Learning Location:</strong> ${userDetails.primary_learning_location}</li> <br />
+      <li><strong>Experience:</strong> ${userDetails.experience}</li> <br />
+      <li><strong>Enrollment Status:</strong> ${userDetails.currently_enrolled.enrolled} ${userDetails.currently_enrolled.day} ${userDetails.currently_enrolled.time}</li> <br />
       </ul>
       `
       const list = document.querySelector('.userDetails')

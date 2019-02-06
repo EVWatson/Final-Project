@@ -54,7 +54,7 @@ class MainNav extends Component {
     }
     
     // const user = JSON.parse(localStorage.getItem('user'))
-  
+
     const user = localStorage.getItem('user')
 
     // console.log(user)

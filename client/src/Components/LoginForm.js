@@ -31,6 +31,7 @@ class LoginForm extends Component {
 
         axios.post(url, data)
             .then(resp => {
+
                 localStorage.setItem('user', resp.data._id)
 
                 if(data.username == "lillafabrik"){
