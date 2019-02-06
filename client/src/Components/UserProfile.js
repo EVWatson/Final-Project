@@ -39,7 +39,7 @@ class UserProfile extends Component {
     }
 
     getId = () => {
-        const userId = JSON.parse(localStorage.getItem('user'))
+        const userId = localStorage.getItem('user')
         return userId
     }
 
