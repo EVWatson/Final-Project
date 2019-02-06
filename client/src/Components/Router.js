@@ -10,7 +10,8 @@ import Contact from './Contact';
 import BookingForm from './BookingForm';
 import AdminProfile from './AdminProfile';
 import Users from './Users';
-import UserDetails from './UserDetails'
+import UserDetails from './UserDetails';
+import EditDetails from './EditDetails';
 
 const Router = () => (
     <BrowserRouter>
@@ -27,6 +28,7 @@ const Router = () => (
             <Route exact path='/adminprofile' component={AdminProfile} />
             <Route exact path='/users' component={Users} />
             <Route exact path='/users/:id' component={UserDetails} />
+            <Route exact path='/editdetails/:id' component={EditDetails} />
 
         </Switch>
     </BrowserRouter>
