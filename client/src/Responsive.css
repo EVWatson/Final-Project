@@ -231,20 +231,20 @@
 
 /* for small phones. from 0 - 480px */
 @media only screen and (max-width: 480px) {
-  .wrapper {
-    margin-left: 0px;
-    margin-right: 0px;
-    border: 10px solid #2B2321;
-    /* border-style: double; */
-    background-color: #FFFFF0;
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-auto-rows: minmax(100px, auto);
-    grid-template-areas:
-    "nav nav nav nav nav"
-    "cnr cnr cnr cnr cnr";
-  }
+    .wrapper {
+      margin-left: 0px;
+      margin-right: 0px;
+      border: 10px solid #2B2321;
+      /* border-style: double; */
+      background-color: #FFFFF0;
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-auto-rows: minmax(100px, auto);
+      grid-template-areas:
+      "nav nav nav nav nav"
+      "cnr cnr cnr cnr cnr";
+    }
   
     .idx {
         grid-area: idx;

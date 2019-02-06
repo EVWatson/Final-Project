@@ -49,7 +49,7 @@ class MainNav extends Component {
   render() {
     if(this.state.loggedOut){
       return(
-        <Redirect to='/' />
+        <Redirect to='/login' />
       )
     }
 

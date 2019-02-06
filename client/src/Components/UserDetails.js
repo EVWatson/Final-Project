@@ -20,17 +20,19 @@ componentDidMount() {
       const userDetails = resp.data
       console.log(userDetails)
       const html =`
-      <p>Name: ${userDetails.student_first_name} ${userDetails.student_last_name}</p>
-      <p>DOB: ${userDetails.student_dob}</p>
-      <p>Email: ${userDetails.email}</p>
-      <p>Gender: ${userDetails.gender}</p>
-      <p>Address: ${userDetails.adress}</p>
-      <p>Primary Instrument: ${userDetails.primary_instrument}</p>
-      <p>Primary Contact: ${userDetails.primary_contact_first_name} ${userDetails.primary_contact_last_name}</p>
-      <p>Primary Contact Number: ${userDetails.primary_contact_number}</p>
-      <p>Primary Learning Location: ${userDetails.primary_learning_location}</p>
-      <p>Experience: ${userDetails.experience}</p>
-      <p>Enrollment Status: ${userDetails.currently_enrolled.enrolled} ${userDetails.currently_enrolled.day} ${userDetails.currently_enrolled.time}</p>
+      <ul>
+      <li>Name: ${userDetails.student_first_name} ${userDetails.student_last_name}</li>
+      <li>DOB: ${userDetails.student_dob}</li>
+      <li>Email: ${userDetails.email}</li>
+      <li>Gender: ${userDetails.student_gender}</li>
+      <li>Address: ${userDetails.address}</li>
+      <li>Primary Instrument: ${userDetails.primary_instrument}</li>
+      <li>Primary Contact: ${userDetails.primary_contact_first_name} ${userDetails.primary_contact_last_name}</li>
+      <li>Primary Contact Number: ${userDetails.primary_contact_number}</li>
+      <li>Primary Learning Location: ${userDetails.primary_learning_location}</li>
+      <li>Experience: ${userDetails.experience}</li>
+      <li>Enrollment Status: ${userDetails.currently_enrolled.enrolled} ${userDetails.currently_enrolled.day} ${userDetails.currently_enrolled.time}</li>
+      </ul>
       `
       const list = document.querySelector('.userDetails')
       list.innerHTML = html
