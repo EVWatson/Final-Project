@@ -12,6 +12,7 @@ class EditDetails extends Component {
         userObject: {}
     }
 
+    
 componentDidMount = () => {
   const queryParams = window.location.href;
   const split = queryParams.split('/')
@@ -23,6 +24,46 @@ componentDidMount = () => {
         const userDetails = resp.data
         console.log(userDetails)
         const contact_number = userDetails.primary_contact_number
+    
+        const submitForm = (e) => {
+            e.preventDefault();
+    
+            const {
+                email,
+                student_first_name,
+                student_last_name,
+                primary_contact_first_name,
+                primary_contact_last_name,
+                primary_contact_number,
+                address,
+                primary_instrument,
+                primary_learning_location
+                 } = this.state;
+
+            const data = {
+                email,
+                student_first_name,
+                student_last_name,
+                primary_contact_first_name,
+                primary_contact_last_name,
+                primary_contact_number,
+                address,
+                primary_instrument,
+                primary_learning_location
+            }
+    
+            axios.post(url, data)
+                .then(resp => {
+                    this.setState({ redirectToNewPage: true })
+                })
+                .catch(err => {
+                    const { status } = err.response
+                    if (status === 406){
+                        this.setState({error: 'Please enter username and password', message: undefined})
+                    }
+                })
+        }
+
         const html = `
                         <form>
                         <label for='first-name'>First Name: </label>
@@ -84,7 +125,7 @@ componentDidMount = () => {
                         <label for='primary_contact_number'>Primary Contact Number: </label>
                         <input type="text"
                                id="primary_contact_number"
-                               placeholder=${contact_number}
+                               placeholder=${userDetails.primary_contact_number}
                                onChange=${this.handleInputChange}
                                className="ed-form-fields"
                         />
@@ -96,7 +137,7 @@ componentDidMount = () => {
                                className="ed-form-fields"
                         />
 
-                        <button type="submit" onClick={this.submitForm}>Update Details</button>
+                        <button type="submit" onClick=${submitForm}>Update Details</button>
                         </form>
                     `
         const list = document.querySelector('.editDetails')
