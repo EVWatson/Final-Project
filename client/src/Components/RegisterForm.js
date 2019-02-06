@@ -5,7 +5,7 @@ import '../App.css';
 
 class RegisterForm extends Component {
     state = {
-        redirectToNewPage: false,
+        redirectToProfilePage: false,
         locations: []
     }
 
@@ -78,7 +78,8 @@ class RegisterForm extends Component {
 
         axios.post(url, data)
             .then(resp => {
-                this.setState({ redirectToNewPage: true })
+                localStorage.setItem('user', JSON.stringify(resp.data._id))
+                this.setState({ redirectToProfilePage: true })
             })
             .catch(err => {
                 const { status } = err.response
@@ -101,9 +102,9 @@ class RegisterForm extends Component {
         const locOptions = this.getLocData()
 
 
-        if (this.state.redirectToNewPage) {
+        if (this.state.redirectToProfilePage) {
             return (
-                <Redirect to="/myProfile" />
+                <Redirect to="/userprofile" />
             )
         }
 

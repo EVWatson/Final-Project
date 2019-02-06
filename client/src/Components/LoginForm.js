@@ -9,7 +9,8 @@ import MainNav from './MainNav';
 
 class LoginForm extends Component {
     state = {
-        redirectToProfilePage: false
+        redirectToProfilePage: false,
+        redirectToAdminProfilePage: false
         // loggedUser: {}
     }
 
@@ -30,8 +31,13 @@ class LoginForm extends Component {
 
         axios.post(url, data)
             .then(resp => {
-                localStorage.setItem('user', JSON.stringify(resp.data._id));
-                this.setState({redirectToProfilePage: true }) //the page rerenders asa redirectToProfilePage became true. so moved this line after local storage is set
+                localStorage.setItem('user', JSON.stringify(resp.data._id))
+
+                if(data.username == "lillafabrik"){
+                    this.setState({redirectToAdminProfilePage: true})
+                } else {
+                    this.setState({redirectToProfilePage: true }) //the page rerenders asa redirectToProfilePage became true. so moved this line after local storage is set
+                }
             })
             .catch(err => { console.log(err) //fix the err here
                 const { status } = err.response
@@ -44,9 +50,14 @@ class LoginForm extends Component {
     render() {
 
         if (this.state.redirectToProfilePage) {
-
             return (
                 <Redirect to='/userprofile' />
+            )
+        }
+
+        if (this.state.redirectToAdminProfilePage) {
+            return (
+                <Redirect to='/adminprofile' />
             )
         }
 
@@ -73,6 +84,7 @@ class LoginForm extends Component {
                             <button type="submit" onClick={this.submitLogin} className="lbtn">Login</button>
                             <p className="or"> Or</p>
                             <button className="rbtn"><Link to='/register' className="rbtn-link">Register</Link></button>
+
                         </form>
                     </div>
                 </div>

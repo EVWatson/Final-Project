@@ -16,8 +16,8 @@ class AdminProfile extends Component {
 
 
     componentDidMount() {
-        // const url=process.env.REACT_APP_API_URL + `/protected/bookings`
-        const url="http://localhost:5001/protected/bookings"
+        // const url="http://localhost:5001/protected/bookings"
+        const url=process.env.REACT_APP_API_URL + `/protected/bookings`
         axios.get(url)
             .then(res => this.setState({bookings: res.data}))
             // .then(res => console.log(res.data[0].booked_by.username))
