@@ -253,7 +253,7 @@ class RegisterForm extends Component {
                                  onChange={this.handleInputChange}
                                  className="rg-form-fieldsA fieldsize"
                           />
-                          <input type="text"
+                          <input type="password"
                                  id="password"
                                  placeholder="Password"
                                  onChange={this.handleInputChange}
