@@ -134,6 +134,8 @@ class AdminProfile extends Component {
                         <img src={userimage}  className="admin-pic" alt="User"/>
                         <Link to='/editbiodetails' className="pnl-link-1">Update Site Details</Link><br/>
                         <Link to='/students' className="pnl-link-2">Students</Link><br/>
+                        <Link to='/availability' className="pnl-link-3">Set Availability</Link> to be added later
+                            <Link to='/bookings/reset' className="pnl-link-4">Delete Entire Schedule</Link>
                     </div>
 
                     <div className="schedule">
@@ -169,6 +171,7 @@ class AdminProfile extends Component {
                             <div class="friday">Friday</div>
                             <div class="saturday">Saturday</div>    
 
+
                             <div class="mon-col"></div>  
                             <div class="tue-col"></div>
                             <div class="wed-col"></div>
@@ -176,6 +179,9 @@ class AdminProfile extends Component {
                             <div class="fri-col"></div>
                             <div class="sat-col"></div>                        
                         </div>                    
+
+            
+            
                     </div>
                 </div>
             </div>

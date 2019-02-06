@@ -177,3 +177,7 @@ html {
     transform: rotate(360deg);
   }
 } */
+
+.userDetails li {
+  list-style: none
+}
