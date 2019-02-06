@@ -123,13 +123,13 @@ class RegisterForm extends Component {
                       <div>
                           <input type="text"
                                  id="student_first_name"
-                                 placeholder="First name"
+                                 placeholder="First Name"
                                  onChange={this.handleInputChange}
                                  className="rg-form-fieldsA fieldsize"
                           />
                           <input type="text"
                                  id="student_last_name"
-                                 placeholder="Last name"
+                                 placeholder="Last Name"
                                  onChange={this.handleInputChange}
                                  className="rg-form-fieldsB fieldsize"
                           />
@@ -137,7 +137,7 @@ class RegisterForm extends Component {
                       <div>
                           <input type="text"
                                  id="student_dob"
-                                 placeholder="Date of birth"
+                                 placeholder="Date of Birth"
                                  onChange={this.handleInputChange}
                                  className="rg-form-fieldsA fieldsize"
                           />
@@ -179,13 +179,13 @@ class RegisterForm extends Component {
                       <div>
                           <input type="text"
                                  id="primary_contact_first_name"
-                                 placeholder="First name"
+                                 placeholder="First Name"
                                  onChange={this.handleInputChange}
                                  className="rg-form-fieldsA fieldsize"
                           />
                           <input type="text"
                                  id="primary_contact_last_name"
-                                 placeholder="Last name"
+                                 placeholder="Last Name"
                                  onChange={this.handleInputChange}
                                  className="rg-form-fieldsB fieldsize"
                           />
@@ -193,7 +193,7 @@ class RegisterForm extends Component {
                       <div>
                           <input type="text"
                                  id="primary_contact_number"
-                                 placeholder="Contact number"
+                                 placeholder="Contact Number"
                                  onChange={this.handleInputChange}
                                  className="rg-form-fieldsA fieldsize"
                           />
