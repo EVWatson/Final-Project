@@ -10,7 +10,7 @@ import userimage from '../userimage.png';
 // import 'react-table/react-table.css';
 
 class AdminProfile extends Component {
-    state = { 
+    state = {
         bookings: []
      }
 
@@ -47,14 +47,14 @@ class AdminProfile extends Component {
             {slot: "1300",rowStart: "20"},
             {slot: "1315",rowStart: "21"}
           ]
-          
+
             const res = arrOfSlots.find((timeslot) => {
                 return timeslot.slot === booktime
             })
 
-            // if(res){
+            if(res){
             return res.rowStart
-            // }
+            }
     }
 
     gridRowEnd = (duration) => {
@@ -89,39 +89,39 @@ class AdminProfile extends Component {
             case "Saturday":
                 gridColumn = "7/8";
                 break;
-            default: 
+            default:
                 gridColumn = ''
         }
-        return gridColumn        
+        return gridColumn
     }
-    
+
 
     // dependent on the day, time and duration return css grid rules
     populateSchedule = () => {
         const schedule = document.querySelector('.sch-grid-outer')
-        
-        this.state.bookings.forEach((booking) => {            
+
+        this.state.bookings.forEach((booking) => {
             const div = document.createElement("div")
             const gridColumn = this.gridColumn(booking.day)
             const rowStart   = this.gridRowStart(booking.time)
             const rowEnd     = this.gridRowEnd(booking.duration)
             const student    = booking.booked_by.username
-            
+
             div.style.gridColumn  = gridColumn
             div.style.gridRow     = `${rowStart}/span ${rowEnd}`
             div.style.background  = 'hsl('+Math.floor(Math.random()*361)+',50%,75%)'
-            
+
             div.innerHTML = student
             div.style.fontSize = "12px"
             div.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
             div.style.padding = "10px"
 
             schedule.append(div)
-        }) 
+        })
     }
 
     render() {
-       
+
      this.populateSchedule()
 
      return (
@@ -136,9 +136,9 @@ class AdminProfile extends Component {
                     </div>
 
                     <div className="schedule">
-                        <p className="sub-heading">Schedule for the term</p>   
+                        <p className="sub-heading">Schedule for the term</p>
                         <div className="sch-grid-outer">
-                            <div className="slots">Time</div>    
+                            <div className="slots">Time</div>
                             <div className="s1">08:30 - 08:45</div>
                             <div className="s2">08:45 - 09:00</div>
                             <div className="s3">09:00 - 09:15</div>
@@ -166,16 +166,16 @@ class AdminProfile extends Component {
                             <div class="wednesday">Wednesday</div>
                             <div class="thursday">Thursday</div>
                             <div class="friday">Friday</div>
-                            <div class="saturday">Saturday</div>    
+                            <div class="saturday">Saturday</div>
 
 
-                            <div class="mon-col"></div>  
+                            <div class="mon-col"></div>
                             <div class="tue-col"></div>
                             <div class="wed-col"></div>
                             <div class="thu-col"></div>
                             <div class="fri-col"></div>
-                            <div class="sat-col"></div>                        
-                        </div>                                
+                            <div class="sat-col"></div>
+                        </div>
                     </div>
                 </div>
             </div>

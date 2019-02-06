@@ -12,22 +12,22 @@ class EditDetails extends Component {
         userObject: {}
     }
 
-    
+
 componentDidMount = () => {
   const queryParams = window.location.href;
   const split = queryParams.split('/')
   const id = split[4]
   console.log(split)
-  const url = `http://localhost:5001/protected/users/${id}`
+  const url = process.env.REACT_APP_API_URL + `/protected/users/${id}`
   axios.get(url)
     .then(resp => {
         const userDetails = resp.data
         console.log(userDetails)
         const contact_number = userDetails.primary_contact_number
-    
+
         const submitForm = (e) => {
             e.preventDefault();
-    
+
             const {
                 email,
                 student_first_name,
@@ -51,7 +51,7 @@ componentDidMount = () => {
                 primary_instrument,
                 primary_learning_location
             }
-    
+
             axios.post(url, data)
                 .then(resp => {
                     this.setState({ redirectToNewPage: true })
