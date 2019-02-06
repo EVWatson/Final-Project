@@ -52,8 +52,10 @@ class MainNav extends Component {
         <Redirect to='/login' />
       )
     }
-
-    const user = JSON.parse(localStorage.getItem('user'))
+    
+    // const user = JSON.parse(localStorage.getItem('user'))
+  
+    const user = localStorage.getItem('user')
 
     // console.log(user)
     if(user) {
@@ -74,6 +76,16 @@ class MainNav extends Component {
           </div>
 
           <div className="nav-headings" id="myTopnav">
+          <button id="dropNavButton" onClick ={this.dropNav_open}>User Panel</button>
+              <div id="dropNav">
+                <Link to='/booking'>Book a lesson</Link>
+                <br />
+                <Link to='/UserProfile'>My Details</Link>
+                <br />
+                <a href="#">Upcoming Lessons</a>
+                <br />
+                <button id="dropNav_closeButton" onClick={this.dropNav_close}>Close</button>
+              </div>
               <Link to='/home' className="nav-links">Home</Link>
               <Link to='/lessons' className="nav-links">Lessons</Link>
               <Link to='/policies' className="nav-links">Policies</Link>
@@ -108,7 +120,7 @@ class MainNav extends Component {
               <div id="dropNav">
                 <a href="#">Book A Lesson</a>
                 <br />
-                <a href="../../public/user-details.html">My Details</a>
+                <Link to='/UserProfile'>My Details</Link>
                 <br />
                 <a href="#">Upcoming Lessons</a>
                 <br />
