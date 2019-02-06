@@ -12,6 +12,7 @@ const Location = require('../models/Location')
 
 
 const isAuthenticated = (req, res, next) => {
+  console.log(req.user);
   if(!req.user) {
     return res.status(403).send('Not authorized!');
   }
@@ -19,7 +20,7 @@ const isAuthenticated = (req, res, next) => {
 };
 
 
-router.use(isAuthenticated);
+// router.use(isAuthenticated);
 
 // End point for fetching all users
 router.get('/users', (req, res) => {
@@ -29,7 +30,7 @@ router.get('/users', (req, res) => {
 });
 
 
-router.get('/users/:id',isAuthenticated, (req, res) => {
+router.get('/users/:id', (req, res) => {
   const { id } = req.params;
   
   const user = User.findOne({ _id: id})
@@ -37,13 +38,6 @@ router.get('/users/:id',isAuthenticated, (req, res) => {
     .catch(err => res.send(err))
 });
 
-
-//Endpoints for Lillas bio which she can be edited from her dashboard. Also display on index page
-//get bio info from client
-router.get('/admin-bio', (req, res) => {
-  const bio = Bio.findOne().sort({ field: 'asc', _id: -1 }).limit(1) // to get the latest record
-      .then(doc => res.send(doc))
-})
 
 
 //make a new record in the collection. may not be used since we update the existing record
@@ -83,12 +77,6 @@ router.put('/admin-bio/update', (req, res) => {
     .catch(err => res.send(err))
 });
 
-//Location endpoints
-router.get('/locations', (req, res) => {
-  Location.find({})
-    .then(doc => res.send(doc))
-    .catch(err => res.send(err))
-})
 
 router.post('/locations/new', (req, res) => {
   const { name, address } = req.body;
@@ -107,7 +95,7 @@ router.post('/locations/new', (req, res) => {
 
 
 router.post('/booking/create', (req, res) => {
-  console.log("here");
+  
   const { day, location, time, duration, instrument, booked_by } = req.body
       
         const booking = new Booking ({
@@ -127,7 +115,7 @@ router.post('/booking/create', (req, res) => {
 //get booking object based on userid
 router.get('/booking/:userId', (req, res) => {
   const { userId } = req.params;
-
+  console.log("in api");
   //find the latest record
   Booking.findOne({ booked_by: userId}).sort({ field: 'asc', _id: -1 })
     .populate('booked_by')

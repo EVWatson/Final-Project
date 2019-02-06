@@ -17,7 +17,6 @@ class UserProfile extends Component {
 
         // axios.get(`http://localhost:5001/protected/users/${userId}`)
         axios.get(process.env.REACT_APP_API_URL + `/protected/users/${userId}`)
-
         .then(resp => {
             console.log(resp.data);
             this.setState({userObject: resp.data})
@@ -29,13 +28,14 @@ class UserProfile extends Component {
         // const data = {
             //     userId
             // }
-        const url=process.env.REACT_APP_API_URL + `/protected/booking/${userId}`
+        // const url=
 
-        axios.get(url)
+        axios.get(process.env.REACT_APP_API_URL + `/protected/booking/${userId}`)
         .then((res) => {
-            console.log(res.data);
+            console.log(res.data)
             this.setState({userBooking: res.data})
-      })
+        })
+        .catch(err => console.log(err))
     }
 
     getId = () => {
@@ -54,13 +54,11 @@ class UserProfile extends Component {
         const linkToEditDetails = {
             pathname: `/editdetails/${userId}`
         }
-        console.log(linkToEditDetails)
+        // console.log(linkToEditDetails)
 
         const userObject = this.state.userObject
         const userBooking = this.state.userBooking
         console.log(userId)
-
-
 
         return (
             <div className="wrapper">

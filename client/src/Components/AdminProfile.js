@@ -130,7 +130,6 @@ class AdminProfile extends Component {
                         <img src={userimage}  className="admin-pic" alt="User"/>
                         <Link to='/adminbio' className="pnl-link-1">Update Site Details</Link><br/>
                         <Link to='/students' className="pnl-link-2">Students</Link><br/>
-                        
                     </div>
 
                     <div className="schedule">

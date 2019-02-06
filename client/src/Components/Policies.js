@@ -12,7 +12,7 @@ class Policies extends Component {
   }
 
   componentDidMount() {
-  axios.get(process.env.REACT_APP_API_URL + "/protected/admin-bio")
+  axios.get(process.env.REACT_APP_API_URL + "/admin-bio")
     .then(resp => {
       this.setState({bio: resp.data})
     })

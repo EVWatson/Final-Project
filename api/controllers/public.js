@@ -15,6 +15,23 @@ router.get('/', (req, res) => {
   res.send('hi from api');
 });
 
+
+//Endpoints for Lillas bio which she can be edited from her dashboard. Also display on index page
+//get bio info from client
+router.get('/admin-bio', (req, res) => {
+  const bio = Bio.findOne().sort({ field: 'asc', _id: -1 }).limit(1) // to get the latest record
+      .then(doc => res.send(doc))
+})
+
+
+//Location endpoints
+router.get('/locations', (req, res) => {
+  Location.find({})
+    .then(doc => res.send(doc))
+    .catch(err => res.send(err))
+})
+
+
 //new user registration
 router.post('/users/new', (req, res) => {
 

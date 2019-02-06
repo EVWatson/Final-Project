@@ -31,13 +31,12 @@ class LoginForm extends Component {
 
         axios.post(url, data)
             .then(resp => {
-
+                console.log(resp.data._id)
                 localStorage.setItem('user', resp.data._id)
 
                 if(data.username == "lillafabrik"){
                     this.setState({redirectToAdminProfilePage: true})
                 } else {
-                    console.log("here");
                     this.setState({redirectToProfilePage: true }) //the page rerenders asa redirectToProfilePage became true. so moved this line after local storage is set
                 }
             })
@@ -62,7 +61,7 @@ class LoginForm extends Component {
                 <Redirect to='/adminprofile' />
             )
         }
-
+ 
         const { error, message } = this.state
 
         return (
