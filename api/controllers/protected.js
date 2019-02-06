@@ -1,14 +1,25 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+require('./auth')
 
 router.use(express.json());
-
 
 const User = require('../models/User');
 const Booking = require('../models/Booking')
 const Bio = require('../models/Bio')
 const Location = require('../models/Location')
+
+
+const isAuthenticated = (req, res, next) => {
+  if(!req.user) {
+    return res.status(403).send('Not authorized!');
+  }
+  next();
+};
+
+
+router.use(isAuthenticated);
 
 // End point for fetching all users
 router.get('/users', (req, res) => {
@@ -18,9 +29,9 @@ router.get('/users', (req, res) => {
 });
 
 
-router.get('/users/:id', (req, res) => {
+router.get('/users/:id',isAuthenticated, (req, res) => {
   const { id } = req.params;
-  // console.log(typeof(id))
+  
   const user = User.findOne({ _id: id})
     .then(doc => res.send(doc))
     .catch(err => res.send(err))
@@ -96,6 +107,7 @@ router.post('/locations/new', (req, res) => {
 
 
 router.post('/booking/create', (req, res) => {
+  console.log("here");
   const { day, location, time, duration, instrument, booked_by } = req.body
       
         const booking = new Booking ({

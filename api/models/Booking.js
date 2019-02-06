@@ -7,6 +7,7 @@ const bookingSchema = new schema({
       location: String,
       time: String,
       duration:  Number,
+      instrument: String,
       booked_by: {type: mongoose.Schema.Types.ObjectId, ref: 'user'},
 })
 
