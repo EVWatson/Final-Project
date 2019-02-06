@@ -10,7 +10,6 @@ class UserProfile extends Component {
     state = {
         userObject: {},
         userBooking: {}
-
     }
 
     componentDidMount = () => {
@@ -52,18 +51,26 @@ class UserProfile extends Component {
                 userId: userId
             }
         }
+        const linkToEditDetails = {
+            pathname: `/editdetails/${userId}`
+        }
+        console.log(linkToEditDetails)
 
         const userObject = this.state.userObject
         const userBooking = this.state.userBooking
+        console.log(userId)
+
+
 
         return (
             <div className="wrapper">
                 <MainNav />
+
                 <div className={userstyles.container}>
                     <div className="userprofile">
                         <div className="user-panel">
                             <img src={userimage}  className="user-pic" alt="User"/>
-                            <Link to='/edituserdetails' className="pnl-link-1">Edit my Profile</Link><br/>
+                            <Link to={linkToEditDetails} className="pnl-link-1">Edit my Profile</Link><br/>
                             <Link to={linkToBookingForm} className="pnl-link-2">Make a Booking</Link>
                         </div>
 
