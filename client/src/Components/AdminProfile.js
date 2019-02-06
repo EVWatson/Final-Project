@@ -50,14 +50,12 @@ class AdminProfile extends Component {
           ]
           
             const res = arrOfSlots.find((timeslot) => {
-                if (timeslot.slot === booktime) {
-                    return timeslot.rowStart
-                }            
+                return timeslot.slot === booktime
             })
 
-            if(res){
-                return res.rowStart
-            }
+            // if(res){
+            return res.rowStart
+            // }
     }
 
     gridRowEnd = (duration) => {
