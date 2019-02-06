@@ -52,8 +52,10 @@ class MainNav extends Component {
         <Redirect to='/login' />
       )
     }
-
-    const user = JSON.parse(localStorage.getItem('user'))
+    
+    // const user = JSON.parse(localStorage.getItem('user'))
+    
+    const user = localStorage.getItem('user')
 
     // console.log(user)
     if(user) {

@@ -31,7 +31,8 @@ class LoginForm extends Component {
 
         axios.post(url, data)
             .then(resp => {
-                localStorage.setItem('user', JSON.stringify(resp.data._id))
+                // localStorage.setItem('user', JSON.stringify(resp.data._id))
+                localStorage.setItem('user', resp.data._id)
 
                 if(data.username == "lillafabrik"){
                     this.setState({redirectToAdminProfilePage: true})
