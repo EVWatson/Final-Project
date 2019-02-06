@@ -1,0 +1,57 @@
+body {
+    padding: 0;
+  }
+  
+  
+:local(.container) {
+    grid-area: cnr;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas:
+    "bkn bkn bkn bkn bkn";
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 8%;
+    margin-bottom: 10%;
+    padding-right: 4%;
+}
+
+.booking {
+    grid-area: bkn;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas:
+    ". . hdr . ."
+    ". bfrm bfrm bfrm .";
+}
+
+.booking-hdr {
+    grid-area: hdr;
+    font-family: 'Great Vibes', cursive;
+    font-size: 190%;
+}
+
+.bookingform {
+    grid-area: bfrm;
+    margin-left: 27%;
+    }
+
+.bform-label {
+    /* margin-bottom: 10%; */
+    display: inline-block;
+    width: 30%;
+
+}
+
+.bform-btn {
+    background-color: #2B2321;
+    color: #FFFFF0;
+    margin-left: 13%;
+    margin-top: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+}
