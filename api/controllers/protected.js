@@ -91,23 +91,13 @@ router.post('/locations/new', (req, res) => {
     .catch(err => res.send(err))
 });
 
+
 //add route to update and delete location
 
 
-//create a new booking by user
-getUserObj = (booked_by) => {
-  const user = User.findById(booked_by)
-    .then(doc => {
-      return doc
-    })
-  console.log(user);
-  return user
-}
-
 router.post('/booking/create', (req, res) => {
   const { day, location, time, duration, instrument, booked_by } = req.body
-    const user = getUserObj(booked_by)
-      .then((booked_by) => {
+      
         const booking = new Booking ({
           day,
           location,
@@ -116,32 +106,28 @@ router.post('/booking/create', (req, res) => {
           instrument,
           booked_by
         });
+
         booking.save()
-          .then((doc) => {
-            console.log(doc)
-            res.send(doc)
-          })
-      })
+          .then((doc) => res.send(doc))      
 })
 
-//get booking object based on userid
-// router.get('/booking/getuserbooking', (req, res) => {
-router.get('/booking/:userId', (req, res) => {
 
+//get booking object based on userid
+router.get('/booking/:userId', (req, res) => {
   const { userId } = req.params;
 
   //find the latest record
   Booking.findOne({ booked_by: userId}).sort({ field: 'asc', _id: -1 })
-  // Booking.findOne({ booked_by: studentid})
-    .then(doc => res.send(doc))
-    .catch(err => res.send(err))
+    .populate('booked_by')
+    .exec((err,doc) => res.send(doc))
 });
+
 
 router.get('/bookings', (req, res) => {
   Booking.find({})
-  .then(doc => res.send(doc))
+    .populate('booked_by')
+    .exec((err,doc) => res.send(doc))
 })
-
 
 
 module.exports = router;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link, Redirect} from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import userstyles from '../UserProfile.css';
 import '../App.css';
 import MainNav from './MainNav';

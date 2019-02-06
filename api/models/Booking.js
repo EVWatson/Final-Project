@@ -1,14 +1,13 @@
 const mongoose = require('mongoose');
 const schema = mongoose.Schema;
-const User = require('./User')
+const user = require('./User')
 
 const bookingSchema = new schema({
       day: String,
       location: String,
       time: String,
       duration:  Number,
-      instrument: String,
-      booked_by: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+      booked_by: {type: mongoose.Schema.Types.ObjectId, ref: 'user'},
 })
 
 module.exports = mongoose.model('booking', bookingSchema);
