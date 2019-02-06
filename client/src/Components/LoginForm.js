@@ -37,6 +37,7 @@ class LoginForm extends Component {
                 if(data.username == "lillafabrik"){
                     this.setState({redirectToAdminProfilePage: true})
                 } else {
+                    console.log("here");
                     this.setState({redirectToProfilePage: true }) //the page rerenders asa redirectToProfilePage became true. so moved this line after local storage is set
                 }
             })

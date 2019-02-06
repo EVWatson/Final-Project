@@ -80,7 +80,7 @@ class RegisterForm extends Component {
 
         axios.post(url, data)
             .then(resp => {
-                localStorage.setItem('user', JSON.stringify(resp.data._id))
+                localStorage.setItem('user', resp.data._id)
                 this.setState({ redirectToProfilePage: true })
             })
             .catch(err => {
