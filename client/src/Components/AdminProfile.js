@@ -133,8 +133,6 @@ class AdminProfile extends Component {
                         <img src={userimage}  className="admin-pic" alt="User"/>
                         <Link to='/editbiodetails' className="pnl-link-1">Update Site Details</Link><br/>
                         <Link to='/students' className="pnl-link-2">Students</Link><br/>
-                        <Link to='/availability' className="pnl-link-3">Set Availability</Link> to be added later
-                            <Link to='/bookings/reset' className="pnl-link-4">Delete Entire Schedule</Link>
                     </div>
 
                     <div className="schedule">

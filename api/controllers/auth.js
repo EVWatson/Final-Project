@@ -17,6 +17,7 @@ const authenticateUser = (req, res, next) => {
       return res.status(401).send(info.message); 
     }     
     req.login(user, next)
+    res.send(user)
   })(req, res, next);
 }
 
@@ -27,9 +28,8 @@ const isAuthenticated = (req, res, next) => {
   next();
 };
 
-router.post('/login', authenticateUser, (req, res) => {
-  return res.send("Authed!")
-});
+router.post('/login', authenticateUser)
+
 
 
 router.get('/logout', (req, res) => {

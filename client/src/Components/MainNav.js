@@ -7,7 +7,8 @@ import axios from 'axios';
 
 class MainNav extends Component {
   state = {
-    loggedOut: false
+    loggedOut: false,
+    name: ''
   }
 
   myFunction = () => {
@@ -37,12 +38,20 @@ class MainNav extends Component {
     const url = process.env.REACT_APP_API_URL + "/auth/logout"
     axios.get(url)
         .then(resp => {
-            localStorage.removeItem('user')
+          localStorage.removeItem('user')
             this.setState({loggedOut: true})
             // this.setState({userPresent: false})
         })
         .catch(err => {
             console.log(err)
+        })
+  }
+
+  getName = (user) => {
+    axios.get(process.env.REACT_APP_API_URL + `/protected/users/${user}`)
+        .then(resp => {
+            console.log(resp.data);
+            this.setState({name: resp.data.username})
         })
   }
 
@@ -59,6 +68,7 @@ class MainNav extends Component {
 
     // console.log(user)
     if(user) {
+      const name = this.getName(user)
       return (
         <div className="main-nav">
           <h1 className="main-heading">Music Lessons With Lilla</h1>
@@ -91,7 +101,7 @@ class MainNav extends Component {
               <Link to='/policies' className="nav-links">Policies</Link>
               <Link to='/contact' className="nav-links">Contact</Link>
 
-              <a href="/userprofile" className="nav-links">Welcome &nbsp;<span className="username">{user.username}</span></a>
+              <a href="/userprofile" className="nav-links">Welcome &nbsp;<span className="username">{this.state.name}</span></a>
               <a href="#logout" onClick={this.handleLogOut} className="nav-links">Logout</a>
               <a href="javascript:void(0);" className="icon nav-links" onClick={()=> this.myFunction()}>&#9776;</a>
 
