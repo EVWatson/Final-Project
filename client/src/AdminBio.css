@@ -1,0 +1,93 @@
+:local(.container) {
+    grid-area: cnr;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas:
+    "adb adb adb adb adb";
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 8%;
+    margin-bottom: 10%;
+    padding-right: 4%;
+  }
+  
+  /*----------------------Index Page ----------------------------------*/
+  
+  .adminbio {
+    grid-area: adb;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas: 
+     ". . hdr hdr . ."
+    "bfrm bfrm bfrm bfrm bfrm"
+    ". . bbtn . .";
+    /*"abt abt abt abt abt"
+    "qual qual qual qual qual"
+    "phil phil phil phil phil"
+    "les les les les les"
+    "rts rts rts rts rts"
+    "plc plc plc plc plc"
+     */
+  }
+  
+  
+  
+  /*========== Index page content =============*/
+  .bio-hdr{
+      grid-area: hdr;
+  }
+  
+
+  .bio-form {
+      grid-area: bfrm
+  }
+
+  .bio-text {
+    font-family: 'Quicksand', sans-serif;
+    text-align: left;
+    line-height: 1.5em
+  }
+  
+  .about {
+    grid-area: abt;
+    order: 2;
+    /* margin-left: 7%; */
+  }
+
+  
+  .qualifications {
+    grid-area: qual;
+    margin-top: 5%;
+  }
+  
+  .philosophy {
+    grid-area: phil;
+    margin-top: 5%;
+  }
+
+  .lessons {
+    grid-area: les;
+    margin-top: 5%;
+  }
+  .rates {
+    grid-area: rts;
+    margin-top: 5%;
+  }
+
+  .policies  {
+    grid-area: plc;
+    margin-top: 5%;
+  }
+  
+  .editbio-btn {
+    grid-area: bbtn;    
+    margin-left: 0em;
+    margin-top: 10%;
+    margin-bottom: 7%;
+    /* padding: 1%; */
+    background-color: #2B2321;
+    font-size: 90%;
+    color: #FFFFF0;
+  }
