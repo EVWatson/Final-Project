@@ -100,7 +100,6 @@ class RegisterForm extends Component {
     render() {
         const locOptions = this.getLocData()
 
-
         if (this.state.redirectToNewPage) {
             return (
                 <Redirect to="/myProfile" />

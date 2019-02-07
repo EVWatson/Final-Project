@@ -9,25 +9,21 @@ import UserProfile from './UserProfile';
 
 class EditDetails extends Component {
     state = {
-        userObject: {}
+        userDetails: {}
     }
 
-    
 componentDidMount = () => {
   const queryParams = window.location.href;
   const split = queryParams.split('/')
   const id = split[4]
   console.log(split)
-  const url = `http://localhost:5001/protected/users/${id}`
+  const url = process.env.REACT_APP_API_URL + `/protected/users/${id}`
+  const url2 = process.env.REACT_APP_API_URL + `/users/new`
   axios.get(url)
     .then(resp => {
         const userDetails = resp.data
         console.log(userDetails)
-        const contact_number = userDetails.primary_contact_number
-    
         const submitForm = (e) => {
-            e.preventDefault();
-    
             const {
                 email,
                 student_first_name,
@@ -37,7 +33,8 @@ componentDidMount = () => {
                 primary_contact_number,
                 address,
                 primary_instrument,
-                primary_learning_location
+                primary_learning_location,
+                _id
                  } = this.state;
 
             const data = {
@@ -49,10 +46,11 @@ componentDidMount = () => {
                 primary_contact_number,
                 address,
                 primary_instrument,
-                primary_learning_location
+                primary_learning_location,
+                _id
             }
-    
-            axios.post(url, data)
+
+            axios.post(url2, data)
                 .then(resp => {
                     this.setState({ redirectToNewPage: true })
                 })
@@ -137,10 +135,16 @@ componentDidMount = () => {
                                className="ed-form-fields"
                         />
 
-                        <button type="submit" onClick=${submitForm}>Update Details</button>
+                        <input type="hidden"
+                            id="_id"
+                            value=${userDetails._id}
+                            className="ed-form-fields"
+                        />
+
+                        <button type="submit" onClick=${submitForm(this)}>Update Details</button>
                         </form>
                     `
-        const list = document.querySelector('.editDetails')
+      const list = document.querySelector('.editDetails')
       list.innerHTML = html
       })
     .catch(error => console.log(error))
