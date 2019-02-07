@@ -12,7 +12,6 @@ const Location = require('../models/Location')
 
 
 const isAuthenticated = (req, res, next) => {
-  console.log(req.user);
   if(!req.user) {
     return res.status(403).send('Not authorized!');
   }
@@ -20,7 +19,7 @@ const isAuthenticated = (req, res, next) => {
 };
 
 
-// router.use(isAuthenticated);
+router.use(isAuthenticated);
 
 // End point for fetching all users
 router.get('/users', (req, res) => {
@@ -37,7 +36,6 @@ router.get('/users/:id', (req, res) => {
     .then(doc => res.send(doc))
     .catch(err => res.send(err))
 });
-
 
 
 //make a new record in the collection. may not be used since we update the existing record
@@ -73,7 +71,9 @@ router.put('/admin-bio/update', (req, res) => {
   const latestDoc = Bio.findOne().sort({ field: 'asc', _id: -1 }) //gets the latest record
 
   Bio.findOneAndUpdate(latestDoc, {$set:req.body}, {new: true}) // updates from req.body, {new:true}sends back the updated doc
-    .then(doc => res.send(doc))
+    .then(doc => {
+      console.log(doc)
+      res.send(doc)})
     .catch(err => res.send(err))
 });
 

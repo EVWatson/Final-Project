@@ -5,6 +5,7 @@ import '../App.css';
 import '../Responsive.css';
 import MainNav from './MainNav';
 
+axios.defaults.withCredentials = true;
 
 class Policies extends Component {
   state = {

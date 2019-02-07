@@ -8,6 +8,7 @@ import '../Headings.css';
 import music from '../music.png';
 import MainNav from './MainNav';
 
+axios.defaults.withCredentials = true;
 
 class Lessons extends Component {
     state = {

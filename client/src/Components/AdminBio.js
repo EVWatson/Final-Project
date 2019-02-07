@@ -5,6 +5,7 @@ import biostyles from '../AdminBio.css';
 import '../Responsive.css';
 import MainNav from './MainNav';
 
+axios.defaults.withCredentials = true;
 
 class AdminBio extends Component {
   state = {bio: {}}
@@ -14,24 +15,47 @@ class AdminBio extends Component {
       .then(resp => {
         this.setState({bio: resp.data})
       })
+    
   }
 
-  handleEditClick = () => {
+  handleInputChange = (e) => {
+    const { value, id } = e.currentTarget;
+    const { bio } = this.state;
+    console.log(value)
+    bio[id] = value;
+    this.setState({ bio });
+}
+
+  handleEditClick = (e) => {
+    e.preventDefault();
+
+    const {
+      about,
+      qualifications,
+      teachingPhilosophy,
+      lessons,
+      ratesPayment,
+      policies,
+      phone,
+      email
+    } = this.state.bio
+
     const data = {
-        photo: String,
-      about: String,
-      qualifications: String,
-      teachingPhilosophy: String,
-      lessons: String,
-      ratesPayment: String,
-      policies: String,
-      phone: String,
-      email: String
+      photo: '',
+      about,
+      qualifications,
+      teachingPhilosophy,
+      lessons,
+      ratesPayment,
+      policies,
+      phone,
+      email
     }
-    axios.get(process.env.REACT_APP_API_URL + "/admin-bio", data)
-    .then(resp => {
-      this.setState({bio: resp.data})
-    })
+
+    axios.put(process.env.REACT_APP_API_URL + "/protected/admin-bio/update", data)
+        .then(resp => { 
+            this.setState({bio: resp.data})
+        })
   }
 
   render() {
@@ -39,58 +63,68 @@ class AdminBio extends Component {
       <div className="wrapper">
         <MainNav />
         <div className={biostyles.container}>
-            <div className="adminbio">               
-                <div className="bio-hdr"><p>Website Content</p></div>
+            <div className="admin-bioedit">  
+
+                <div className="adminbio-hdr"><p>Website Content</p></div>
                 <form className="bio-form">
-                    <input type="text"
+                    <label for='about' className="bioform-label">About: </label>
+                    <textarea 
                         id="about"
-                        placeholder={this.state.bio.about}
+                        value={this.state.bio.about}
                         onChange={this.handleInputChange}
-                        // className="rg-form-fieldsA fieldsize"
-                    />
-                    <input type="text"
+                        
+                    /><br/>
+
+                    <label for='qualifications' className="bioform-label">Qualifications: </label>
+                    <textarea
                         id="qualifications"
-                        placeholder={this.state.bio.qualifications}
+                        value={this.state.bio.qualifications}
                         onChange={this.handleInputChange}
-                        // className="rg-form-fieldsA fieldsize"
-                    />
+                    /><br/>
+
+                    <label for='teachingPhilosophy' className="bioform-label">Philosophy: </label>
+                    <textarea
+                        id="teachingPhilosophy"
+                        value={this.state.bio.teachingPhilosophy}
+                        onChange={this.handleInputChange}
+                    /><br/>
+
+                    <label for='lessons' className="bioform-label">Lessons: </label>
+                    <textarea
+                        id="lessons"
+                        value={this.state.bio.lessons}
+                        onChange={this.handleInputChange}
+                    /><br/>
+
+                    <label for='ratesPayment' className="bioform-label">Rates: </label>
+                    <textarea
+                        id="ratesPayment"
+                        value={this.state.bio.ratesPayment}
+                        onChange={this.handleInputChange}
+                    /><br/>
+
+                    <label for='policies' className="bioform-label">Policies: </label>
+                    <textarea
+                        id="policies"
+                        value={this.state.bio.policies}
+                        onChange={this.handleInputChange}
+                    /><br/> 
+
+                    <label for='phone' className="bioform-label">Phone: </label>
                     <input type="text"
-                        id="philosophy"
-                        placeholder={this.state.bio.philosophy}
+                        id="phone"
+                        value={this.state.bio.phone}
                         onChange={this.handleInputChange}
-                        // className="rg-form-fieldsA fieldsize"
-                    />
-                {/* <div className="about" id="about">
-                    <p className="sub-heading">About Me</p>
-                    <p className="bio-text">{this.state.bio.about}</p>
-                </div>       
+                    /><br/>
 
-                <div className="qualifications">
-                    <p className="sub-heading">Qualifications</p>
-                    <p className="bio-text">{this.state.bio.qualifications}</p>
-                </div> 
-
-                <div className="philosophy">
-                    <p className="sub-heading">Teaching Philosophy</p>
-                    <p className="bio-text">{this.state.bio.teachingPhilosophy}</p>
-                </div>   
-
-                <div className="lessons">
-                    <p className="sub-heading">Music Lessons</p>
-                    <p className="bio-text">{this.state.bio.lessons}</p>
-                </div>  
-
-                <div className="rates">
-                    <p className="sub-heading">Rates and Payment</p>
-                    <p className="bio-text">{this.state.bio.ratesPayment}</p>
-                </div>
-
-                <div className="policies">
-                    <p className="sub-heading">Policies</p>
-                    <p className="bio-text">{this.state.bio.policies}</p>
-                </div>                 
-                 */}
-                <button onClick={this.handleEditClick} className="editbio-btn">Edit</button>
+                    <label for='email' className="bioform-label">Email: </label>
+                    <input type="text"
+                        id="email"
+                        value={this.state.bio.email}
+                        onChange={this.handleInputChange}
+                    /><br/>
+                           
+                    <button onClick={this.handleEditClick} className="editbio-btn">Update</button>
                 </form>
             </div>
         </div>

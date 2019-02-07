@@ -7,7 +7,7 @@ import '../App.css';
 import bookformstyles from '../BookingForm.css'; 
 import MainNav from './MainNav';
 
-
+axios.defaults.withCredentials = true;
 
 class BookingForm extends Component {
   state = {
@@ -27,14 +27,7 @@ class BookingForm extends Component {
   submitForm = (e) => {
     
     e.preventDefault()
-    // const values = Array.from(e.currentTarget.parentNode.childNodes)
-    // console.log(values);
-    // const day = values[1].value
-    // const location = values[3].value
-    // const time = values[5].value
-    // const duration = values[7].value
-    // const instrument = values[9].value
-    // const booked_by = values[10].value
+    
     const {
       day,
       location,
@@ -53,11 +46,12 @@ class BookingForm extends Component {
       instrument,
       booked_by: userId
     }
-    
+    console.log(data)
     const url = process.env.REACT_APP_API_URL + '/protected/booking/create'
     axios.post(url, data)
       .then((res) => {
         console.log(res.data)
+        alert("Thankyou!  Your booking is submitted.");
       })
       .catch((err) => {
         console.log(err.response)
@@ -80,7 +74,7 @@ class BookingForm extends Component {
                   <div className="bookingform">
                         <div className="bform-group">
                             <label for='day' className="bform-label">Day: </label>
-                            <select value={this.state.day} onChange={this.handleInputChange}>
+                            <select value={this.state.day} onChange={this.handleInputChange} id="day">
                               <option value="Monday">Monday</option>
                               <option value="Tuesday">Tuesday</option>
                               <option value="Wednesday">Wednesday</option>
@@ -94,10 +88,8 @@ class BookingForm extends Component {
                         <div className="bform-group"> 
                             <label for='location' className="bform-label">Location: </label>
                             <select value={this.state.location} onChange={this.handleInputChange} id="location">
-                                <option value="Location 1">Home</option>
-                                <option value="Location 2">Location 2</option>
-                                <option value="Location 3">Location 3</option>
-                                <option value="Location 4">Location 4</option>
+                                <option value="Location 1">Lilla's Music Studio</option>
+                                <option value="Location 2">Devonport Christian School</option>
                             </select>
                         </div>
                       <br/>
@@ -123,28 +115,6 @@ class BookingForm extends Component {
                           <option value="1245">12.45</option>
                           <option value="1300">13.00</option>
                           <option value="1315">13.15</option>
-                          <option value="1330">13.30</option>
-                          <option value="1345">13.45</option>
-                          <option value="1400">14.00</option>
-                          <option value="1415">14.15</option>
-                          <option value="1430">14.30</option>
-                          <option value="1445">14.45</option>
-                          <option value="1500">15.00</option>
-                          <option value="1515">15.15</option>
-                          <option value="1530">15.30</option>
-                          <option value="1545">15.45</option>
-                          <option value="1600">16.00</option>
-                          <option value="1615">16.15</option>
-                          <option value="1630">16.30</option>
-                          <option value="1645">16.45</option>
-                          <option value="1700">17.00</option>
-                          <option value="1715">17.15</option>
-                          <option value="1730">17.30</option>
-                          <option value="1745">17.45</option>
-                          <option value="1800">18.00</option>
-                          <option value="1815">18.15</option>
-                          <option value="1830">18.30</option>
-                          <option value="1845">18.45</option>
                         </select>
                       </div>
                       <br/>

@@ -12,9 +12,7 @@
     padding-right: 4%;
   }
   
-  /*----------------------Index Page ----------------------------------*/
-  
-  .adminbio {
+  /* :local(.adminbio) {
     grid-area: adb;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -23,70 +21,46 @@
      ". . hdr hdr . ."
     "bfrm bfrm bfrm bfrm bfrm"
     ". . bbtn . .";
-    /*"abt abt abt abt abt"
-    "qual qual qual qual qual"
-    "phil phil phil phil phil"
-    "les les les les les"
-    "rts rts rts rts rts"
-    "plc plc plc plc plc"
-     */
+  } */
+
+
+.admin-bioedit {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     grid-column: 1 / 6;
+     grid-row: 1 / 2;
+ }
+
+ .bioform-label {
+     display: block;
+     margin: 20px 0px;
+ }
+  
+  
+  .adminbio-hdr{
+    font-family: 'Great Vibes', cursive;
+    font-weight: 200;
+    font-size: 150%;
+    margin-bottom: 4%;
   }
   
-  
-  
-  /*========== Index page content =============*/
-  .bio-hdr{
-      grid-area: hdr;
+  .bio-form textarea {
+      min-height: 100px;
+      width: 100%;
   }
-  
 
   .bio-form {
-      grid-area: bfrm
+      width: 100%;
   }
 
-  .bio-text {
-    font-family: 'Quicksand', sans-serif;
-    text-align: left;
-    line-height: 1.5em
-  }
-  
-  .about {
-    grid-area: abt;
-    order: 2;
-    /* margin-left: 7%; */
-  }
-
-  
-  .qualifications {
-    grid-area: qual;
-    margin-top: 5%;
-  }
-  
-  .philosophy {
-    grid-area: phil;
-    margin-top: 5%;
-  }
-
-  .lessons {
-    grid-area: les;
-    margin-top: 5%;
-  }
-  .rates {
-    grid-area: rts;
-    margin-top: 5%;
-  }
-
-  .policies  {
-    grid-area: plc;
-    margin-top: 5%;
-  }
-  
   .editbio-btn {
-    grid-area: bbtn;    
+    float: right;  
     margin-left: 0em;
     margin-top: 10%;
+    padding:2% 5%;
     margin-bottom: 7%;
-    /* padding: 1%; */
     background-color: #2B2321;
     font-size: 90%;
     color: #FFFFF0;

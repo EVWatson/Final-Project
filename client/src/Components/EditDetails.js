@@ -7,6 +7,8 @@ import MainNav from './MainNav';
 import userimage from '../userimage.png';
 import UserProfile from './UserProfile';
 
+axios.defaults.withCredentials = true;
+
 class EditDetails extends Component {
     state = {
         userObject: {}

@@ -3,6 +3,7 @@ import '../Responsive.css';
 import idxstyles from '../App.css';
 import lilla from '../lilla.jpg';
 
+// axios.defaults.withCredentials = true;
 
 class IndexPage extends Component {
     

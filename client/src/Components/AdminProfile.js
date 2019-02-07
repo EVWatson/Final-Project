@@ -6,6 +6,8 @@ import '../App.css';
 import MainNav from './MainNav';
 import userimage from '../userimage.png';
 
+axios.defaults.withCredentials = true;
+
 class AdminProfile extends Component {
     state = { 
         bookings: []
@@ -49,9 +51,9 @@ class AdminProfile extends Component {
                 return timeslot.slot === booktime
             })
 
-            // if(res){
+            if(res){
             return res.rowStart
-            // }
+            }
     }
 
     gridRowEnd = (duration) => {
