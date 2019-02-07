@@ -15,7 +15,7 @@ class AdminBio extends Component {
       .then(resp => {
         this.setState({bio: resp.data})
       })
-    
+
   }
 
   handleInputChange = (e) => {
@@ -53,7 +53,8 @@ class AdminBio extends Component {
     }
 
     axios.put(process.env.REACT_APP_API_URL + "/protected/admin-bio/update", data)
-        .then(resp => { 
+        .then(resp => {
+          alert('Website content successfully updated')
             this.setState({bio: resp.data})
         })
   }
@@ -63,16 +64,16 @@ class AdminBio extends Component {
       <div className="wrapper">
         <MainNav />
         <div className={biostyles.container}>
-            <div className="admin-bioedit">  
+            <div className="admin-bioedit">
 
                 <div className="adminbio-hdr"><p>Website Content</p></div>
                 <form className="bio-form">
                     <label for='about' className="bioform-label">About: </label>
-                    <textarea 
+                    <textarea
                         id="about"
                         value={this.state.bio.about}
                         onChange={this.handleInputChange}
-                        
+
                     /><br/>
 
                     <label for='qualifications' className="bioform-label">Qualifications: </label>
@@ -108,7 +109,7 @@ class AdminBio extends Component {
                         id="policies"
                         value={this.state.bio.policies}
                         onChange={this.handleInputChange}
-                    /><br/> 
+                    /><br/>
 
                     <label for='phone' className="bioform-label">Phone: </label>
                     <input type="text"
@@ -123,7 +124,7 @@ class AdminBio extends Component {
                         value={this.state.bio.email}
                         onChange={this.handleInputChange}
                     /><br/>
-                           
+
                     <button onClick={this.handleEditClick} className="editbio-btn">Update</button>
                 </form>
             </div>
