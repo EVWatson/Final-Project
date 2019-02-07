@@ -20,18 +20,14 @@ class Policies extends Component {
   }
 
   render() {
-    // const user = localStorage.getItem('user')
     return (
-
       <div className="wrapper">
           <MainNav />
           <div className={plcstyles.container}>
-              {/* <div className="pol"> */}
                 <div className="policies" id="policies">
                     <p className="main-sub-heading center-header">Policies</p>
                     <p className="bio-text">{this.state.bio.policies}</p>
                 </div>
-              {/* </div> */}
           </div>
       </div>
     );

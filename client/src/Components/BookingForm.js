@@ -1,8 +1,6 @@
 
 import React, { Component } from 'react';
 import axios from 'axios';
-// import { Redirect } from "react-router-dom";
-// import { Link } from 'react-router-dom';
 import '../App.css';
 import bookformstyles from '../BookingForm.css'; 
 import MainNav from './MainNav';
@@ -21,7 +19,6 @@ class BookingForm extends Component {
   handleInputChange = (e) => {
     const { value, id } = e.currentTarget;
     this.setState({ [id]: value });
-    // this.setState({value: e.target.value})
   }
   
   submitForm = (e) => {
@@ -46,7 +43,7 @@ class BookingForm extends Component {
       instrument,
       booked_by: userId
     }
-    console.log(data)
+    
     const url = process.env.REACT_APP_API_URL + '/protected/booking/create'
     axios.post(url, data)
       .then((res) => {
@@ -147,7 +144,6 @@ class BookingForm extends Component {
                 </div>
               </div>
             </div>
-
     )
   }
 }

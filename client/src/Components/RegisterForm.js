@@ -20,7 +20,6 @@ class RegisterForm extends Component {
             })
     }
 
-
     handleInputChange = (e) => {
         const { value, id } = e.currentTarget;
         this.setState({ [id]: value });
@@ -104,7 +103,6 @@ class RegisterForm extends Component {
 
     render() {
         const locOptions = this.getLocData()
-
 
         if (this.state.redirectToProfilePage) {
             return (

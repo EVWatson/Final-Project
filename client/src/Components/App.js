@@ -3,7 +3,6 @@ import axios from 'axios';
 import '../Headings.css';
 import '../App.css';
 import MainNav from './MainNav';
-// import DropNav from './DropNav';
 import IndexPage from './IndexPage';
 
 axios.defaults.withCredentials = true;
@@ -12,7 +11,6 @@ class App extends Component {
   state = {
     bio: {},
     locations: []
-
   }
 
   componentDidMount() {

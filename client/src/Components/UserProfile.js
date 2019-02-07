@@ -18,14 +18,11 @@ class UserProfile extends Component {
         const userId = this.getId();
         console.log(userId)
 
-        // axios.get(`http://localhost:5001/protected/users/${userId}`)
         axios.get(process.env.REACT_APP_API_URL + `/protected/users/${userId}`)
         .then(resp => {
             console.log(resp.data);
             this.setState({userObject: resp.data})
         })
-
-        // const url="http://localhost:5001/protected/booking/getuserbooking"
 
         //axios.get dint work with a req.body. was fine in postman
         // const data = {
@@ -33,7 +30,7 @@ class UserProfile extends Component {
             // }
         // const url=
 
-        axios.get(process.env.REACT_APP_API_URL + `protected/booking/${userId}`)
+        axios.get(process.env.REACT_APP_API_URL + `/protected/booking/${userId}`)
         .then((res) => {
             console.log(res.data)
             this.setState({userBooking: res.data})
@@ -57,7 +54,6 @@ class UserProfile extends Component {
         const linkToEditDetails = {
             pathname: `/editdetails/${userId}`
         }
-        // console.log(linkToEditDetails)
 
         const userObject = this.state.userObject
         const userBooking = this.state.userBooking

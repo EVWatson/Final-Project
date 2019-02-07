@@ -20,20 +20,7 @@ class MainNav extends Component {
       x.className = "nav-headings";
     }
   }
- //
- //  dropNav_open = () => {
- //    document.getElementById("dropNav").style.display = "block";
- //    document.getElementById("dropNavButton").style.display = "none";
- //  }
- //
- //  dropNav_close = () => {
- //    document.getElementById("dropNav").style.display = "none";
- //    document.getElementById("dropNavButton").style.display = "inline-block";
- // }
-
-  // render() {
-  //   return (
-  //     <div className="main-nav">
+ 
 
   handleLogOut = () => {
     const url = process.env.REACT_APP_API_URL + "/auth/logout"
@@ -41,7 +28,6 @@ class MainNav extends Component {
         .then(resp => {
           localStorage.removeItem('user')
             this.setState({loggedOut: true})
-            // this.setState({userPresent: false})
         })
         .catch(err => {
             console.log(err)
@@ -51,7 +37,6 @@ class MainNav extends Component {
   getName = (user) => {
     axios.get(process.env.REACT_APP_API_URL + `/protected/users/${user}`)
         .then(resp => {
-            // console.log(resp.data);
             this.setState({name: resp.data.username})
         })
   }
@@ -63,11 +48,9 @@ class MainNav extends Component {
       )
     }
 
-
     const user = localStorage.getItem('user')
 
-    
-    // console.log(user)
+
     if(user) {
       const name = this.getName(user)
       const profile = (this.state.name === "lillafabrik")?  "/adminprofile" : "/userprofile"
@@ -90,14 +73,11 @@ class MainNav extends Component {
           </div>
 
           <div className="nav-headings" id="myTopnav">
-
               <Link to='/home' className="nav-links">Home</Link>
               <Link to='/lessons' className="nav-links">Lessons</Link>
               <Link to='/policies' className="nav-links">Policies</Link>
-              <Link to='/contact' className="nav-links">Contact</Link>
-              
-              <a href={profile} className="nav-links">Welcome &nbsp;<span className="username">{this.state.name}</span></a>
-              
+              <Link to='/contact' className="nav-links">Contact</Link>              
+              <a href={profile} className="nav-links">Welcome &nbsp;<span className="username">{this.state.name}</span></a>              
               <a href="#logout" onClick={this.handleLogOut} className="nav-links">Logout</a>
               <a href="javascript:void(0);" className="icon nav-links" onClick={()=> this.myFunction()}>&#9776;</a>
         </div>
@@ -122,7 +102,6 @@ class MainNav extends Component {
 
         <div className="nav-headings" id="myTopnav">
             <Link to='/home' className="nav-links">Home</Link>
-            {/* <a href="#about" className="nav-links">About</a> */}
             <Link to='/lessons' className="nav-links">Lessons</Link>
             <Link to='/policies' className="nav-links">Policies</Link>
             <Link to='/contact' className="nav-links">Contact</Link>
