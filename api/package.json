@@ -22,7 +22,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon api.js",
-    "deploy": "now && now lms-lilla"
+    "deploy": "now && now alias"
   },
   "author": "\"Alex Taylor, Emily Watson, Sherin Samuel\"",
   "license": "ISC"
