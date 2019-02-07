@@ -11,7 +11,7 @@ axios.defaults.withCredentials = true;
 
 class EditDetails extends Component {
     state = {
-        userObject: {}
+        userDetails: {}
     }
 
     submitForm = (e) => {
@@ -55,11 +55,13 @@ class EditDetails extends Component {
             primary_instrument,
             primary_learning_location,
             experience,
-            currently_enrolled    }
+            currently_enrolled,
+            id    }
     
         axios.patch(url, data)
             .then(res => {
-                this.setState({ redirectToNewPage: true })
+                console.log(res)
+                // this.setState({ redirectToNewPage: true })
             })
             .catch(err => {
                 console.log(err)
