@@ -21,7 +21,7 @@ componentDidMount() {
         console.log(user)
         const id = user._id
         html += `
-        <a href="http://localhost:3000/users/${id}"> 
+        <a href="https://lms-lilla.netlify.com/users/${id}"> 
             <p>${user.student_first_name} ${user.student_last_name}</p>
         </a>
         `

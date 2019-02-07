@@ -16,7 +16,7 @@ componentDidMount() {
   const split = queryParams.split('/')
   const id = split[4]
   console.log(split)
-  const url = process.env.REACT_APP_API_URL + `/users/${id}`
+  const url = process.env.REACT_APP_API_URL + `/protected/users/${id}`
   axios.get(url)
     .then(resp => {
       const userDetails = resp.data

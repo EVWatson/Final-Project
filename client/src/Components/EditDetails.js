@@ -38,7 +38,7 @@ class EditDetails extends Component {
             experience,
          currently_enrolled
              } = this.state;
-    
+
         const data = {
             role,
             username,
@@ -57,12 +57,12 @@ class EditDetails extends Component {
             experience,
             currently_enrolled,
             id    }
-    
-        axios.patch(url, data)
-            .then(res => {
-                console.log(res)
-                // this.setState({ redirectToNewPage: true })
-            })
+
+            axios.put(url, data)
+               .then(res => {
+                   console.log(res)
+                   this.setState({userDetails: res.data })
+               })
             .catch(err => {
                 console.log(err)
             })
@@ -80,7 +80,7 @@ componentDidMount = () => {
         const userDetails = resp.data
         console.log(userDetails)
 
-        
+
 
         const html = `
                         <form>
