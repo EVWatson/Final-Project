@@ -12,14 +12,14 @@ class MainNav extends Component {
     name: ''
   }
 
- //  myFunction = () => {
- //    var x = document.getElementById("myTopnav");
- //    if (x.className === "nav-headings") {
- //      x.className += " responsive";
- //    } else {
- //      x.className = "nav-headings";
- //    }
- //  }
+  myFunction = () => {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "nav-headings") {
+      x.className += " responsive";
+    } else {
+      x.className = "nav-headings";
+    }
+  }
  //
  //  dropNav_open = () => {
  //    document.getElementById("dropNav").style.display = "block";
