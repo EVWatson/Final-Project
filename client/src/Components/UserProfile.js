@@ -14,6 +14,7 @@ class UserProfile extends Component {
 
     componentDidMount = () => {
         const userId = this.getId();
+        console.log(userId)
 
         // axios.get(`http://localhost:5001/protected/users/${userId}`)
         axios.get(process.env.REACT_APP_API_URL + `/protected/users/${userId}`)
@@ -30,7 +31,7 @@ class UserProfile extends Component {
             // }
         // const url=
 
-        axios.get(process.env.REACT_APP_API_URL + `/protected/booking/${userId}`)
+        axios.get(process.env.REACT_APP_API_URL + `protected/booking/${userId}`)
         .then((res) => {
             console.log(res.data)
             this.setState({userBooking: res.data})
