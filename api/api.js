@@ -7,14 +7,20 @@ const LocalStrategy = require('passport-local').Strategy;
 const cookieSession = require('cookie-session');
 const bcrypt = require('bcrypt');
 
+app.use(cors({
+  credentials: true,
+  origin: process.env.REQUEST_ORIGIN
+  // origin: "http://localhost:3000"
+}));
+
 require('dotenv').config();
 require('./config/db');
-require('dotenv').config();
 const User = require('./models/User');
 const Admin = require('./models/Admin');
 const port = process.env.PORT || 5001;
 
 app.use(express.json());
+
 
 //1. Sessions for users
 const oneDay = 1000 * 60 * 60 *24;
@@ -29,11 +35,6 @@ app.use(cookie);
 //2. Initialize passport
 app.use(passport.initialize());
 app.use(passport.session());
-
-app.use(cors({
-  credentials: true,
-  origin: process.env.REQUEST_ORIGIN
-}));
 
 
 //3 . Tell passport how to serialize and deserialize users

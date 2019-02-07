@@ -7,6 +7,8 @@ import MainNav from './MainNav';
 import userimage from '../userimage.png'
 import UserDetails from './UserDetails'
 
+axios.defaults.withCredentials = true;
+
 class Users extends Component {
 
 componentDidMount() {

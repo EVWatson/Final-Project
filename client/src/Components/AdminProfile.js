@@ -5,9 +5,8 @@ import adminstyles from '../AdminProfile.css';
 import '../App.css';
 import MainNav from './MainNav';
 import userimage from '../userimage.png';
-// import ReactTable from 'react-table';
-// import MaterialTable from 'material-table';
-// import 'react-table/react-table.css';
+
+axios.defaults.withCredentials = true;
 
 class AdminProfile extends Component {
     state = {
@@ -131,7 +130,7 @@ class AdminProfile extends Component {
                 <div className="adminprofile">
                     <div className="admin-panel">
                         <img src={userimage}  className="admin-pic" alt="User"/>
-                        <Link to='/editbiodetails' className="pnl-link-1">Update Site Details</Link><br/>
+                        <Link to='/adminbio' className="pnl-link-1">Update Site Details</Link><br/>
                         <Link to='/students' className="pnl-link-2">Students</Link><br/>
                     </div>
 

@@ -7,6 +7,8 @@ import loginstyles from '../LoginForm.css';
 import '../App.css';
 import MainNav from './MainNav';
 
+axios.defaults.withCredentials = true;
+
 class LoginForm extends Component {
     state = {
         redirectToProfilePage: false,

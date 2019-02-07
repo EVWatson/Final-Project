@@ -4,6 +4,7 @@ import '../App.css';
 import '../Responsive.css';
 import axios from 'axios';
 
+axios.defaults.withCredentials = true;
 
 class MainNav extends Component {
   state = {
@@ -50,7 +51,7 @@ class MainNav extends Component {
   getName = (user) => {
     axios.get(process.env.REACT_APP_API_URL + `/protected/users/${user}`)
         .then(resp => {
-            console.log(resp.data);
+            // console.log(resp.data);
             this.setState({name: resp.data.username})
         })
   }
@@ -65,10 +66,14 @@ class MainNav extends Component {
 
     const user = localStorage.getItem('user')
 
+    
     // console.log(user)
     if(user) {
       const name = this.getName(user)
+      const profile = (this.state.name === "lillafabrik")?  "/adminprofile" : "/userprofile"
+      
       return (
+        
         <div className="main-nav">
           <h1 className="main-heading">Music Lessons With Lilla</h1>
 
@@ -90,8 +95,9 @@ class MainNav extends Component {
               <Link to='/lessons' className="nav-links">Lessons</Link>
               <Link to='/policies' className="nav-links">Policies</Link>
               <Link to='/contact' className="nav-links">Contact</Link>
-
-              <a href="/userprofile" className="nav-links">Welcome &nbsp;<span className="username">{this.state.name}</span></a>
+              
+              <a href={profile} className="nav-links">Welcome &nbsp;<span className="username">{this.state.name}</span></a>
+              
               <a href="#logout" onClick={this.handleLogOut} className="nav-links">Logout</a>
               <a href="javascript:void(0);" className="icon nav-links" onClick={()=> this.myFunction()}>&#9776;</a>
         </div>

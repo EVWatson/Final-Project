@@ -12,6 +12,7 @@ import AdminProfile from './AdminProfile';
 import Users from './Users';
 import UserDetails from './UserDetails';
 import EditDetails from './EditDetails';
+import AdminBio from './AdminBio';
 
 const Router = () => (
     <BrowserRouter>
@@ -29,7 +30,7 @@ const Router = () => (
             <Route exact path='/users' component={Users} />
             <Route exact path='/users/:id' component={UserDetails} />
             <Route exact path='/editdetails/:id' component={EditDetails} />
-
+            <Route exact path='/adminbio' component={AdminBio} />
         </Switch>
     </BrowserRouter>
 )

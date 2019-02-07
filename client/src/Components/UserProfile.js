@@ -6,6 +6,8 @@ import '../App.css';
 import MainNav from './MainNav';
 import userimage from '../userimage.png'
 
+axios.defaults.withCredentials = true;
+
 class UserProfile extends Component {
     state = {
         userObject: {},

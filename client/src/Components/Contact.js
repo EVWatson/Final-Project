@@ -6,6 +6,7 @@ import '../Responsive.css';
 import music1 from '../music1.png';
 import MainNav from './MainNav';
 
+axios.defaults.withCredentials = true;
 
 class Lessons extends Component {
   state = {bio: {}}

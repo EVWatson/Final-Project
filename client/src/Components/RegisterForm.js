@@ -5,6 +5,8 @@ import '../App.css';
 import registerstyles from '../RegisterForm.css';
 import MainNav from './MainNav';
 
+axios.defaults.withCredentials = true;
+
 class RegisterForm extends Component {
     state = {
         redirectToProfilePage: false,
