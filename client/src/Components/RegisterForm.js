@@ -58,7 +58,7 @@ class RegisterForm extends Component {
              } = this.state;
 
 
-        const url = process.env.REACT_APP_API_URL + "/users/new"
+        const url = process.env.REACT_APP_API_URL + "/auth/users/new"
         const data = {
             role,
             username,
@@ -85,7 +85,7 @@ class RegisterForm extends Component {
                 localStorage.setItem('user', resp.data._id)
                 this.setState({ redirectToProfilePage: true })
             })
-            .catch(err => {
+            .catch(err => { 
                 const { status } = err.response
                 if (status === 406){
                     this.setState({error: 'Please enter username and password', message: undefined})
@@ -121,7 +121,7 @@ class RegisterForm extends Component {
                   <form>
                    <div className="heading">
                     Register
-                   </div>
+                   </div> 
                       <div className="sub-heading"><p id="student">Student Details</p></div>
                       <div>
                           <input type="text"
