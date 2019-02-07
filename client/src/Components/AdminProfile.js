@@ -13,17 +13,16 @@ class AdminProfile extends Component {
         bookings: []
      }
 
-
+    //get all bookings
     componentDidMount() {
         const url=process.env.REACT_APP_API_URL + `/protected/bookings`
         axios.get(url)
             .then(res => this.setState({bookings: res.data}))
             .catch(err => console.log(err))
-            // .then(res => console.log(res.data[0].booked_by.username))
     }
 
+    //select the slot-begin for schedule view
     gridRowStart = (booktime) => {
-
         const arrOfSlots = [
             {slot: "0830",rowStart: "2"},
             {slot: "0845",rowStart: "3"},
@@ -52,10 +51,11 @@ class AdminProfile extends Component {
             })
 
             if(res){
-            return res.rowStart
+                return res.rowStart
             }
     }
 
+    //select the slot-end for schedule view
     gridRowEnd = (duration) => {
         if(duration == 30){
             return 2
@@ -66,6 +66,7 @@ class AdminProfile extends Component {
         }
     }
 
+    //select the column for schedule view
     gridColumn = (day) => {
         let gridColumn = ''
 
@@ -159,14 +160,12 @@ class AdminProfile extends Component {
                             <div className="s19">13.00 - 13.15</div>
                             <div className="s20">13.15 - 13.30</div>
 
-
                             <div class="monday">Monday</div>
                             <div class="tuesday">Tuesday</div>
                             <div class="wednesday">Wednesday</div>
                             <div class="thursday">Thursday</div>
                             <div class="friday">Friday</div>
                             <div class="saturday">Saturday</div>
-
 
                             <div class="mon-col"></div>
                             <div class="tue-col"></div>

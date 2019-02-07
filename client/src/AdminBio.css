@@ -12,17 +12,6 @@
     padding-right: 4%;
   }
   
-  /* :local(.adminbio) {
-    grid-area: adb;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-auto-rows: minmax(100px, auto);
-    grid-template-areas: 
-     ". . hdr hdr . ."
-    "bfrm bfrm bfrm bfrm bfrm"
-    ". . bbtn . .";
-  } */
-
 
 .admin-bioedit {
      display: flex;

@@ -35,16 +35,12 @@ class Lessons extends Component {
                 <div className="contact-form">
                     <p className="sub-heading">Send Lilla a Message!</p>
                     <form>
-                        {/* <label for="sender-name" className="cform-label">Full Name:</label> */}
                         <input type="text" name="sender-name" placeholder="Enter your name here"  className="ct-form-fields"/>
                         <br/>
-                        {/* <label for="sender-phone" className="cform-label">Contact Number:</label> */}
                         <input type="text" name="sender-phone" placeholder="Enter your contact number here" className="ct-form-fields"/>
                         <br/>
-                        {/* <label for="sender-email" className="cform-label">Email:</label> */}
                         <input type="text" name="sender-email" placeholder="Enter your email here" className="ct-form-fields"/>
                         <br/>
-                        {/* <label for="message" className="cform-label">Message:</label> */}
                         <textarea name="message" id="message" placeholder="Enter your message here" className="ct-form-fields"/>
                         <br/>
                         <button type="submit" className="ct-form-btn">Send &nbsp; Message</button>
@@ -52,8 +48,7 @@ class Lessons extends Component {
                 </div>
               </div>
             </div>
-           </div>
-
+        </div>
     );
   }
 }

@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link, Redirect} from 'react-router-dom';
-import adminstyles from '../AdminProfile.css';
 import '../App.css';
 import MainNav from './MainNav';
-import userimage from '../userimage.png'
-import UserDetails from './UserDetails'
 
 axios.defaults.withCredentials = true;
 

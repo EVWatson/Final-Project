@@ -13,7 +13,6 @@ class LoginForm extends Component {
     state = {
         redirectToProfilePage: false,
         redirectToAdminProfilePage: false
-        // loggedUser: {}
     }
 
     handleInputChange = (e) => {
@@ -42,12 +41,14 @@ class LoginForm extends Component {
                     this.setState({redirectToProfilePage: true }) //the page rerenders asa redirectToProfilePage became true. so moved this line after local storage is set
                 }
             })
-            .catch(err => { console.log(err)}) //fix the err here
-            //     const { status } = err.response
-            //     if (status === 401){
-            //         this.setState({error: 'Incorrect username or password.', message: undefined})
-            //     }
-            // })
+
+            .catch(err => {
+                const { status } = err.response
+                if (status === 401){
+                    this.setState({error: 'Incorrect username or password.', message: undefined})
+                }
+            })
+
     }
 
     render() {
@@ -73,11 +74,10 @@ class LoginForm extends Component {
                     <div className="login">
                         <p className="sub-heading login-hdr">Login</p>
 
-                        <form className="loginform">
-                            {/* <label for="sender-name" className="cform-label">User Name</label> */}
+                        <form className="loginform">                            
                             <input type="text" id="username" placeholder="Username" onChange={this.handleInputChange} className="login-form-fields"/>
                             <br/>
-                            {/* <label for="sender-phone" className="cform-label">Password</label> */}
+                            
                             <input type="password" id="password" placeholder="Password" onChange={this.handleInputChange} className="login-form-fields"/>
                             <br/>
 
@@ -87,7 +87,6 @@ class LoginForm extends Component {
                             <button type="submit" onClick={this.submitLogin} className="lbtn">Login</button>
                             <p className="or"> Or</p>
                             <button className="rbtn"><Link to='/register' className="rbtn-link">Register</Link></button>
-
                         </form>
                     </div>
                 </div>

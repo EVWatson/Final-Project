@@ -24,7 +24,7 @@ class AdminBio extends Component {
     console.log(value)
     bio[id] = value;
     this.setState({ bio });
-}
+  }
 
   handleEditClick = (e) => {
     e.preventDefault();
