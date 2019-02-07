@@ -14,7 +14,7 @@ class RegisterForm extends Component {
     }
 
     componentDidMount() {
-        axios.get(process.env.REACT_APP_API_URL + "/protected/locations")
+        axios.get(process.env.REACT_APP_API_URL + "/locations")
             .then(resp => {
                  this.setState({locations: resp.data})
             })

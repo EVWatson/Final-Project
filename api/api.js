@@ -26,53 +26,52 @@ app.use(express.json());
 const oneDay = 1000 * 60 * 60 *24;
 
 const cookie = cookieSession({
-  maxAge: oneDay, 
+  maxAge: oneDay,
   keys: [process.env.COOKIE_KEY]
 })
 
 
-app.use(cookie); 
+app.use(cookie);
 //2. Initialize passport
 app.use(passport.initialize());
 app.use(passport.session());
 
 
-
 //3 . Tell passport how to serialize and deserialize users
 passport.serializeUser((user, done) => {
-  done(null, user.username); 
+  done(null, user.username);
 });
 
 
 passport.deserializeUser((username, done) => {
   User.findOne({ username })
-  .then(doc => done(null, doc)) 
+  .then(doc => done(null, doc))
   .catch(err => done({myError: err}, null));
 });
 
 
 //4. Tell passport how to authenticate using local strategy
 passport.use(new LocalStrategy(
-  (username, password, done) => {  
+  (username, password, done) => {
     User.findOne({ username }, (err, user) => {
-      if (err) { 
-        return done(err); 
-      } 
-      if (!user) { 
-        return done(null, false, { message: 'Incorrect username' }); 
+      if (err) {
+        return done(err);
+      }
+      if (!user) {
+        return done(null, false, { message: 'Incorrect username' });
       }
 
       bcrypt.compare(password, user.password, function(err, resp){
         if(!resp){
-          return done(null, false, { message: 'Incorrect password' }); 
+          return done(null, false, { message: 'Incorrect password' });
         } else {
-          done(null, user); 
+          done(null, user);
         }
       })
     });
   }
 ))
-  
+
 
 app.use(require('./controllers'));
 
