@@ -33,7 +33,7 @@ class UserProfile extends Component {
             // }
         // const url=
 
-        axios.get(process.env.REACT_APP_API_URL + `protected/booking/${userId}`)
+        axios.get(process.env.REACT_APP_API_URL + `/protected/booking/${userId}`)
         .then((res) => {
             console.log(res.data)
             this.setState({userBooking: res.data})

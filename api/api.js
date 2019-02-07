@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
@@ -10,10 +11,9 @@ const bcrypt = require('bcrypt');
 app.use(cors({
   credentials: true,
   origin: process.env.REQUEST_ORIGIN
-  // origin: "http://localhost:3000"
 }));
 
-require('dotenv').config();
+
 require('./config/db');
 const User = require('./models/User');
 const Admin = require('./models/Admin');
