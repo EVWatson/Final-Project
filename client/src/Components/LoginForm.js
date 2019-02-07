@@ -41,12 +41,14 @@ class LoginForm extends Component {
                     this.setState({redirectToProfilePage: true }) //the page rerenders asa redirectToProfilePage became true. so moved this line after local storage is set
                 }
             })
-            .catch(err => { console.log(err)
+
+            .catch(err => {
                 const { status } = err.response
                 if (status === 401){
                     this.setState({error: 'Incorrect username or password.', message: undefined})
                 }
             })
+
     }
 
     render() {

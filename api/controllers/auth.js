@@ -6,24 +6,18 @@ const LocalStrategy = require('passport-local').Strategy;
 const cookieSession = require('cookie-session');
 const bcrypt = require('bcrypt');
 
-// require('dotenv').config();
-
-router.use(cors({
-  credentials: true,
-  origin: process.env.REQUEST_ORIGIN
-}));
 
 const User = require('../models/User');
 
 const authenticateUser = (req, res, next) => {
   console.log('authenticating')
-  passport.authenticate('local', (err, user, info) => { 
-    if (err) { 
-      return next(err); 
+  passport.authenticate('local', (err, user, info) => {
+    if (err) {
+      return next(err);
     }
     if (!user) {
-      return res.status(401).send(info.message); 
-    }     
+      return res.status(401).send(info.message);
+    }
     req.login(user, next)
     res.send(user)
   })(req, res, next);
@@ -113,7 +107,7 @@ router.post('/users/new', (req, res) => {
                       req.login(doc, () => {
                         return res.send(doc)
                       })
-                      
+
                   })
             })
           }
@@ -124,4 +118,3 @@ router.post('/users/new', (req, res) => {
 });
 
 module.exports = router
-

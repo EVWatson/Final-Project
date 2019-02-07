@@ -8,7 +8,7 @@ axios.defaults.withCredentials = true;
 class Users extends Component {
 
 componentDidMount() {
-  const url = 'http://localhost:5001/protected/users/'
+  const url = process.env.REACT_APP_API_URL + '/protected/users/'
   axios.get(url)
     .then(resp => {
       const users = resp.data
@@ -17,7 +17,7 @@ componentDidMount() {
         console.log(user)
         const id = user._id
         html += `
-        <a href="http://localhost:3000/users/${id}"> 
+        <a href="https://lms-lilla.netlify.com/users/${id}"> 
             <p>${user.student_first_name} ${user.student_last_name}</p>
         </a>
         `
