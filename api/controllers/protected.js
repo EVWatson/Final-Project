@@ -129,5 +129,19 @@ router.get('/bookings', (req, res) => {
     .exec((err,doc) => res.send(doc))
 })
 
+router.patch('/user/edit-details', (req,res) => {
+  const { id } = req.body.data;
+  Users.findOneAndUpdate({_id: id}, {data})
+    .then(doc => {
+      return res.send(doc)
+    })
+    .catch(err => {
+      return res.send(err)
+    })
+
+})
+
+
+
 
 module.exports = router;
