@@ -12,7 +12,7 @@ axios.defaults.withCredentials = true;
 class Users extends Component {
 
 componentDidMount() {
-  const url = 'http://localhost:5001/protected/users/'
+  const url = process.env.REACT_APP_API_URL + '/protected/users/'
   axios.get(url)
     .then(resp => {
       const users = resp.data
